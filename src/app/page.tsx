@@ -26,21 +26,6 @@ const expertise = [
   { icon: "icon-music", title: "AI Sanat & Müzik Prodüksiyonu", desc: "Suno ile rap ve müzik çalışmaları, AI Art, dijital sanat üretimi. İşimi sanatla inşa ediyorum.", tags: ["Suno", "AI Art", "Rap", "Müzik"] },
 ];
 
-/* Portfolyo — D:\0 altındaki gerçek projeler */
-const projects = [
-  { title: "KEŞİF Portal", cat: "Platform", desc: "50+ MCP sunucusu ve AI orkestrasyon içeren merkezi yönetim platformu — ekosistemin omurgası.", stack: ["Python", "Flask", "MCP", "AI"], status: "Aktif", accent: "#219295" },
-  { title: "Keşif Akademi", cat: "Eğitim", desc: "WordPress tabanlı özgün LMS — Udemy entegrasyonu, kurs/satış yönetimi ve otomasyon pipeline'ı.", stack: ["WordPress", "PHP", "Udemy API"], status: "Aktif", accent: "#a435f0" },
-  { title: "İyilik Hali Platformu", cat: "Sağlık", desc: "BAHAR E-BÜTS modülü — bağımlılık rehabilitasyon ve wellness takip sistemi.", stack: [".NET", "ASP.NET Core", "C#"], status: "Aktif", accent: "#16a34a" },
-  { title: "TerapistPRO Desktop", cat: "Sağlık", desc: "KVKK uyumlu terapist yönetim masaüstü uygulaması — lokal SQLite, offline çalışma.", stack: ["Rust", "Tauri", "SQLite"], status: "Geliştirme", accent: "#dea584" },
-  { title: "LearnTube AI", cat: "Eğitim", desc: "YouTube videolarından otomatik kurs üreten AI akademi platformu.", stack: ["Next.js", "TypeScript", "Claude"], status: "Aktif", accent: "#7c3aed" },
-  { title: "Bağımlılık Kalkanı", cat: "Mobil", desc: "Davranışsal bağımlılık engelleme mobil uygulaması — tetikleyici analizi ve destek.", stack: ["Flutter", "Dart", "AI"], status: "Geliştirme", accent: "#02569b" },
-  { title: "Maneviyat App", cat: "Mobil", desc: "Ehli Sünnet kaynakları, Calibre + Ollama RAG ile İslami soru-cevap uygulaması.", stack: ["Flutter", "Calibre", "Ollama"], status: "Geliştirme", accent: "#b8a920" },
-  { title: "KesifMotion", cat: "İçerik", desc: "Whiteboard animasyon video üretim sistemi — eğitim içerikleri için otomatik pipeline.", stack: ["Next.js", "Remotion", "FFmpeg"], status: "Geliştirme", accent: "#dc2626" },
-  { title: "Müzik Stüdyo", cat: "İçerik", desc: "Suno AI ile müzik üretimi + video montaj pipeline'ı — MCP destekli stüdyo.", stack: ["Python", "Suno", "FFmpeg"], status: "Aktif", accent: "#ff5722" },
-  { title: "AI Marketing Swarm", cat: "Otomasyon", desc: "Çoklu AI ajanı ile pazarlama otomasyonu — içerik, reklam ve analiz.", stack: ["Node.js", "Zod", "AI"], status: "Aktif", accent: "#ea580c" },
-  { title: "Keşif Data Pipeline", cat: "Platform", desc: "Google, Instagram, YouTube verilerini toplayan ve AI ile analiz eden hat.", stack: ["Python", "Starlette", "AI"], status: "Aktif", accent: "#4285f4" },
-];
-
 const milestones = [
   { year: "2006 — 2010", title: "Hemşirelik Lisans", desc: "Muğla Sıtkı Koçman Üniversitesi, Fethiye SYO" },
   { year: "2011 — 2013", title: "Klinik Deneyim", desc: "Çapa, Cerrahpaşa, Kocaeli Tıp — Onkoloji & Kemoterapi" },
@@ -357,35 +342,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* Projeler / Portfolyo — PASİF: üzerinde çalışılıyor, geri açmak için false'u true yap */}
-      {false && (
-        <section className="projects-section" id="projeler">
-          <div className="projects-inner">
-            <div className="section-label reveal">Portfolyo</div>
-            <h2 className="section-title reveal">İnşa Ettiğim <em>Projeler</em>.</h2>
-            <p className="section-subtitle reveal">Sağlıktan eğitime, terapi platformlarından AI ajanlarına — Keşif Ekosistemi altında geliştirdiğim gerçek projelerden bir seçki.</p>
-            <div className="projects-grid">
-              {projects.map((p) => (
-                <div key={p.title} className="project-card reveal">
-                  <div className="project-accent" style={{ background: p.accent }}></div>
-                  <div className="project-head">
-                    <span className="project-cat">{p.cat}</span>
-                    <span className={`project-status ${p.status === "Aktif" ? "status-active" : "status-dev"}`}>
-                      <span className="status-dot"></span>{p.status}
-                    </span>
-                  </div>
-                  <h3>{p.title}</h3>
-                  <p>{p.desc}</p>
-                  <div className="project-stack">
-                    {p.stack.map((s) => <span key={s} className="stack-tag">{s}</span>)}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Keşif Akademi */}
       <div className="akademi-section" id="akademi">
