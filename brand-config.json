@@ -1,0 +1,52 @@
+{
+  "brand": "mustafayilmaz.art",
+  "owner": "Mustafa Yılmaz",
+  "tagline": "Keşif, İyilik, Dönüşüm",
+  "colors": {
+    "primary": "#219295",
+    "primary_dark": "#1a7577",
+    "primary_light": "#2ab3b6",
+    "primary_glow": "rgba(33, 146, 149, 0.15)",
+    "accent": "#e1d948",
+    "accent_soft": "#f0e96e",
+    "accent_muted": "rgba(225, 217, 72, 0.12)",
+    "background": "#faf8f0",
+    "background_warm": "#fefdfb",
+    "background_gray": "#f5f3ed",
+    "text_dark": "#1a1a1a",
+    "text": "#2c2c2c",
+    "text_muted": "#6b6b6b",
+    "text_light": "#999999",
+    "border": "rgba(33, 146, 149, 0.1)"
+  },
+  "instagram": {
+    "handle": "@mustafayilmaz.art",
+    "slide_size": "1080x1350",
+    "carousel_templates": [
+      "6_best_tools",
+      "free_vs_paid",
+      "growth_tips",
+      "best_websites",
+      "product_deep_dive",
+      "checklist"
+    ],
+    "cta_keywords": ["AI", "ARAÇ", "BÜYÜME", "İPUCU", "MENTOR"],
+    "hashtag_groups": {
+      "ai_tools": ["#aitools", "#aiaraci", "#yapayZeka", "#aiturkey", "#dijitaldonusum", "#teknoloji2026"],
+      "content_creation": ["#icerikuretimi", "#dijitalpazarlama", "#sosyalmedya", "#instagramtips", "#icerikstratejisi"],
+      "personal_brand": ["#kisiselgelisim", "#markaol", "#girisimcilik", "#freelancer", "#dijitalyaratici"],
+      "psychology": ["#psikoloji", "#iyilikhali", "#zihinselSaglik", "#terapist", "#danismanlik"],
+      "education": ["#egitim", "#udemy", "#onlineEgitim", "#kesifakademi", "#ogrenmeninSonu"]
+    },
+    "posting_schedule": {
+      "monday": "6_best_tools",
+      "wednesday": "free_vs_paid",
+      "friday": "growth_tips"
+    }
+  },
+  "fonts": {
+    "heading": "Playfair Display",
+    "body": "DM Sans",
+    "mono": "JetBrains Mono"
+  }
+}
