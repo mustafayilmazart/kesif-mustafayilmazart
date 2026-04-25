@@ -135,17 +135,17 @@ const certs = [
   ]},
 ];
 
-/* Udemy 5★ gerçek öğrenci yorumları (Keşif Akademi) */
+/* Udemy 5★ gerçek öğrenci yorumları — soyadları gizlilik için kısaltılmıştır (KVKK) */
 const refs = [
   { grad: "linear-gradient(135deg,var(--teal),var(--teal-light))", letter: "F",
     quote: "İçerik derli toplu, çok iyi şekilde düzenli olması ve daha anlaşılır olması benim için çok iyiydi. Hocamızın emeğine sağlık, teşekkür ederim.",
-    name: "Fazilet Oğuz", title: "Udemy · Kendini Yönetme Becerileri" },
+    name: "Fazilet O.", title: "Udemy · Kendini Yönetme Becerileri" },
   { grad: "linear-gradient(135deg,#7c3aed,#a855f7)", letter: "B",
     quote: "İçeriğinde yoğun ve faydalı bilgiler içeren bu video için emeğinize sağlık.",
-    name: "Büşra Yuvalı", title: "Udemy · Stres ve Başa Çıkma" },
+    name: "Büşra Y.", title: "Udemy · Stres ve Başa Çıkma" },
   { grad: "linear-gradient(135deg,#16a34a,#22c55e)", letter: "F",
     quote: "Faydalı bir eğitim. Eğitimciye teşekkür ederim.",
-    name: "Fikret Yalçın", title: "Udemy · Alkol Bağımlılığı" },
+    name: "Fikret Y.", title: "Udemy · Alkol Bağımlılığı" },
 ];
 
 /* Icon bileşenleri — basit SVG'ler */
@@ -227,7 +227,7 @@ export default function Home() {
           <li><a href="#uzmanlik">Uzmanlık</a></li>
           <li><a href="#akademi">Keşif Akademi</a></li>
           <li><a href="#referanslar">Referanslar</a></li>
-          <li><a href="#yazilar">Yazılar</a></li>
+          <li><a href="/blog">Blog</a></li>
           <li><a href="#iletisim" className="nav-cta">İletişime Geç</a></li>
         </ul>
         <button className="mobile-menu-btn" id="menuBtn" aria-label="Menü">
@@ -427,7 +427,7 @@ export default function Home() {
         <div className="references-inner">
           <div className="section-label reveal">Referanslar</div>
           <h2 className="section-title reveal">Birlikte Yol Yürüdüklerim<br />Ne Diyor?</h2>
-          <p className="section-subtitle reveal">Öğrencilerimden, danışanlarımdan ve iş birliği yaptığım profesyonellerden gelen geri bildirimler.</p>
+          <p className="section-subtitle reveal">Öğrencilerimden, danışanlarımdan ve iş birliği yaptığım profesyonellerden gelen geri bildirimler. <span style={{ display: "block", fontSize: "0.78rem", marginTop: "8px", opacity: 0.7 }}>Soyadlar KVKK kapsamında gizlilik için kısaltılmıştır.</span></p>
           <div className="references-grid">
             {refs.map((r) => (
               <div key={r.name} className="reference-card reveal">
@@ -535,7 +535,7 @@ export default function Home() {
             <a href="#akademi">Keşif Akademi</a>
             <a href="#referanslar">Referanslar</a>
             <a href="#sertifikalar">Sertifikalar</a>
-            <a href="#yazilar">Yazılar</a>
+            <a href="/blog">Blog</a>
             <a href="#iletisim">İletişim</a>
           </div>
           <p className="footer-copy">&copy; {new Date().getFullYear()} Mustafa Yılmaz. Tüm hakları saklıdır. Aşkla inşa edildi ☕</p>

@@ -1,0 +1,48 @@
+MIT License
+
+Copyright (c) 2026 Mustafa Yılmaz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+DUAL LICENSING — IMPORTANT:
+
+This repository contains TWO distinct categories of content with different
+licenses. Please read carefully before forking, copying, or redistributing:
+
+1. CODE & THEME (MIT licensed - covered above):
+   - All TypeScript / TSX / JavaScript files (src/**/*.tsx, src/**/*.ts, etc.)
+   - All CSS files (src/app/globals.css, etc.)
+   - Configuration files (next.config.ts, tailwind config, package.json, etc.)
+   - Build scripts, Firebase config, deployment helpers
+   You MAY fork, modify, redistribute and use these for any purpose under MIT.
+
+2. PERSONAL CONTENT (All Rights Reserved - NOT covered by MIT):
+   - Blog articles (src/data/posts.ts content fields and any markdown posts)
+   - Biography text in src/app/page.tsx
+   - Profile photographs (public/profile.jpg, public/profile-large.jpg)
+   - The name, brand, voice and identity of "Mustafa Yılmaz"
+   - Udemy student reviews quoted on the site
+   - Site copy and marketing language
+   These remain All Rights Reserved © Mustafa Yılmaz.
+   You MAY NOT redistribute these as your own, even after forking the code.
+
+If you fork this repository to build your own personal site, please:
+   (a) keep the MIT license for the code,
+   (b) replace ALL personal content with your own,
+   (c) update ATTRIBUTIONS.md with your own credits.

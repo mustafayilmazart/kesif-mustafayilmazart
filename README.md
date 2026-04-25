@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# mustafayilmaz.art — Personal Site
 
-## Getting Started
+> **Mustafa Yılmaz'ın kişisel marka ve portfolyo sitesi.**
+> *Personal brand site — Next.js 16 + Tailwind + Firebase Hosting. Migrated from a custom WordPress theme.*
 
-First, run the development server:
+🌐 Canlı: **[mustafayilmazart.web.app](https://mustafayilmazart.web.app)** (özel alan: mustafayilmaz.art)
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org)
+[![Firebase Hosting](https://img.shields.io/badge/Firebase-Hosting-orange)](https://firebase.google.com/docs/hosting)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+---
+
+## ✨ Hikaye
+
+Bu site önce bir **özel WordPress teması** olarak yazıldı (`mustafayilmaz-art.zip`), sonra performans, deploy kolaylığı ve modern stack için **Next.js + Firebase Hosting**'e migrasyon yapıldı. Tema'nın CSS'i ve genel tasarımı korundu; React component'leri ile yeniden inşa edildi.
+
+> Burada gördüğünüz her şey, kişisel marka ve portfolyo için inşa edilen **yaşayan bir örnektir**. Aynı yapıyı kendi sitenize uyarlamak için fork edebilirsiniz.
+
+---
+
+## 🏗 Stack
+
+- **Framework:** Next.js 16 App Router + TypeScript
+- **Stil:** Tailwind CSS 4 + custom CSS theme
+- **Font:** Playfair Display + DM Sans + JetBrains Mono (Google Fonts)
+- **Hosting:** Firebase Hosting (statik export, `output: "export"`)
+- **CDN:** Cloudflare (custom domain için)
+- **Blog:** Markdown-in-TS — `src/data/posts.ts`
+
+---
+
+## 📑 Sayfalar
+
+| Sayfa | Yol | Açıklama |
+|---|---|---|
+| Anasayfa | `/` | Hero + Hakkımda + Uzmanlık + Akademi + Süreç + Araçlar + Sertifikalar + Referanslar + İletişim |
+| Blog | `/blog` | Düşünce yazıları listesi |
+| Blog Tekil | `/blog/[slug]` | fs.blog / jamesclear.com tarzı tekil yazı |
+
+---
+
+## 🚀 Geliştirme
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/kpmustafayilmaz/NextJS-MustafaYilmazArt
+cd NextJS-MustafaYilmazArt
+npm install
+npm run dev   # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build & Deploy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build              # statik export -> out/
+npm run deploy             # Firebase Hosting'e push
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📝 Yeni Blog Yazısı Eklemek
 
-To learn more about Next.js, take a look at the following resources:
+`src/data/posts.ts`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```ts
+{
+  slug: "yeni-yazi",
+  title: "Başlık",
+  category: "Kategori",
+  excerpt: "Özet...",
+  date: "2026-04-21",
+  readTime: "5 dk",
+  cover: "linear-gradient(135deg,#X,#Y)",
+  tags: ["..."],
+  content: `<p>HTML içerik...</p>`
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`globals.css`'e cover gradient ekle:
+```css
+.blog-cover-bg[data-cover="yeni-yazi"]{background:linear-gradient(135deg,#X,#Y)}
+```
 
-## Deploy on Vercel
+Build & deploy — yeni statik sayfa otomatik üretilir.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📚 Atıflar
+
+[ATTRIBUTIONS.md](ATTRIBUTIONS.md)
+
+---
+
+## 📄 Lisans
+
+MIT — bkz. [LICENSE](LICENSE).
+
+> Sitenin **kişisel içerikleri** (yazılar, biyografi, profil fotoğrafı, marka adı) MIT kapsamında değildir; All Rights Reserved © Mustafa Yılmaz. Sadece **kod & tema yapısı** MIT.

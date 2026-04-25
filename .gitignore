@@ -40,3 +40,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .firebase/
+
+# Dahili
+.claude/
+CLAUDE.md
+CLAUDE-CODE-TAVSIYE.md
+proje-durum.json
+brand-config.json
+*.private.*
+
+# Yedekler
+*.bak
