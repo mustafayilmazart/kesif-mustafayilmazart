@@ -43,7 +43,7 @@ Bu site önce bir **özel WordPress teması** olarak yazıldı (`mustafayilmaz-a
 ## 🚀 Geliştirme
 
 ```bash
-git clone https://github.com/mustafayilmazart/NextJS-MustafaYilmazArt
+git clone https://github.com/mustafayilmazart/kesif-mustafayilmazart
 cd NextJS-MustafaYilmazArt
 npm install
 npm run dev   # http://localhost:3000
