@@ -44,7 +44,7 @@ Bu site önce bir **özel WordPress teması** olarak yazıldı (`mustafayilmaz-a
 
 ```bash
 git clone https://github.com/mustafayilmazart/kesif-mustafayilmazart
-cd NextJS-MustafaYilmazArt
+cd kesif-mustafayilmazart
 npm install
 npm run dev   # http://localhost:3000
 ```
