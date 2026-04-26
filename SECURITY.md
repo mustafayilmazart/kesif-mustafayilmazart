@@ -2,7 +2,7 @@
 
 ## Reporting / Bildirim
 
-**medya@kesif.org** — public issue açmayın / do not open public issues.
+**bilgi@mustafayilmaz.art** — public issue açmayın / do not open public issues.
 
 72 saat yanıt, 14 gün düzeltme hedefi.
 
@@ -19,7 +19,7 @@ Bu site **statik export** (`output: "export"`) ile dağıtılır. Kullanıcı ve
 
 ## Bilinen Hususlar
 
-### `mailto:medya@kesif.org` Açık
+### `mailto:bilgi@mustafayilmaz.art` Açık
 
 Bot tarama/spam riski vardır. Mitigasyonu basit: spam filtre (Gmail otomatik).
 

@@ -105,7 +105,7 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
           <p>Düzenli yazıları kaçırmamak için bültenime abone ol.</p>
           <div className="article-cta-buttons">
             <a href="https://kesiforg.substack.com" target="_blank" rel="noopener noreferrer" className="btn-primary">Substack&apos;te Abone Ol</a>
-            <a href="mailto:medya@kesif.org" className="btn-secondary">İletişime Geç</a>
+            <a href="mailto:bilgi@mustafayilmaz.art" className="btn-secondary">İletişime Geç</a>
           </div>
         </div>
       </article>

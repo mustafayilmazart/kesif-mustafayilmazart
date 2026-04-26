@@ -4,7 +4,7 @@ import Image from "next/image";
 
 /* Konfig — kolay güncellenebilir */
 const CFG = {
-  email: "medya@kesif.org",
+  email: "bilgi@mustafayilmaz.art",
   medium: "https://medium.com/@kp.mustafayilmaz",
   substack: "https://kesiforg.substack.com",
   udemy: "https://www.udemy.com/user/kesfet-kendini/",

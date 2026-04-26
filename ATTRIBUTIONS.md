@@ -33,8 +33,8 @@ Site tasarımı şu projelerden ilham aldı (kod/asset kopyalanmamış, yalnızc
 ## İçerik Hakları
 
 - **Profil fotoğrafları** (`public/profile.jpg`, `profile-large.jpg`) — © Mustafa Yılmaz. Eğer üçüncü taraf bir fotoğrafçı tarafından çekildiyse, FSEK m.86 kapsamında eser sahibi fotoğrafçıdır ve kullanım için yazılı izin alınmıştır. Fotoğraflar kişisel/portfolyo kullanım kapsamında bu sitede yer almaktadır.
-- **Blog yazıları** — © Mustafa Yılmaz, **All Rights Reserved**. (LICENSE dosyasındaki Dual Licensing notu geçerlidir; kişisel içerik MIT kapsamı dışındadır.) Yeniden yayınlamak için yazılı izin gerekir; alıntı yapmak isteyenler [medya@kesif.org](mailto:medya@kesif.org) adresine yazabilir.
-- **Udemy yorumları** (Referanslar bölümü) — Udemy platformunda öğrencilerin **kamuya açık** yayınladığı 5★ yorumları. **KVKK uyumu için soyadlar kısaltılmıştır** (örn. "Fazilet O." biçiminde). Yorum metni birebir alıntıdır; yorum sahibi açık rıza vermediği takdirde tam ad-soyad kullanımı KVKK Md. 5 kapsamında risk yaratabileceğinden, yalnızca **ad + soyad inisiyali** gösterilmiştir. Bir yorum sahibi yorumunun kaldırılmasını isterse [medya@kesif.org](mailto:medya@kesif.org) adresine yazabilir; talep 7 gün içinde işleme alınır.
+- **Blog yazıları** — © Mustafa Yılmaz, **All Rights Reserved**. (LICENSE dosyasındaki Dual Licensing notu geçerlidir; kişisel içerik MIT kapsamı dışındadır.) Yeniden yayınlamak için yazılı izin gerekir; alıntı yapmak isteyenler [bilgi@mustafayilmaz.art](mailto:bilgi@mustafayilmaz.art) adresine yazabilir.
+- **Udemy yorumları** (Referanslar bölümü) — Udemy platformunda öğrencilerin **kamuya açık** yayınladığı 5★ yorumları. **KVKK uyumu için soyadlar kısaltılmıştır** (örn. "Fazilet O." biçiminde). Yorum metni birebir alıntıdır; yorum sahibi açık rıza vermediği takdirde tam ad-soyad kullanımı KVKK Md. 5 kapsamında risk yaratabileceğinden, yalnızca **ad + soyad inisiyali** gösterilmiştir. Bir yorum sahibi yorumunun kaldırılmasını isterse [bilgi@mustafayilmaz.art](mailto:bilgi@mustafayilmaz.art) adresine yazabilir; talep 7 gün içinde işleme alınır.
 
 ## Vector Icons
 
