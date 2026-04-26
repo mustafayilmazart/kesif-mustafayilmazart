@@ -222,7 +222,7 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
                   ))}
                 </ul>
                 <p className="sources-note">
-                  Bu yazı, kaynaklarda anılan eserlerden <strong>kavram düzeyinde ilham</strong> almıştır; metin tamamen Mustafa Yılmaz&apos;ın kendi klinik deneyimi ve yorumlarıyla, sıfırdan Türkçe yazılmıştır. Birebir alıntı içermez.
+                  Bu yazı, kaynaklarda anılan eserlerden <strong>kavram düzeyinde ilham</strong> almıştır; metin sıfırdan, Türkçe ve genel okur için yazılmıştır. Birebir alıntı veya kişisel danışan/seans verisi içermez. Verilen örnekler, alanyazında yaygın olarak gözlemlenen tipik durumların anonim ve genel anlatımıdır.
                 </p>
               </section>
             )}

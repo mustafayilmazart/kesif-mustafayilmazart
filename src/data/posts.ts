@@ -40,7 +40,7 @@ export const posts: Post[] = [
       { title: "Michelangelo Phenomenon: The Couple as a Sculptor", author: "Caryl E. Rusbult, Eli J. Finkel, Madoka Kumashiro", type: "akademik", url: "https://journals.sagepub.com/doi/10.1111/j.1467-8721.2009.01657.x", note: "Current Directions in Psychological Science, 2009" },
       { title: "The Michelangelo Phenomenon (yazı)", author: "Sahil Bloom — The Curiosity Chronicle", type: "makale", url: "https://www.sahilbloom.com/newsletter/the-michelangelo-phenomenon", note: "Kavram hatırlatıcı kaynak" },
       { title: "Yakın İlişkilerde Bağımlılık ve Süreçler", author: "Caryl Rusbult ve ark.", type: "akademik", note: "Investment Model literatürü" },
-      { title: "Klinik gözlem", author: "Mustafa Yılmaz", type: "makale", note: "BAHAR Merkezi ve serbest çift terapisi seansları" },
+      { title: "Çift Terapisi: Yetişkin Sevgisinin Bilim ve Sanatı", author: "Susan M. Johnson, EdD", type: "kitap", note: "EFT (Duygu Odaklı Terapi) çerçevesinde Michelangelo benzeri ilişki dinamikleri" },
     ],
     content: `
 <p>Floransa'da 1501 yılı. Yirmi altı yaşındaki Michelangelo, dört metre yüksekliğindeki bir mermer bloğun karşısına geçer. Bu blok kırk yıldır atölyelerde unutulmuş, kusurlu sayılmış, kimse el sürmemiştir. Genç heykeltıraş gözlerini kapatır ve şu cümleyi söyler: <em>"Davut zaten bu mermerin içinde. Benim işim, ona ait olmayan her şeyi çıkarmak."</em> Üç yıl sonra dünyanın en ünlü heykellerinden biri ortaya çıkar.</p>
@@ -51,7 +51,7 @@ export const posts: Post[] = [
 
 <p>Çoğumuz ilişkiyi bir aynaya benzetiriz: "Beni olduğum gibi gören biri." Oysa Rusbult'un on yıllarca süren araştırmaları, sağlıklı bir ilişkinin bundan çok daha aktif bir şey yaptığını gösterir. Eş, sadece görmez; <strong>oymaya başlar</strong>. Onun sana yönelik tutumu — ne sorduğu, neyi fark ettiği, hangi konularda inandığı — yıllar içinde seni başka bir kişi haline getirir.</p>
 
-<p>Klinik gözlemim de bunu doğruluyor. Çift terapisinde bir yıldır sıkıntılı bir evlilikten gelen kişi, eşinin kendisine "tembel" diye baktığını söyler ve bir süre sonra gerçekten tembelleşir. Bir başka danışan, partnerinin ona "şefkatli bir baba olabilirsin" cümlesini düzenli söylediğini anlatır ve ona inanılmayı bekler — sonra zamanla şefkat onun karakterinin tanımlayıcı niteliği olur. Bu insan bir önceki ilişkide aynı şefkati göstermiyordu.</p>
+<p>Bu olgu çift terapisi alanyazınında sık karşılaşılan bir desendir. Hayal edin: yıllarca eşi tarafından "tembel" diye etiketlenen bir kişi, zamanla gerçekten o etikete uygun davranmaya başlar. Bir başkası ise eşinin sürekli "sen şefkatli bir baba olabilirsin" demesiyle, kendisinde olmadığını sandığı bu yönü açığa çıkarır. Aynı insan, önceki bir ilişkide aynı şefkati göstermiyor olabilir. İlişki bağlamı, kişiliğin yetişkinlikteki ince ayarını da yapıyor demektir.</p>
 
 <h2>İki farklı keski tipi</h2>
 
@@ -65,9 +65,9 @@ export const posts: Post[] = [
 
 <h2>Pratik soru: Eşinin gözünde hangi heykel görünüyor?</h2>
 
-<p>Çift terapisinde sık sorduğum bir soru var: <em>"Eşin senin için 'olabileceğin en iyi sürüm' kelimesinin karşılığını koysa, ne yazardı?"</em> Bu soru, sandığınızdan daha derin bir bilgi açar. Çünkü bir partner, eşinin ideal benliğini açıkça bilemiyorsa, ona bilinçsizce yön veremez. Yön veremediği için, ilişki şekillenmez; sadece tekrarlanır.</p>
+<p>Çift terapisinde sık başvurulan bir soru vardır: <em>"Eş senin için 'olabileceğin en iyi sürüm' kelimesinin karşılığını koysa, ne yazardı?"</em> Bu soru, ilk bakışta basit görünür ama ilişkinin derin yapısına dair çok şey açar. Çünkü bir partner, eşinin ideal benliğini bilmiyorsa ona bilinçsizce yön veremez. Yön veremediği için ilişki şekillenmez; yalnızca tekrarlanır.</p>
 
-<p>Tersine sorduğumda da aynı şey: <em>"Eş olarak senin gözünde, partnerinin geliştirmek istediği üç şey nedir?"</em> Cevap çoğu zaman boş kalır. Yıllarca aynı evi paylaşan iki insan, birbirinin <strong>iç hayalini</strong> bilmez. Bu yüzden de onu açığa çıkaracak hareketleri yapmaz.</p>
+<p>Tersinden sorulduğunda da aynı tablo ortaya çıkar: <em>"Partnerinin geliştirmek istediği üç şey nedir?"</em> Cevap çoğu zaman boş kalır. Yıllarca aynı evi paylaşan iki insan, birbirinin <strong>iç hayalini</strong> bilmez. Bu yüzden de onu açığa çıkaracak hareketleri yapmaz.</p>
 
 <h2>Michelangelo Etkisinin pratik üç adımı</h2>
 
@@ -111,10 +111,10 @@ export const posts: Post[] = [
       { title: "The Impostor Phenomenon", author: "Pauline Rose Clance, Suzanne Imes", type: "akademik", note: "Psychotherapy: Theory, Research and Practice, 1978" },
       { title: "The Conditional Regard Scale (Koşullu Sevgi Ölçeği)", author: "Avi Assor, Guy Roth", type: "akademik", note: "Self-Determination Theory literatürü" },
       { title: "Daring Greatly", author: "Brené Brown", type: "kitap", note: "Yetişkinlikte yetersizlik duygusu üzerine" },
-      { title: "Klinik gözlem", author: "Mustafa Yılmaz", type: "makale", note: "Yüksek başarılı danışanlarla seans notları" },
+      { title: "The Drama of the Gifted Child", author: "Alice Miller", type: "kitap", note: "Çocuklukta koşullu sevgi ve yetişkinlikte yetersizlik bağı üzerine" },
     ],
     content: `
-<p>Psikoloji (klinik) ofisinde sıkça yaşadığım bir sahne vardır. Karşımda otuzlu yaşlarında, parlak özgeçmişli, çevresinin gıpta ettiği bir kişi oturuyordur. Lisans birincisi, yüksek lisans, prestijli kurumda iyi bir pozisyon, son kitabı bir ödül listesinde, sosyal medyada binlerce takipçi. Ve bu kişi, ilk seansın yirminci dakikasında şunu söyler: <em>"Hocam, hayatımda her şey tıkır tıkır. Ama ben hiçbir zaman yetersiz hissetmekten kurtulamıyorum."</em></p>
+<p>Psikoloji (klinik) alanyazınında sık tartışılan bir profil vardır. Hayal edin: otuzlu yaşlarında, parlak özgeçmişli, çevresinin gıpta ettiği bir kişi. Lisans birincisi, yüksek lisans, prestijli kurumda iyi bir pozisyon, son kitabı bir ödül listesinde, sosyal medyada binlerce takipçi. Ve bu kişinin gizlice söylediği cümle şudur: <em>"Hayatımda her şey tıkır tıkır. Ama ben hiçbir zaman yetersiz hissetmekten kurtulamıyorum."</em></p>
 
 <p>Yıllar boyunca çoğaltılmış başarıların, içsel yetersizlik duygusunu büyüttüğüne tanık olmak — bu, psikolojinin (klinik) en sessiz dramlarından biridir. Bizler hırsı bir motor olarak öğretiliriz. Oysa hırs çoğu zaman <strong>kapanmamış bir yaranın üstüne sürülen yapay benzin</strong> gibidir.</p>
 
@@ -183,7 +183,7 @@ export const posts: Post[] = [
       { title: "DSM-5: Internet Gaming Disorder ve davranışsal bağımlılıklar bölümü", author: "American Psychiatric Association", type: "akademik", note: "Tanı kriterleri" },
       { title: "Irresistible: The Rise of Addictive Technology", author: "Adam Alter", type: "kitap", note: "Penguin Press, 2017" },
       { title: "Dopamine Nation", author: "Anna Lembke, MD", type: "kitap", note: "Stanford bağımlılık merkezinden klinik perspektif" },
-      { title: "Klinik gözlem", author: "Mustafa Yılmaz", type: "makale", note: "BAHAR Merkezi bağımlılık seansları" },
+      { title: "In the Realm of Hungry Ghosts", author: "Gabor Maté, MD", type: "kitap", note: "Davranışsal bağımlılığın klinik perspektifi ve farkındalık eşiği" },
     ],
     content: `
 <p>Klasik bağımlılık tanımında bir madde vardır: alkol, eroin, kokain. Madde girer, beyin tutsak olur, davranış kişiyi yönetir. Bu basit modele on yıllar boyunca güvendik. Ama 21. yüzyıl bizi zor bir gerçekle yüzleştirdi: <strong>madde olmadan da beyin köleleşebilir.</strong></p>
@@ -200,11 +200,11 @@ export const posts: Post[] = [
 
 <h2>Madde bağımlısı kabul ediyor, davranışsal bağımlı reddediyor</h2>
 
-<p>BAHAR Merkezindeki klinik gözlemim şudur: bir alkol bağımlısı tedaviye başladığında ilk seansta <em>"benim bir sorunum var"</em> cümlesini söyler. Bir telefon bağımlısı bu cümleyi söylemez. "Çok mu kullanıyorum, evet biraz fazla, ama herkes böyle." Bu cümle kabulü engeller, kabul olmadan tedavi olmaz.</p>
+<p>Bağımlılık alanyazınında çarpıcı bir gözlem vardır: bir alkol bağımlısı tedaviye başladığında ilk seansta çoğunlukla <em>"benim bir sorunum var"</em> cümlesini söyler. Bir telefon bağımlısı bu cümleyi nadiren söyler. "Çok mu kullanıyorum, evet biraz fazla, ama herkes böyle." Bu cümle kabulü engeller; kabul olmadan tedavi başlamaz.</p>
 
 <p>Davranışsal bağımlılığın en tehlikeli özelliği, toplumsal kamuflajdır. Telefonu sürekli elinde olan biri herkesle aynı görünür. Sosyal medyada saatlerce kayan biri "haberleri takip ediyor" diye savunulur. Sürekli online alışveriş yapan biri "şımarık" denip geçilir. Oysa beynin ödül sistemi sessizce ve sürekli kaçırılmaktadır.</p>
 
-<p>İçimden iki klinik soru paylaşayım. Bunları danışana sorduğumda davranışsal bağımlılığın varlığı ya da yokluğu belirginleşir:</p>
+<p>Tarama amaçlı, alanyazında sık önerilen iki soru vardır. Kişi bu soruları kendisine yönelttiğinde davranışsal bağımlılığın varlığı ya da yokluğu belirginleşir:</p>
 
 <ol>
   <li><strong>"Bu davranışı 7 gün boyunca tamamen bıraksan ne hissedersin?"</strong> Cevap "rahatlardım" değil de "huzursuz olurdum, sinir krizi geçirirdim" ise dikkat etmek gerek.</li>
@@ -252,7 +252,7 @@ export const posts: Post[] = [
     cover: "linear-gradient(135deg,#0ea5e9,#7c3aed)",
     tags: ["AI", "Claude", "prompt engineering", "verimlilik"],
     sources: [
-      { title: "Claude Limitlerini 2 Katına Çıkaran 8 Alışkanlık", author: "Defne İncekara", type: "makale", url: "https://defneincekara.substack.com", note: "Liste ilham kaynağı; içerik kendi deneyimimle yeniden yazıldı" },
+      { title: "Claude Limitlerini 2 Katına Çıkaran 8 Alışkanlık", author: "Defne İncekara", type: "makale", url: "https://defneincekara.substack.com", note: "Liste ilham kaynağı; metin sıfırdan yeniden yazıldı" },
       { title: "Token Sayan Bir Dünyada Yapay Zeka", author: "Defne İncekara", type: "makale", note: "Token ekonomisi çerçevesi" },
       { title: "Anthropic Cookbook & Prompt Engineering Guide", author: "Anthropic PBC", type: "akademik", url: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview", note: "Prompt mühendisliği teknikleri" },
       { title: "Inside Anthropic: 10 Teams Use Claude Code", author: "Anthropic", type: "makale", note: "Pratik kullanım vaka çalışmaları" },
@@ -276,7 +276,7 @@ export const posts: Post[] = [
 
 <h2>Claude limitlerini iki katına çıkaran sekiz alışkanlık</h2>
 
-<p>Defne İncekara'nın listesini kendi kullanım deneyimimle harmanlayarak özetleyeyim:</p>
+<p>Defne İncekara'nın listesini AI ile yoğun çalışan geliştiricilerin tipik öğrenmeleriyle harmanlayarak özetleyelim:</p>
 
 <ol>
   <li><strong>Sıfırdan başlama, devam et.</strong> Aynı sohbette bağlam birikir. Yeni sohbet açmak token sıfırlar ama bağlam sıfırdan kurulur. Bağlam pahalıdır; sıfırlama daha pahalıdır.</li>
@@ -321,9 +321,9 @@ export const posts: Post[] = [
     date: "2026-04-18",
     readTime: "7 dk",
     cover: "linear-gradient(135deg,#16a34a,#0ea5e9)",
-    tags: ["bağımlılık", "rehabilitasyon", "BAHAR", "psikoloji"],
+    tags: ["bağımlılık", "rehabilitasyon", "psikoloji"],
     content: `
-<p>BAHAR Merkezi'nde geçirdiğim yıllar bana bir şeyi defalarca öğretti: <strong>bağımlılık, asla yalnızca madde ya da davranışla ilgili değildir.</strong> Bağımlılık, çoğu zaman karşılanmamış bir ihtiyacın yanlış adresle gönderilmiş mektubudur.</p>
+<p>Bağımlılık alanında çalışan klinisyenlerin ortak bir gözlemi vardır: <strong>bağımlılık asla yalnızca madde ya da davranışla ilgili değildir.</strong> Bağımlılık, çoğu zaman karşılanmamış bir ihtiyacın yanlış adresle gönderilmiş mektubudur.</p>
 
 <h2>Beyin değil, hayat</h2>
 
@@ -333,7 +333,7 @@ export const posts: Post[] = [
 
 <h2>Karşılanmamış üç ihtiyaç</h2>
 
-<p>Klinik deneyimim bana bağımlılığın çoğunlukla şu üç boşluğun tepkisi olduğunu gösterdi:</p>
+<p>Bağımlılık alanyazınında bu olgunun çoğunlukla üç boşluğun tepkisi olduğu kabul edilir:</p>
 
 <ul>
   <li><strong>Bağ kurma ihtiyacı</strong> — yalnızlığı uyuşturma</li>
@@ -349,7 +349,7 @@ export const posts: Post[] = [
 
 <p>Onun yerine sormalıyız: <em>"Bu davranış sana neyi söylemeye çalışıyor? Hangi acıyı sustur­maya çalışıyor?"</em> Bu soru, bağımlıyı düşmandan müttefike çevirir. İyileşmenin ilk kapısı budur.</p>
 
-<p>BAHAR'da gördüğüm en güçlü dönüşümler, kişinin bağımlılığa düşman olmaktan vazgeçip, ona <strong>çevirmen</strong> olduğu anda başlar. Çünkü bağımlılık susturmak istediğimiz değil, anlamamız gereken bir mesajdır.</p>
+<p>Rehabilitasyon ortamlarında gözlemlenen en güçlü dönüşümler, kişinin bağımlılığa düşman olmaktan vazgeçip, ona <strong>çevirmen</strong> olduğu anda başlar. Çünkü bağımlılık susturulmak istediğimiz değil, anlaşılması gereken bir mesajdır.</p>
 
 <blockquote>"İyileşmek; <strong>kalp, nefs, ruh, zihin ve bedenin</strong> birbiriyle uyum içinde dans ettiği bütünsel bir yaklaşımla mümkündür. İhtiyacı görmeden çareyi konuşamayız."</blockquote>
 `,
