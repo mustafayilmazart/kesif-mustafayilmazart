@@ -1,7 +1,14 @@
 """Gemini TTS chunked — uzun yazıları parçalara bölüp üretir, sonra ffmpeg ile birleştirir."""
 import json, base64, struct, sys, re, urllib.request, os, subprocess, tempfile
 
-API_KEY = "AIzaSyAQoZ7f3_aUilG-HqmoToB3EyL9AkDnYyU"
+API_KEYS = [
+    "AIzaSyAQoZ7f3_aUilG-HqmoToB3EyL9AkDnYyU",
+    "AIzaSyBfiyp0-u7cRlq5Aoj09-Uh5a68fe0oKF4",
+    "AIzaSyDGRXnYw0SrpkxyD8VHoV5Ycb1e9faICjg",
+    "AIzaSyBbMTKfR-YT-ryLSvQ9LPuoF0GlDjo7ra8",
+    "AIzaSyAcH4GGpHs7XIcEuVqDtmAj3FJcz1ICQso",
+    "AIzaSyBd3A1Db0WDzwDa-FA3K22D0O3kQHTMlUI",
+]
 SLUG = sys.argv[1]
 TITLE = sys.argv[2]
 TEXT = sys.stdin.read()
@@ -45,15 +52,22 @@ def gemini_tts(prompt_text):
             }
         }
     }).encode()
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key={API_KEY}"
-    req = urllib.request.Request(url, data=req_data, headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=300) as resp:
-        d = json.loads(resp.read())
-    parts = d.get("candidates", [{}])[0].get("content", {}).get("parts", [])
-    for p in parts:
-        if "inlineData" in p:
-            return base64.b64decode(p["inlineData"]["data"])
-    raise RuntimeError(f"NO AUDIO: {json.dumps(d)[:200]}")
+    last_err = None
+    for key in API_KEYS:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key={key}"
+        req = urllib.request.Request(url, data=req_data, headers={"Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=300) as resp:
+                d = json.loads(resp.read())
+            parts = d.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+            for p in parts:
+                if "inlineData" in p:
+                    return base64.b64decode(p["inlineData"]["data"])
+            last_err = f"NO AUDIO: {json.dumps(d)[:200]}"
+        except Exception as e:
+            last_err = f"key {key[:12]}: {e}"
+            continue
+    raise RuntimeError(f"All keys failed. Last: {last_err}")
 
 def pcm_to_wav(pcm, path):
     sample_rate = 24000

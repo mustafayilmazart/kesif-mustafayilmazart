@@ -104,6 +104,8 @@ export const posts: Post[] = [
     readTime: "8 dk",
     cover: "linear-gradient(135deg,#7c3aed,#0ea5e9)",
     tags: ["hırs", "imposter sendromu", "kimlik", "kişisel gelişim"],
+    audio: "/audio/hirsli-insan-sessiz-sabotaji.mp3",
+    audioDuration: "5 dk 47 sn",
     sources: [
       { title: "Why Ambitious People Sabotage Their Success", author: "Corey Wilks, PsyD", type: "makale", url: "https://www.coreywilkspsyd.com", note: "Başlık ilham kaynağı" },
       { title: "The Impostor Phenomenon", author: "Pauline Rose Clance, Suzanne Imes", type: "akademik", note: "Psychotherapy: Theory, Research and Practice, 1978" },
@@ -173,6 +175,8 @@ export const posts: Post[] = [
     readTime: "10 dk",
     cover: "linear-gradient(135deg,#dc2626,#f97316)",
     tags: ["davranışsal bağımlılık", "ekran", "kumar", "dopamin"],
+    audio: "/audio/davranissal-bagimlilik-cagi.mp3",
+    audioDuration: "5 dk 54 sn",
     sources: [
       { title: "Behavioral Addictions: Criteria, Evidence, and Treatment", author: "Jon E. Grant, Marc N. Potenza vd.", type: "kitap", note: "Academic Press, 2014 — alanın temel referans kitabı" },
       { title: "Patolojik Kumar Yaygınlık Meta-Analizi", author: "DergiPark üzerinden Türkçe meta-analiz", type: "akademik", url: "https://dergipark.org.tr", note: "Yetişkinlerde %0,1-2,7 yaygınlık verisi" },
