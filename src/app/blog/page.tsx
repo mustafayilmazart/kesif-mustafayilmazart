@@ -2,6 +2,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { posts } from "@/data/posts";
+import { BlogIcon } from "@/components/BlogIcon";
 
 export const metadata: Metadata = {
   title: "Blog · Mustafa Yılmaz",
@@ -52,6 +53,7 @@ export default function BlogIndex() {
         <Link href={`/blog/${featured.slug}`} className="featured-card">
           <div className="featured-cover blog-cover-bg" data-cover={featured.slug}>
             <span className="featured-cat">{featured.category}</span>
+            <div className="cover-icon"><BlogIcon slug={featured.slug} size={120} /></div>
           </div>
           <div className="featured-body">
             <div className="post-meta">
@@ -75,6 +77,7 @@ export default function BlogIndex() {
               <Link key={p.slug} href={`/blog/${p.slug}`} className="blog-card">
                 <div className="blog-card-cover blog-cover-bg" data-cover={p.slug}>
                   <span className="blog-cat">{p.category}</span>
+                  <div className="cover-icon"><BlogIcon slug={p.slug} size={70} /></div>
                 </div>
                 <div className="blog-card-body">
                   <div className="post-meta">

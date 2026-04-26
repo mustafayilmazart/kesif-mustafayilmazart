@@ -1,8 +1,10 @@
 /* Blog tekil yazı sayfası — TOC + audio + profil kartı + SEO */
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { posts, type Post } from "@/data/posts";
+import { BlogIcon } from "@/components/BlogIcon";
 
 type Params = { slug: string };
 
@@ -137,6 +139,7 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
           <div className="article-header-inner">
             <Link href="/blog" className="back-link">← Tüm Yazılar</Link>
             <div className="article-cat">{post.category}</div>
+            <div className="article-header-icon"><BlogIcon slug={post.slug} size={140} /></div>
             <h1>{post.title}</h1>
             <div className="article-meta">
               <div className="author">
@@ -198,6 +201,32 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
               dangerouslySetInnerHTML={{ __html: contentWithIds }}
             />
 
+            {/* Kaynaklar */}
+            {post.sources && post.sources.length > 0 && (
+              <section className="article-sources">
+                <h3>Kaynaklar &amp; Atıflar</h3>
+                <ul>
+                  {post.sources.map((s, i) => (
+                    <li key={i}>
+                      {s.type && <span className={`source-type source-type-${s.type}`}>{s.type}</span>}
+                      <span className="source-title">
+                        {s.url ? (
+                          <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>
+                        ) : (
+                          s.title
+                        )}
+                      </span>
+                      {s.author && <span className="source-author"> — {s.author}</span>}
+                      {s.note && <span className="source-note"> · {s.note}</span>}
+                    </li>
+                  ))}
+                </ul>
+                <p className="sources-note">
+                  Bu yazı, kaynaklarda anılan eserlerden <strong>kavram düzeyinde ilham</strong> almıştır; metin tamamen Mustafa Yılmaz&apos;ın kendi klinik deneyimi ve yorumlarıyla, sıfırdan Türkçe yazılmıştır. Birebir alıntı içermez.
+                </p>
+              </section>
+            )}
+
             <div className="article-tags">
               {post.tags.map((t) => (
                 <span key={t} className="article-tag">#{t}</span>
@@ -219,7 +248,9 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
             <div className="profile-sticky">
               <div className="profile-card">
                 <div className="profile-avatar-wrap">
-                  <div className="profile-avatar">MY</div>
+                  <div className="profile-avatar profile-avatar-img">
+                    <Image src="/profile.jpg" alt="Mustafa Yılmaz" width={96} height={96} />
+                  </div>
                 </div>
                 <h4>Mustafa Yılmaz</h4>
                 <p className="profile-role">Danışman · AI Engineer · Eğitmen · AI Artist</p>
@@ -258,6 +289,7 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
                 <Link key={p.slug} href={`/blog/${p.slug}`} className="blog-card">
                   <div className="blog-card-cover blog-cover-bg" data-cover={p.slug}>
                     <span className="blog-cat">{p.category}</span>
+                    <div className="cover-icon"><BlogIcon slug={p.slug} size={70} /></div>
                   </div>
                   <div className="blog-card-body">
                     <div className="post-meta">

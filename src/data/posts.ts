@@ -10,8 +10,17 @@ export type Post = {
   cover: string;
   content: string;
   tags: string[];
-  audio?: string;     // /audio/<slug>.mp3 — Gemini TTS Türkçe erkek ses
+  audio?: string;          // /audio/<slug>.mp3 — Gemini TTS Türkçe erkek ses
   audioDuration?: string;  // "4 dk 12 sn"
+  sources?: Source[];      // Kaynaklar / atıflar
+};
+
+export type Source = {
+  title: string;
+  author?: string;
+  url?: string;
+  type?: "akademik" | "kitap" | "makale" | "podcast" | "video" | "veri";
+  note?: string;
 };
 
 export const posts: Post[] = [
@@ -26,7 +35,13 @@ export const posts: Post[] = [
     cover: "linear-gradient(135deg,#ec4899,#f43f5e)",
     tags: ["ilişki", "evlilik", "çift terapisi", "psikoloji"],
     audio: "/audio/michelangelo-etkisi-iliskilerde.mp3",
-    audioDuration: "4 dk 12 sn",
+    audioDuration: "5 dk 57 sn",
+    sources: [
+      { title: "Michelangelo Phenomenon: The Couple as a Sculptor", author: "Caryl E. Rusbult, Eli J. Finkel, Madoka Kumashiro", type: "akademik", url: "https://journals.sagepub.com/doi/10.1111/j.1467-8721.2009.01657.x", note: "Current Directions in Psychological Science, 2009" },
+      { title: "The Michelangelo Phenomenon (yazı)", author: "Sahil Bloom — The Curiosity Chronicle", type: "makale", url: "https://www.sahilbloom.com/newsletter/the-michelangelo-phenomenon", note: "Kavram hatırlatıcı kaynak" },
+      { title: "Yakın İlişkilerde Bağımlılık ve Süreçler", author: "Caryl Rusbult ve ark.", type: "akademik", note: "Investment Model literatürü" },
+      { title: "Klinik gözlem", author: "Mustafa Yılmaz", type: "makale", note: "BAHAR Merkezi ve serbest çift terapisi seansları" },
+    ],
     content: `
 <p>Floransa'da 1501 yılı. Yirmi altı yaşındaki Michelangelo, dört metre yüksekliğindeki bir mermer bloğun karşısına geçer. Bu blok kırk yıldır atölyelerde unutulmuş, kusurlu sayılmış, kimse el sürmemiştir. Genç heykeltıraş gözlerini kapatır ve şu cümleyi söyler: <em>"Davut zaten bu mermerin içinde. Benim işim, ona ait olmayan her şeyi çıkarmak."</em> Üç yıl sonra dünyanın en ünlü heykellerinden biri ortaya çıkar.</p>
 
@@ -89,6 +104,13 @@ export const posts: Post[] = [
     readTime: "8 dk",
     cover: "linear-gradient(135deg,#7c3aed,#0ea5e9)",
     tags: ["hırs", "imposter sendromu", "kimlik", "kişisel gelişim"],
+    sources: [
+      { title: "Why Ambitious People Sabotage Their Success", author: "Corey Wilks, PsyD", type: "makale", url: "https://www.coreywilkspsyd.com", note: "Başlık ilham kaynağı" },
+      { title: "The Impostor Phenomenon", author: "Pauline Rose Clance, Suzanne Imes", type: "akademik", note: "Psychotherapy: Theory, Research and Practice, 1978" },
+      { title: "The Conditional Regard Scale (Koşullu Sevgi Ölçeği)", author: "Avi Assor, Guy Roth", type: "akademik", note: "Self-Determination Theory literatürü" },
+      { title: "Daring Greatly", author: "Brené Brown", type: "kitap", note: "Yetişkinlikte yetersizlik duygusu üzerine" },
+      { title: "Klinik gözlem", author: "Mustafa Yılmaz", type: "makale", note: "Yüksek başarılı danışanlarla seans notları" },
+    ],
     content: `
 <p>Psikoloji (klinik) ofisinde sıkça yaşadığım bir sahne vardır. Karşımda otuzlu yaşlarında, parlak özgeçmişli, çevresinin gıpta ettiği bir kişi oturuyordur. Lisans birincisi, yüksek lisans, prestijli kurumda iyi bir pozisyon, son kitabı bir ödül listesinde, sosyal medyada binlerce takipçi. Ve bu kişi, ilk seansın yirminci dakikasında şunu söyler: <em>"Hocam, hayatımda her şey tıkır tıkır. Ama ben hiçbir zaman yetersiz hissetmekten kurtulamıyorum."</em></p>
 
@@ -151,6 +173,14 @@ export const posts: Post[] = [
     readTime: "10 dk",
     cover: "linear-gradient(135deg,#dc2626,#f97316)",
     tags: ["davranışsal bağımlılık", "ekran", "kumar", "dopamin"],
+    sources: [
+      { title: "Behavioral Addictions: Criteria, Evidence, and Treatment", author: "Jon E. Grant, Marc N. Potenza vd.", type: "kitap", note: "Academic Press, 2014 — alanın temel referans kitabı" },
+      { title: "Patolojik Kumar Yaygınlık Meta-Analizi", author: "DergiPark üzerinden Türkçe meta-analiz", type: "akademik", url: "https://dergipark.org.tr", note: "Yetişkinlerde %0,1-2,7 yaygınlık verisi" },
+      { title: "DSM-5: Internet Gaming Disorder ve davranışsal bağımlılıklar bölümü", author: "American Psychiatric Association", type: "akademik", note: "Tanı kriterleri" },
+      { title: "Irresistible: The Rise of Addictive Technology", author: "Adam Alter", type: "kitap", note: "Penguin Press, 2017" },
+      { title: "Dopamine Nation", author: "Anna Lembke, MD", type: "kitap", note: "Stanford bağımlılık merkezinden klinik perspektif" },
+      { title: "Klinik gözlem", author: "Mustafa Yılmaz", type: "makale", note: "BAHAR Merkezi bağımlılık seansları" },
+    ],
     content: `
 <p>Klasik bağımlılık tanımında bir madde vardır: alkol, eroin, kokain. Madde girer, beyin tutsak olur, davranış kişiyi yönetir. Bu basit modele on yıllar boyunca güvendik. Ama 21. yüzyıl bizi zor bir gerçekle yüzleştirdi: <strong>madde olmadan da beyin köleleşebilir.</strong></p>
 
@@ -217,6 +247,13 @@ export const posts: Post[] = [
     readTime: "9 dk",
     cover: "linear-gradient(135deg,#0ea5e9,#7c3aed)",
     tags: ["AI", "Claude", "prompt engineering", "verimlilik"],
+    sources: [
+      { title: "Claude Limitlerini 2 Katına Çıkaran 8 Alışkanlık", author: "Defne İncekara", type: "makale", url: "https://defneincekara.substack.com", note: "Liste ilham kaynağı; içerik kendi deneyimimle yeniden yazıldı" },
+      { title: "Token Sayan Bir Dünyada Yapay Zeka", author: "Defne İncekara", type: "makale", note: "Token ekonomisi çerçevesi" },
+      { title: "Anthropic Cookbook & Prompt Engineering Guide", author: "Anthropic PBC", type: "akademik", url: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview", note: "Prompt mühendisliği teknikleri" },
+      { title: "Inside Anthropic: 10 Teams Use Claude Code", author: "Anthropic", type: "makale", note: "Pratik kullanım vaka çalışmaları" },
+      { title: "Vibe Coding kavramı", author: "Andrej Karpathy", type: "makale", note: "X/Twitter üzerinden popülerleştirilen kavram" },
+    ],
     content: `
 <p>Defne İncekara'nın geçtiğimiz hafta yazdığı bir cümle vardı: <em>"Yapay zeka mesaj değil, token sayar."</em> Bu cümle bana modern programlamanın en az anlaşılan gerçeğini hatırlattı. Yapay zekayla çalışmak, bir insanla konuşmaya benzemiyor. Bir ekonomik birim olan token üzerinden kurulan bir alışveriş ilişkisidir. Ve bu ilişkide en pahalı para birimi <strong>net niyet</strong>tir.</p>
 

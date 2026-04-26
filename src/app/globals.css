@@ -423,3 +423,124 @@
   background:var(--warm-gray);
   border-radius:16px
 }
+
+/* === Sticky scroll fix — body overflow-x sticky'i bozuyordu === */
+html{overflow-x:hidden}
+body{overflow-x:visible !important;overflow-y:auto}
+.article-layout{overflow:visible}
+.article-toc, .article-profile{align-self:start}
+
+/* === Kaynaklar bölümü === */
+.article-sources{
+  margin-top:48px;
+  padding:28px 32px;
+  background:linear-gradient(135deg,var(--warm-gray),#fff);
+  border:1px solid var(--border);
+  border-left:4px solid var(--teal);
+  border-radius:0 12px 12px 0
+}
+.article-sources h3{
+  font-family:var(--font-playfair),'Playfair Display',serif;
+  font-size:1.15rem;
+  color:var(--charcoal);
+  margin:0 0 18px;
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+.article-sources h3::before{
+  content:'📚';
+  font-size:1rem
+}
+.article-sources ul{
+  list-style:none;
+  padding:0;
+  margin:0 0 20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px
+}
+.article-sources li{
+  font-size:.88rem;
+  line-height:1.55;
+  color:var(--text);
+  padding-left:0;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:6px
+}
+.source-type{
+  display:inline-block;
+  font-size:.65rem;
+  font-weight:700;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  padding:2px 8px;
+  border-radius:50px;
+  background:var(--teal-glow);
+  color:var(--teal-dark);
+  flex-shrink:0
+}
+.source-type-akademik{background:rgba(33,146,149,.15);color:var(--teal-dark)}
+.source-type-kitap{background:rgba(225,217,72,.18);color:#9a8e0a}
+.source-type-makale{background:rgba(124,58,237,.12);color:#6d28d9}
+.source-type-podcast{background:rgba(236,72,153,.12);color:#be185d}
+.source-type-video{background:rgba(220,38,38,.12);color:#b91c1c}
+.source-type-veri{background:rgba(14,165,233,.12);color:#0369a1}
+.source-title{font-weight:600;color:var(--charcoal)}
+.source-title a{color:var(--teal-dark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+.source-title a:hover{color:var(--teal)}
+.source-author{color:var(--text-muted);font-size:.85rem}
+.source-note{color:var(--text-light);font-size:.78rem;font-style:italic}
+.sources-note{
+  font-size:.78rem;
+  color:var(--text-muted);
+  font-style:italic;
+  line-height:1.55;
+  padding-top:14px;
+  border-top:1px dashed var(--border);
+  margin:0
+}
+
+/* Cover ikon (yazı kartlarında) */
+.cover-icon{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(255,255,255,.85);
+  pointer-events:none
+}
+.featured-cover, .blog-card-cover, .article-header{position:relative;overflow:hidden}
+.featured-cover .cover-icon svg{filter:drop-shadow(0 4px 12px rgba(0,0,0,.15))}
+.article-header-icon{
+  position:absolute;
+  top:50%;
+  right:8%;
+  transform:translateY(-50%);
+  color:rgba(255,255,255,.18);
+  pointer-events:none
+}
+
+/* Profile avatar fotoğraf (text yerine) */
+.profile-avatar-img{
+  width:88px;
+  height:88px;
+  padding:0;
+  overflow:hidden;
+  border:3px solid #fff
+}
+.profile-avatar-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%
+}
+
+/* Featured/blog card cover gradient'ler featured-cat ve cover-icon birarada görünsün */
+.featured-cat, .blog-cat{
+  position:relative;
+  z-index:2
+}
