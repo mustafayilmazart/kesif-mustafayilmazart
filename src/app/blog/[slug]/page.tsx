@@ -201,37 +201,45 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
               dangerouslySetInnerHTML={{ __html: contentWithIds }}
             />
 
-            {/* Kaynaklar */}
-            {post.sources && post.sources.length > 0 && (
-              <section className="article-sources">
-                <h3>Kaynaklar &amp; Atıflar</h3>
-                <ul>
-                  {post.sources.map((s, i) => (
-                    <li key={i}>
-                      {s.type && <span className={`source-type source-type-${s.type}`}>{s.type}</span>}
-                      <span className="source-title">
-                        {s.url ? (
-                          <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>
-                        ) : (
-                          s.title
-                        )}
-                      </span>
-                      {s.author && <span className="source-author"> — {s.author}</span>}
-                      {s.note && <span className="source-note"> · {s.note}</span>}
-                    </li>
-                  ))}
-                </ul>
-                <p className="sources-note">
-                  Bu yazı, kaynaklarda anılan eserlerden <strong>kavram düzeyinde ilham</strong> almıştır; metin sıfırdan, Türkçe ve genel okur için yazılmıştır. Birebir alıntı veya kişisel danışan/seans verisi içermez. Verilen örnekler, alanyazında yaygın olarak gözlemlenen tipik durumların anonim ve genel anlatımıdır.
-                </p>
-              </section>
-            )}
-
+            {/* Etiketler */}
             <div className="article-tags">
               {post.tags.map((t) => (
                 <span key={t} className="article-tag">#{t}</span>
               ))}
             </div>
+
+            {/* Kaynaklar — açılır/kapanır toggle (etiketlerin altında) */}
+            {post.sources && post.sources.length > 0 && (
+              <details className="article-sources">
+                <summary>
+                  <span className="sources-icon">📚</span>
+                  <span className="sources-label">Kaynaklar &amp; Atıflar</span>
+                  <span className="sources-count">{post.sources.length} kaynak</span>
+                  <svg className="sources-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </summary>
+                <div className="sources-content">
+                  <ul>
+                    {post.sources.map((s, i) => (
+                      <li key={i}>
+                        {s.type && <span className={`source-type source-type-${s.type}`}>{s.type}</span>}
+                        <span className="source-title">
+                          {s.url ? (
+                            <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>
+                          ) : (
+                            s.title
+                          )}
+                        </span>
+                        {s.author && <span className="source-author"> — {s.author}</span>}
+                        {s.note && <span className="source-note"> · {s.note}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="sources-note">
+                    Bu yazı, kaynaklarda anılan eserlerden <strong>kavram düzeyinde ilham</strong> almıştır; metin sıfırdan, Türkçe ve genel okur için yazılmıştır. Birebir alıntı veya kişisel danışan/seans verisi içermez. Verilen örnekler, alanyazında yaygın olarak gözlemlenen tipik durumların anonim ve genel anlatımıdır.
+                  </p>
+                </div>
+              </details>
+            )}
 
             <div className="article-cta">
               <h3>Bu yazı sana iyi geldiyse...</h3>

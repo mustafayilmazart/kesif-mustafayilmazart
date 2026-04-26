@@ -81,39 +81,43 @@ def pcm_to_wav(pcm, path):
     with open(path, 'wb') as f:
         f.write(wav)
 
-# Her chunk için ayrı ses üret
+# Tüm chunk PCM'lerini topla, tek WAV yap (ffmpeg concat sorununu atla)
 tmpdir = tempfile.mkdtemp(prefix="tts_")
-wav_paths = []
+all_pcm = b""
+total_pcm_size = 0
 for i, chunk in enumerate(chunks):
     intro = f"Türkçe blog yazısı, sıcak ve sakin bir erkek sesiyle. {('Başlık: ' + TITLE + '. ') if i == 0 else ''}"
     prompt = intro + chunk
     try:
         pcm = gemini_tts(prompt)
-        wav_path = os.path.join(tmpdir, f"chunk_{i:02d}.wav")
-        pcm_to_wav(pcm, wav_path)
-        wav_paths.append(wav_path)
+        all_pcm += pcm
         duration = len(pcm) / 24000 / 2
+        total_pcm_size += len(pcm)
         print(f"  chunk {i+1}/{len(chunks)}: {duration:.0f} sn")
     except Exception as e:
         print(f"  chunk {i+1} FAIL: {e}")
         sys.exit(1)
 
-# ffmpeg ile birleştir
-concat_list = os.path.join(tmpdir, "list.txt")
-with open(concat_list, 'w') as f:
-    for w in wav_paths:
-        f.write(f"file '{w}'\n")
+# Tek WAV oluştur (PCM concat — header bir kere)
+combined_wav = os.path.join(tmpdir, "combined.wav")
+pcm_to_wav(all_pcm, combined_wav)
 
-mp3_out = os.path.join(OUT_DIR, f"{SLUG}.mp3")
-cmd = ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", concat_list,
+mp3_out = os.path.normpath(os.path.join(OUT_DIR, f"{SLUG}.mp3"))
+if os.path.exists(mp3_out):
+    try: os.remove(mp3_out)
+    except: pass
+cmd = ["ffmpeg", "-y", "-i", combined_wav,
        "-codec:a", "libmp3lame", "-b:a", "64k", mp3_out]
-subprocess.run(cmd, check=True, capture_output=True)
+res = subprocess.run(cmd, capture_output=True, text=True)
+if res.returncode != 0:
+    print("FFMPEG ERR:", res.stderr[-500:])
+    sys.exit(1)
+try: os.remove(combined_wav)
+except: pass
+wav_paths = []  # cleanup boş
 
-# Toplam süreyi al
-result = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
-                        "-of", "default=noprint_wrappers=1:nokey=1", mp3_out],
-                       capture_output=True, text=True)
-total_sec = float(result.stdout.strip())
+# Süreyi PCM toplam boyutundan hesapla (24kHz, 16-bit mono = 48000 byte/sn)
+total_sec = total_pcm_size / 48000
 mm = int(total_sec // 60)
 ss = int(total_sec % 60)
 

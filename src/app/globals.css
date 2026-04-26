@@ -544,3 +544,96 @@ body{overflow-x:visible !important;overflow-y:auto}
   position:relative;
   z-index:2
 }
+
+/* === Sticky güçlendirme — TOC ve profil daha agresif === */
+html, body{overflow-x:clip}
+.article-layout{
+  overflow:visible !important;
+  align-items:start
+}
+.article-toc, .article-profile{
+  align-self:start;
+  height:fit-content
+}
+.toc-sticky, .profile-sticky{
+  position:-webkit-sticky;
+  position:sticky;
+  top:90px;
+  max-height:calc(100vh - 110px);
+  overflow-y:auto
+}
+.toc-sticky::-webkit-scrollbar, .profile-sticky::-webkit-scrollbar{width:4px}
+.toc-sticky::-webkit-scrollbar-thumb, .profile-sticky::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+@media(max-width:1100px){
+  .toc-sticky{position:static;max-height:none}
+}
+
+/* === Kaynakça açılır/kapanır toggle === */
+.article-sources{
+  margin:32px 0 0;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  overflow:hidden;
+  padding:0
+}
+.article-sources summary{
+  list-style:none;
+  cursor:pointer;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  user-select:none;
+  transition:background .2s
+}
+.article-sources summary::-webkit-details-marker{display:none}
+.article-sources summary:hover{background:var(--warm-gray)}
+.sources-icon{font-size:1.1rem}
+.sources-label{
+  font-family:var(--font-playfair),'Playfair Display',serif;
+  font-size:1rem;
+  font-weight:700;
+  color:var(--charcoal);
+  flex:1
+}
+.sources-count{
+  font-family:var(--font-jetbrains),'JetBrains Mono',monospace;
+  font-size:.7rem;
+  color:var(--text-light);
+  background:var(--warm-gray);
+  padding:3px 10px;
+  border-radius:50px
+}
+.sources-chevron{
+  color:var(--teal);
+  transition:transform .3s
+}
+.article-sources[open] .sources-chevron{transform:rotate(180deg)}
+.article-sources[open] summary{
+  border-bottom:1px solid var(--border);
+  background:linear-gradient(135deg,var(--warm-gray),#fff)
+}
+.sources-content{
+  padding:20px 24px 24px;
+  background:linear-gradient(180deg,rgba(33,146,149,.02),#fff);
+  border-left:3px solid var(--teal);
+  margin-left:0
+}
+.sources-content ul{
+  list-style:none;
+  padding:0;
+  margin:0 0 16px;
+  display:flex;
+  flex-direction:column;
+  gap:12px
+}
+.sources-content li{
+  font-size:.86rem;
+  line-height:1.55;
+  color:var(--text);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:6px
+}
