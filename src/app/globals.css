@@ -153,3 +153,9 @@
 .github-stack-tag{font-size:.7rem;font-weight:600;padding:4px 10px;border-radius:50px;background:rgba(42,179,182,.12);color:#2ab3b6;border:1px solid rgba(42,179,182,.2);letter-spacing:.3px}
 .github-link{color:#2ab3b6;font-size:.85rem;font-weight:600;margin-top:6px;letter-spacing:.3px}
 @media(max-width:968px){.github-section{padding:70px 24px}.github-grid{grid-template-columns:1fr}}
+
+/* Yeni 4 yazı için cover gradient'ları */
+.blog-cover-bg[data-cover="michelangelo-etkisi-iliskilerde"]{background:linear-gradient(135deg,#ec4899,#f43f5e)}
+.blog-cover-bg[data-cover="hirsli-insan-sessiz-sabotaji"]{background:linear-gradient(135deg,#7c3aed,#0ea5e9)}
+.blog-cover-bg[data-cover="davranissal-bagimlilik-cagi"]{background:linear-gradient(135deg,#dc2626,#f97316)}
+.blog-cover-bg[data-cover="ai-caginda-niyet-mimarisi"]{background:linear-gradient(135deg,#0ea5e9,#7c3aed)}

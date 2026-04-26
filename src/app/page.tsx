@@ -41,7 +41,7 @@ const process = [
   { n: "01", t: "Dinle & Anla", d: "İhtiyacınızı derinlemesine anlıyorum. Her proje bir sohbetle başlar." },
   { n: "02", t: "Keşfet & Planla", d: "En uygun stratejiyi birlikte belirliyoruz. Yol haritası netleşiyor." },
   { n: "03", t: "İnşa Et & Tasarla", d: "Kod, tasarım veya terapi — aşkla ve özenle inşa süreci başlıyor." },
-  { n: "04", t: "Büyüt & Dönüştür", d: "Sürdürülebilir sonuçlar için birlikte evriliyoruz." },
+  { n: "04", t: "Büyüt & Dönüştür", d: "Sürdürülebilir sonuçlar için birlikte ilerliyoruz." },
 ];
 
 /* GitHub açık kaynak projelerim — github.com/mustafayilmazart */
