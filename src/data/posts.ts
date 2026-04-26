@@ -10,6 +10,8 @@ export type Post = {
   cover: string;
   content: string;
   tags: string[];
+  audio?: string;     // /audio/<slug>.mp3 — Gemini TTS Türkçe erkek ses
+  audioDuration?: string;  // "4 dk 12 sn"
 };
 
 export const posts: Post[] = [
@@ -23,6 +25,8 @@ export const posts: Post[] = [
     readTime: "9 dk",
     cover: "linear-gradient(135deg,#ec4899,#f43f5e)",
     tags: ["ilişki", "evlilik", "çift terapisi", "psikoloji"],
+    audio: "/audio/michelangelo-etkisi-iliskilerde.mp3",
+    audioDuration: "4 dk 12 sn",
     content: `
 <p>Floransa'da 1501 yılı. Yirmi altı yaşındaki Michelangelo, dört metre yüksekliğindeki bir mermer bloğun karşısına geçer. Bu blok kırk yıldır atölyelerde unutulmuş, kusurlu sayılmış, kimse el sürmemiştir. Genç heykeltıraş gözlerini kapatır ve şu cümleyi söyler: <em>"Davut zaten bu mermerin içinde. Benim işim, ona ait olmayan her şeyi çıkarmak."</em> Üç yıl sonra dünyanın en ünlü heykellerinden biri ortaya çıkar.</p>
 

@@ -1,8 +1,8 @@
-/* Blog tekil yazı sayfası */
+/* Blog tekil yazı sayfası — TOC + audio + profil kartı + SEO */
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { posts } from "@/data/posts";
+import { posts, type Post } from "@/data/posts";
 
 type Params = { slug: string };
 
@@ -16,19 +16,33 @@ export async function generateMetadata(
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
   if (!post) return { title: "Yazı bulunamadı" };
+  const url = `https://mustafayilmaz.art/blog/${post.slug}/`;
   return {
     title: `${post.title} · Mustafa Yılmaz`,
     description: post.excerpt,
+    keywords: post.tags,
+    authors: [{ name: "Mustafa Yılmaz", url: "https://mustafayilmaz.art" }],
+    alternates: { canonical: url },
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url,
       type: "article",
       publishedTime: post.date,
       authors: ["Mustafa Yılmaz"],
+      tags: post.tags,
+      siteName: "mustafayilmaz.art",
+      locale: "tr_TR",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
     },
   };
 }
 
+/* Türkçe tarih biçimi */
 function formatDate(iso: string) {
   const months = [
     "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
@@ -38,12 +52,59 @@ function formatDate(iso: string) {
   return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
 }
 
+/* HTML içeriğinden h2 başlıklarını çıkarıp TOC üret */
+function extractToc(html: string): { id: string; text: string }[] {
+  const matches = [...html.matchAll(/<h2>([^<]+)<\/h2>/g)];
+  return matches.map((m, i) => ({
+    id: `h2-${i}`,
+    text: m[1].trim(),
+  }));
+}
+
+/* h2'lere id ekleyerek HTML üret (anchor için) */
+function injectTocIds(html: string): string {
+  let i = 0;
+  return html.replace(/<h2>/g, () => `<h2 id="h2-${i++}">`);
+}
+
+/* JSON-LD Article structured data (SEO için) */
+function articleSchema(post: Post) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    author: {
+      "@type": "Person",
+      name: "Mustafa Yılmaz",
+      url: "https://mustafayilmaz.art",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Mustafa Yılmaz",
+      url: "https://mustafayilmaz.art",
+    },
+    datePublished: post.date,
+    dateModified: post.date,
+    inLanguage: "tr-TR",
+    keywords: post.tags.join(", "),
+    articleSection: post.category,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://mustafayilmaz.art/blog/${post.slug}/`,
+    },
+  };
+}
+
 export default async function BlogPost({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  /* Diğer yazılar - aynı kategori veya en yenisi */
+  const toc = extractToc(post.content);
+  const contentWithIds = injectTocIds(post.content);
+
+  /* İlgili yazılar — aynı kategori öncelikli, en çok 2 tane */
   const others = posts
     .filter((p) => p.slug !== post.slug)
     .sort((a, b) => (a.category === post.category ? -1 : 1))
@@ -51,6 +112,12 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
 
   return (
     <>
+      {/* JSON-LD structured data — SEO için Article schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema(post)) }}
+      />
+
       <nav className="site-nav" id="navbar">
         <Link href="/" className="nav-logo">
           M<span>.</span>Yılmaz
@@ -65,7 +132,6 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
         </ul>
       </nav>
 
-      {/* Article hero */}
       <article className="article">
         <header className="article-header blog-cover-bg" data-cover={post.slug}>
           <div className="article-header-inner">
@@ -89,24 +155,96 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
           </div>
         </header>
 
-        <div
-          className="article-body"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        {/* 3 kolon grid: TOC sol — content orta — profil kart sağ */}
+        <div className="article-layout">
+          {/* SOL: İçindekiler (Table of Contents) */}
+          {toc.length > 0 && (
+            <aside className="article-toc">
+              <div className="toc-sticky">
+                <h4 className="toc-title">İçindekiler</h4>
+                <ol className="toc-list">
+                  {toc.map((item) => (
+                    <li key={item.id}>
+                      <a href={`#${item.id}`}>{item.text}</a>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </aside>
+          )}
 
-        <div className="article-tags">
-          {post.tags.map((t) => (
-            <span key={t} className="article-tag">#{t}</span>
-          ))}
-        </div>
+          {/* ORTA: Audio + içerik */}
+          <div className="article-main">
+            {post.audio && (
+              <div className="article-audio">
+                <div className="audio-head">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 18v-6a9 9 0 0118 0v6"></path>
+                    <path d="M21 19a2 2 0 01-2 2h-1v-7h3zM3 19a2 2 0 002 2h1v-7H3z"></path>
+                  </svg>
+                  <div>
+                    <div className="audio-label">Bu yazıyı dinle</div>
+                    <div className="audio-meta">Türkçe seslendirme · {post.audioDuration ?? ""}</div>
+                  </div>
+                </div>
+                <audio controls preload="none" src={post.audio}>
+                  Tarayıcınız ses oynatmayı desteklemiyor.
+                </audio>
+              </div>
+            )}
 
-        <div className="article-cta">
-          <h3>Bu yazı sana iyi geldiyse...</h3>
-          <p>Düzenli yazıları kaçırmamak için bültenime abone ol.</p>
-          <div className="article-cta-buttons">
-            <a href="https://kesiforg.substack.com" target="_blank" rel="noopener noreferrer" className="btn-primary">Substack&apos;te Abone Ol</a>
-            <a href="mailto:bilgi@mustafayilmaz.art" className="btn-secondary">İletişime Geç</a>
+            <div
+              className="article-body"
+              dangerouslySetInnerHTML={{ __html: contentWithIds }}
+            />
+
+            <div className="article-tags">
+              {post.tags.map((t) => (
+                <span key={t} className="article-tag">#{t}</span>
+              ))}
+            </div>
+
+            <div className="article-cta">
+              <h3>Bu yazı sana iyi geldiyse...</h3>
+              <p>Düzenli yazıları kaçırmamak için bültenime abone ol.</p>
+              <div className="article-cta-buttons">
+                <a href="https://kesiforg.substack.com" target="_blank" rel="noopener noreferrer" className="btn-primary">Substack&apos;te Abone Ol</a>
+                <a href="mailto:bilgi@mustafayilmaz.art" className="btn-secondary">İletişime Geç</a>
+              </div>
+            </div>
           </div>
+
+          {/* SAĞ: Profil + Bülten kartı (sticky) */}
+          <aside className="article-profile">
+            <div className="profile-sticky">
+              <div className="profile-card">
+                <div className="profile-avatar-wrap">
+                  <div className="profile-avatar">MY</div>
+                </div>
+                <h4>Mustafa Yılmaz</h4>
+                <p className="profile-role">Danışman · AI Engineer · Eğitmen · AI Artist</p>
+                <p className="profile-bio">
+                  Hemşirelikten psikolojiye (klinik), yazılımdan AI&apos;a uzanan bir yolculuk. BAHAR Merkezi&apos;nde bağımlılık danışmanlığı, 80&apos;den fazla projede AI orkestrasyonu.
+                </p>
+                <div className="profile-stats">
+                  <div><strong>14+</strong><span>Yıl</span></div>
+                  <div><strong>3.7K+</strong><span>Öğrenci</span></div>
+                  <div><strong>12+</strong><span>Uzmanlık</span></div>
+                </div>
+                <div className="profile-links">
+                  <a href="https://github.com/mustafayilmazart" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a href="https://linkedin.com/in/kpmustafayilmaz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                  <a href="mailto:bilgi@mustafayilmaz.art">E-posta</a>
+                </div>
+              </div>
+
+              <div className="profile-card profile-cta-card">
+                <h5>📬 Bültene abone ol</h5>
+                <p>Psikoloji (klinik), AI ve maneviyat üzerine yeni yazılarımı kaçırma.</p>
+                <a href="https://kesiforg.substack.com" target="_blank" rel="noopener noreferrer" className="btn-primary btn-block">Substack&apos;te Abone Ol</a>
+              </div>
+            </div>
+          </aside>
         </div>
       </article>
 
