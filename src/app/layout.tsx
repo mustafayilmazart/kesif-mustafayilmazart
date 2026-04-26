@@ -26,9 +26,9 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Mustafa Yılmaz | mustafayilmaz.art — Danışman · AI Engineer · Eğitmen · AI Artist",
   description:
-    "Klinik psikolojiden yazılıma, maneviyat danışmanlığından dijital tasarıma, müzikten eğitime — insanın bütünsel iyilik halini bilim, sanat ve teknolojiyle inşa ediyorum.",
+    "Psikolojiden (klinik) yazılıma, maneviyat danışmanlığından dijital tasarıma, müzikten eğitime — insanın bütünsel iyilik halini bilim, sanat ve teknolojiyle inşa ediyorum.",
   keywords: [
-    "Mustafa Yılmaz", "Klinik Psikoloji", "Bağımlılık Danışmanlığı",
+    "Mustafa Yılmaz", "Psikoloji (Klinik)", "Bağımlılık Danışmanlığı",
     "NLP Trainer", "Vibe Coding", "Keşif Akademi", "mustafayilmaz.art",
   ],
   authors: [{ name: "Mustafa Yılmaz" }],

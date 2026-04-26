@@ -78,7 +78,7 @@ export const posts: Post[] = [
   {
     slug: "hirsli-insan-sessiz-sabotaji",
     title: "Hırslı İnsanın Sessiz Sabotajı: Başardıkça Yetersiz Hissetmek",
-    category: "Klinik Psikoloji",
+    category: "Psikoloji (Klinik)",
     excerpt:
       "Hayatın her sınavını başaran kişi, başardıktan sonra niye boşluk hisseder? Hırs ile yetersizlik aynı paranın iki yüzüdür. Bu yazıda 'hep daha fazla' arzusunun arkasındaki kırılgan kimliğe ve onu onaran üç pratiğe bakıyoruz.",
     date: "2026-04-23",
@@ -86,9 +86,9 @@ export const posts: Post[] = [
     cover: "linear-gradient(135deg,#7c3aed,#0ea5e9)",
     tags: ["hırs", "imposter sendromu", "kimlik", "kişisel gelişim"],
     content: `
-<p>Klinik psikoloji ofisinde sıkça yaşadığım bir sahne vardır. Karşımda otuzlu yaşlarında, parlak özgeçmişli, çevresinin gıpta ettiği bir kişi oturuyordur. Lisans birincisi, yüksek lisans, prestijli kurumda iyi bir pozisyon, son kitabı bir ödül listesinde, sosyal medyada binlerce takipçi. Ve bu kişi, ilk seansın yirminci dakikasında şunu söyler: <em>"Hocam, hayatımda her şey tıkır tıkır. Ama ben hiçbir zaman yetersiz hissetmekten kurtulamıyorum."</em></p>
+<p>Psikoloji (klinik) ofisinde sıkça yaşadığım bir sahne vardır. Karşımda otuzlu yaşlarında, parlak özgeçmişli, çevresinin gıpta ettiği bir kişi oturuyordur. Lisans birincisi, yüksek lisans, prestijli kurumda iyi bir pozisyon, son kitabı bir ödül listesinde, sosyal medyada binlerce takipçi. Ve bu kişi, ilk seansın yirminci dakikasında şunu söyler: <em>"Hocam, hayatımda her şey tıkır tıkır. Ama ben hiçbir zaman yetersiz hissetmekten kurtulamıyorum."</em></p>
 
-<p>Yıllar boyunca çoğaltılmış başarıların, içsel yetersizlik duygusunu büyüttüğüne tanık olmak — bu, klinik psikolojinin en sessiz dramlarından biridir. Bizler hırsı bir motor olarak öğretiliriz. Oysa hırs çoğu zaman <strong>kapanmamış bir yaranın üstüne sürülen yapay benzin</strong> gibidir.</p>
+<p>Yıllar boyunca çoğaltılmış başarıların, içsel yetersizlik duygusunu büyüttüğüne tanık olmak — bu, psikolojinin (klinik) en sessiz dramlarından biridir. Bizler hırsı bir motor olarak öğretiliriz. Oysa hırs çoğu zaman <strong>kapanmamış bir yaranın üstüne sürülen yapay benzin</strong> gibidir.</p>
 
 <h2>"Hep daha fazla" cümlesinin altındaki cümle</h2>
 
@@ -270,7 +270,7 @@ export const posts: Post[] = [
   {
     slug: "bagimliligi-anlamak",
     title: "Bağımlılığı Anlamak: Bir İhtiyacın Yanlış İfadesi",
-    category: "Klinik Psikoloji",
+    category: "Psikoloji (Klinik)",
     excerpt:
       "Bağımlılık ahlaki bir zayıflık değil, karşılanmamış bir ihtiyacın çığlığıdır. Bu yazıda madde, davranış ve duygusal bağımlılıkların ortak köküne — kaçış arayışına — bakıyoruz.",
     date: "2026-04-18",

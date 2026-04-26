@@ -16,7 +16,7 @@ const CFG = {
 };
 
 const expertise = [
-  { icon: "icon-healing", title: "Klinik Psikoloji & Bağımlılık Danışmanlığı", desc: "BAHAR Merkezinde bağımlı hastalara eğitim ve ailelerine danışmanlık. Kanıta dayalı rehabilitasyon yaklaşımları.", tags: ["CBT", "NLP Trainer", "Rehabilitasyon", "SAMBA"] },
+  { icon: "icon-healing", title: "Psikoloji (Klinik) & Bağımlılık Danışmanlığı", desc: "BAHAR Merkezinde bağımlı hastalara eğitim ve ailelerine danışmanlık. Kanıta dayalı rehabilitasyon yaklaşımları.", tags: ["CBT", "NLP Trainer", "Rehabilitasyon", "SAMBA"] },
   { icon: "icon-spirit", title: "Maneviyat Danışmanlığı & Yaşam Koçluğu", desc: "İçsel keşif yolculuğunda eşlik ediyor, manevi farkındalık ve duygusal zeka ile kişisel dönüşümü destekliyorum.", tags: ["Yaşam Koçluğu", "Manevi Danışmanlık", "Pozitif Psikoterapi"] },
   { icon: "icon-code", title: "AI Engineer & Vibe Coding", desc: "AI ajanları, çoklu model orkestrasyonu ve vibe coding ile sağlık/eğitim platformları geliştiriyorum. Prompt engineering ve AI workflow tasarımı uzmanı.", tags: ["AI Agents", "Vibe Code", "Prompt Engineering", "MCP & Tools"] },
   { icon: "icon-design", title: "WordPress & Grafik Tasarım", desc: "Ruh sağlığı profesyonellerinin dijital varlığını inşa ediyorum. WordPress, Avada, Canva ile marka kimliği.", tags: ["WordPress", "Canva", "Avada", "SEO"] },
@@ -31,7 +31,7 @@ const milestones = [
   { year: "2006 — 2010", title: "Hemşirelik Lisans", desc: "Muğla Sıtkı Koçman Üniversitesi, Fethiye SYO" },
   { year: "2011 — 2013", title: "Klinik Deneyim", desc: "Çapa, Cerrahpaşa, Kocaeli Tıp — Onkoloji & Kemoterapi" },
   { year: "2013 — 2018", title: "Eğitim & AR-GE", desc: "Anadolu Kuzey KHB — HES yazılımı, 80+ eğitim videosu" },
-  { year: "2014 — 2019", title: "Psikoloji & Klinik Psikoloji", desc: "Nişantaşı & Doğuş Üniversitesi — Yüksek Lisans" },
+  { year: "2014 — 2019", title: "Psikoloji (Klinik)", desc: "Nişantaşı & Doğuş Üniversitesi — Yüksek Lisans" },
   { year: "2018 — Günümüz", title: "BAHAR Merkezi", desc: "Erenköy RH EAH — Bağımlılık Rehabilitasyonu" },
   { year: "2019 — 2021", title: "Web Tasarım & Kodlama", desc: "Anadolu Üniversitesi — Ön Lisans" },
   { year: "2021 — Günümüz", title: "Vibe Code & AI Art & Müzik", desc: "Apps Script, WordPress, Suno, AI Tools" },
@@ -307,7 +307,7 @@ export default function Home() {
               <em>İnşa Ediyorum.</em>
             </h1>
             <p className="hero-desc">
-              Klinik psikolojiden yazılıma, maneviyat danışmanlığından dijital tasarıma, müzikten eğitime —{" "}
+              Psikolojiden (klinik) yazılıma, maneviyat danışmanlığından dijital tasarıma, müzikten eğitime —{" "}
               <strong>insanın bütünsel iyilik halini</strong> hem bilimle hem sanatla hem de teknolojiyle inşa ediyorum.
             </p>
             <div className="hero-buttons">
@@ -357,7 +357,7 @@ export default function Home() {
             <h2>Her Şey Bir <em>Merakla</em> Başladı.</h2>
             <p>Her şey, insanın karmaşık ve bir o kadar da büyüleyici iç dünyasını anlama merakıyla başladı. <strong>2010 yılında</strong> insan bedenine şifa verme niyetiyle çıktığım hemşirelik yolculuğu, zamanla beni ruhun ve zihnin derinliklerine doğru bir keşfe yöneltti.</p>
             <div className="about-highlight">Anladım ki gerçek iyileşme; KALP, NEFS, RUH, ZİHİN ve BEDEN&apos;in birbiriyle uyum içinde dans ettiği bütünsel bir yaklaşımla mümkündü.</div>
-            <p>Bu farkındalık, beni önce psikoloji, ardından da <strong>Klinik Psikoloji</strong> alanında uzmanlaşmaya götürdü. Geçtiğimiz 14 yıl boyunca heybeme NLP Eğitmenliği, Hızlı Okuma ve Hafıza Teknikleri gibi zihinsel yetenekleri güçlendiren araçları; Yaşam, Öğrenci, Aile, Bağımlılık ve Maneviyat Danışmanlığı gibi hayatın farklı dönemeçlerinde yol gösteren pusulaları ekledim.</p>
+            <p>Bu farkındalık, beni önce psikoloji, ardından da <strong>Psikoloji (Klinik)</strong> alanında uzmanlaşmaya götürdü. Geçtiğimiz 14 yıl boyunca heybeme NLP Eğitmenliği, Hızlı Okuma ve Hafıza Teknikleri gibi zihinsel yetenekleri güçlendiren araçları; Yaşam, Öğrenci, Aile, Bağımlılık ve Maneviyat Danışmanlığı gibi hayatın farklı dönemeçlerinde yol gösteren pusulaları ekledim.</p>
             <p>Teorik bilgiyi ve danışmanlık tecrübelerimi daha geniş kitlelere ulaştırma arzusu, beni yeni yollar aramaya itti. <strong>2012&apos;de</strong> bir hobi olarak başlayan web tasarım ve sosyal medya merakım, zamanla ruh sağlığı profesyonellerinin seslerini dijital dünyada duyurmalarına yardımcı olduğum bir uzmanlığa dönüştü.</p>
             <p>İşimi sadece bir meslek olarak değil, bir <strong>sanat</strong> olarak görüyorum. Domain adresim <strong>{CFG.domain}</strong> bu felsefeyi yansıtıyor — her projemde aşk ve özen var. Suno ile rap ve müzik çalışmalarım da bu sanatsal bakış açısının bir uzantısı.</p>
             <p>Ben <strong>Mustafa Yılmaz</strong>. Amacım, insanların kendini keşfetme yolculuklarında onlara rehberlik etmek ve daha anlamlı bir hayat inşa etmelerine katkı sağlamaktır.</p>
@@ -534,7 +534,7 @@ export default function Home() {
       <section className="my-section" id="yazilar">
         <div className="section-label reveal">Yazılar &amp; Platformlar</div>
         <h2 className="section-title reveal">Düşünce Atölyem</h2>
-        <p className="section-subtitle reveal">Klinik psikoloji, maneviyat, teknoloji ve kişisel gelişim üzerine düzenli içerikler inşa ediyorum.</p>
+        <p className="section-subtitle reveal">Psikoloji (klinik), maneviyat, teknoloji ve kişisel gelişim üzerine düzenli içerikler inşa ediyorum.</p>
         <div className="writing-grid">
           <a href={CFG.medium} target="_blank" rel="noopener noreferrer" className="writing-card reveal">
             <div className="writing-card-img" style={{ background: "linear-gradient(135deg,#1a1a1a,#333)" }}>
@@ -542,7 +542,7 @@ export default function Home() {
             </div>
             <div className="writing-card-body">
               <div className="platform">Medium</div>
-              <h3>Klinik Psikoloji &amp; Bilgelik</h3>
+              <h3>Psikoloji (Klinik) &amp; Bilgelik</h3>
               <p>Öz farkındalık, duygusal zeka ve ilişki dinamikleri.</p>
             </div>
           </a>
