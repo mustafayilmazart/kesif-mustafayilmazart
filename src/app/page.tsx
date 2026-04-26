@@ -10,6 +10,7 @@ const CFG = {
   udemy: "https://www.udemy.com/user/kesfet-kendini/",
   youtube: "https://youtube.com/@kesiforg",
   linkedin: "https://linkedin.com/in/kpmustafayilmaz",
+  github: "https://github.com/mustafayilmazart",
   kesif: "https://kesif.org",
   domain: "mustafayilmaz.art",
 };
@@ -41,6 +42,58 @@ const process = [
   { n: "02", t: "Keşfet & Planla", d: "En uygun stratejiyi birlikte belirliyoruz. Yol haritası netleşiyor." },
   { n: "03", t: "İnşa Et & Tasarla", d: "Kod, tasarım veya terapi — aşkla ve özenle inşa süreci başlıyor." },
   { n: "04", t: "Büyüt & Dönüştür", d: "Sürdürülebilir sonuçlar için birlikte evriliyoruz." },
+];
+
+/* GitHub açık kaynak projelerim — github.com/mustafayilmazart */
+const githubProjects = [
+  {
+    name: "kesif-avukat-mcp",
+    title: "Avukat MCP",
+    desc: "Türkiye + uluslararası hukuki uyumluluk tarayıcısı. KVKK, GDPR, FSEK, PCI-DSS, COPPA, İYS taraması — Claude Desktop & Cursor üzerinden.",
+    stack: ["Python", "MCP", "FastMCP"],
+    url: "https://github.com/mustafayilmazart/kesif-avukat-mcp",
+    accent: "#16a34a",
+  },
+  {
+    name: "kesif-capraz-kontrol",
+    title: "Çapraz Kontrol",
+    desc: "Multi-LLM kod review CLI. Aynı dosyayı Claude + Gemini + Codex + Qwen'a inceletip birleşik Markdown raporu üretir.",
+    stack: ["Node.js", "CLI", "Multi-LLM"],
+    url: "https://github.com/mustafayilmazart/kesif-capraz-kontrol",
+    accent: "#7c3aed",
+  },
+  {
+    name: "kesif-udemy-mcp",
+    title: "Udemy MCP",
+    desc: "Udemy eğitmenleri için MCP. Instructor API + browser scanner ile kurs/yorum/Q&A yönetimi ve AI ile içerik üretimi.",
+    stack: ["Python", "MCP", "Playwright"],
+    url: "https://github.com/mustafayilmazart/kesif-udemy-mcp",
+    accent: "#a435f0",
+  },
+  {
+    name: "kesif-mcp-orkestratori",
+    title: "MCP Orkestratörü",
+    desc: "Tek registry'den Claude Desktop + Code + Cursor için MCP sync. Kategorize, .env ile secret yönetimi, dry-run modu.",
+    stack: ["Node.js", "Zero deps"],
+    url: "https://github.com/mustafayilmazart/kesif-mcp-orkestratori",
+    accent: "#219295",
+  },
+  {
+    name: "kesif-claude-skills",
+    title: "Claude Skills Curated",
+    desc: "Yazarın pipeline'larında dahili kullanılan 14 Claude Code skill — TTS, video, NotebookLM, YouTube, prompt engineering.",
+    stack: ["Markdown", "Skills"],
+    url: "https://github.com/mustafayilmazart/kesif-claude-skills",
+    accent: "#d4a574",
+  },
+  {
+    name: "kesif-mustafayilmazart",
+    title: "Bu Site",
+    desc: "Kişisel marka ve portfolyo sitesi. Next.js 16 + Tailwind + Firebase Hosting. WordPress→Next.js migration.",
+    stack: ["Next.js", "Firebase", "TS"],
+    url: "https://github.com/mustafayilmazart/kesif-mustafayilmazart",
+    accent: "#1a1a1a",
+  },
 ];
 
 const tools = [
@@ -225,6 +278,7 @@ export default function Home() {
         <ul className="nav-links" id="navLinks">
           <li><a href="#hakkimda">Hikayem</a></li>
           <li><a href="#uzmanlik">Uzmanlık</a></li>
+          <li><a href="#github">Açık Kaynak</a></li>
           <li><a href="#akademi">Keşif Akademi</a></li>
           <li><a href="#referanslar">Referanslar</a></li>
           <li><a href="/blog">Blog</a></li>
@@ -340,6 +394,35 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Açık Kaynak / GitHub Projeleri */}
+      <section className="github-section" id="github">
+        <div className="github-inner">
+          <div className="section-label reveal">Açık Kaynak</div>
+          <h2 className="section-title reveal">GitHub&apos;da <em>İnşa Ettiklerim</em>.</h2>
+          <p className="section-subtitle reveal">
+            MCP sunucuları, AI orkestrasyon araçları ve Claude Code skill koleksiyonu — hepsi MIT lisansı altında, herkes kullanabilir.
+            <a href="https://github.com/mustafayilmazart" target="_blank" rel="noopener noreferrer" className="github-profile-link"> @mustafayilmazart →</a>
+          </p>
+          <div className="github-grid">
+            {githubProjects.map((p) => (
+              <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="github-card reveal">
+                <div className="github-accent" style={{ background: p.accent }}></div>
+                <div className="github-card-head">
+                  <svg className="github-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                  <span className="github-name">{p.name}</span>
+                </div>
+                <h3>{p.title}</h3>
+                <p>{p.desc}</p>
+                <div className="github-stack">
+                  {p.stack.map((s) => <span key={s} className="github-stack-tag">{s}</span>)}
+                </div>
+                <span className="github-link">View on GitHub →</span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -515,6 +598,7 @@ export default function Home() {
           <a href={CFG.linkedin} target="_blank" rel="noopener noreferrer" className="btn-secondary">LinkedIn&apos;de Bağlanalım</a>
         </div>
         <div className="cta-links reveal">
+          <a href={CFG.github} target="_blank" rel="noopener noreferrer" className="cta-link">⌨️ GitHub</a>
           <a href={CFG.medium} target="_blank" rel="noopener noreferrer" className="cta-link">📝 Medium</a>
           <a href={CFG.substack} target="_blank" rel="noopener noreferrer" className="cta-link">📬 Substack</a>
           <a href={CFG.youtube} target="_blank" rel="noopener noreferrer" className="cta-link">▶ YouTube</a>
@@ -532,6 +616,7 @@ export default function Home() {
           <div className="footer-links">
             <a href="#hakkimda">Hikayem</a>
             <a href="#uzmanlik">Uzmanlık</a>
+            <a href="#github">Açık Kaynak</a>
             <a href="#akademi">Keşif Akademi</a>
             <a href="#referanslar">Referanslar</a>
             <a href="#sertifikalar">Sertifikalar</a>

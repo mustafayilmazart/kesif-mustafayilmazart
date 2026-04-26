@@ -128,3 +128,28 @@
   .article-body,.article-tags,.article-cta{padding-left:24px;padding-right:24px}
   .article-cta{padding:32px 24px;margin-left:24px;margin-right:24px}
 }
+
+/* GitHub / Açık Kaynak Bölümü */
+.github-section{background:linear-gradient(135deg,#0d1117 0%,#161b22 100%);padding:100px 40px;max-width:100%;color:#fff;position:relative;overflow:hidden}
+.github-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M0 0h20v20H0zM20 20h20v20H20z'/%3E%3C/g%3E%3C/svg%3E")}
+.github-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.github-section .section-label{color:#2ab3b6}
+.github-section .section-label::before{background:#2ab3b6}
+.github-section .section-title{color:#fff}
+.github-section .section-title em{color:#2ab3b6;font-style:italic}
+.github-section .section-subtitle{color:rgba(255,255,255,.6);max-width:680px}
+.github-profile-link{color:#2ab3b6;font-weight:600;text-decoration:none;transition:opacity .3s}
+.github-profile-link:hover{opacity:.8}
+.github-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px;margin-top:50px}
+.github-card{background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.08);transition:all .4s cubic-bezier(.23,1,.32,1);position:relative;overflow:hidden;display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit}
+.github-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.07);border-color:rgba(42,179,182,.4);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.github-accent{position:absolute;top:0;left:0;width:100%;height:3px}
+.github-card-head{display:flex;align-items:center;gap:10px;font-family:var(--font-jetbrains),'JetBrains Mono',monospace}
+.github-icon{color:#fff;flex-shrink:0}
+.github-name{font-size:.85rem;color:rgba(255,255,255,.7);font-weight:500;letter-spacing:.3px}
+.github-card h3{font-family:var(--font-playfair),'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#fff;margin:4px 0 0;line-height:1.3}
+.github-card p{font-size:.92rem;color:rgba(255,255,255,.65);line-height:1.65;margin:0;flex:1}
+.github-stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.github-stack-tag{font-size:.7rem;font-weight:600;padding:4px 10px;border-radius:50px;background:rgba(42,179,182,.12);color:#2ab3b6;border:1px solid rgba(42,179,182,.2);letter-spacing:.3px}
+.github-link{color:#2ab3b6;font-size:.85rem;font-weight:600;margin-top:6px;letter-spacing:.3px}
+@media(max-width:968px){.github-section{padding:70px 24px}.github-grid{grid-template-columns:1fr}}
