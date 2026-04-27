@@ -278,9 +278,9 @@ export default function Home() {
         <ul className="nav-links" id="navLinks">
           <li><a href="#hakkimda">Hikayem</a></li>
           <li><a href="#uzmanlik">Uzmanlık</a></li>
+          <li><a href="/ai-danismanligi">AI Danışmanlık</a></li>
           <li><a href="#github">Açık Kaynak</a></li>
           <li><a href="#akademi">Keşif Akademi</a></li>
-          <li><a href="#referanslar">Referanslar</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="#iletisim" className="nav-cta">İletişime Geç</a></li>
         </ul>
@@ -616,9 +616,9 @@ export default function Home() {
           <div className="footer-links">
             <a href="#hakkimda">Hikayem</a>
             <a href="#uzmanlik">Uzmanlık</a>
+            <a href="/ai-danismanligi">AI Danışmanlık</a>
             <a href="#github">Açık Kaynak</a>
             <a href="#akademi">Keşif Akademi</a>
-            <a href="#referanslar">Referanslar</a>
             <a href="#sertifikalar">Sertifikalar</a>
             <a href="/blog">Blog</a>
             <a href="#iletisim">İletişim</a>
