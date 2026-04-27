@@ -89,15 +89,15 @@ const process = [
 
 const whyMe = [
   { icon: "🩺", title: "Sağlık Sektörü İçeriden", desc: "14+ yıl psikiyatri hemşireliği, BAHAR Bağımlılık Merkezi'nde danışmanlık. Hekim ve hasta dilini biliyorum; \"sistem dili\" değil, klinik dili konuşuyorum." },
-  { icon: "🤖", title: "AI Engineer", desc: "80'den fazla projede AI orkestrasyonu, 50+ MCP sunucusu. Claude, GPT, Gemini ile production deneyimi. Hype değil, çalışan sistem kuruyorum." },
-  { icon: "⚖️", title: "KVKK Uzmanlığı", desc: "Kendi açık kaynak KVKK tarayıcımı yazdım (Avukat MCP). Sağlık verisinin yasal hassasiyetini hem teknik hem hukuki yönden anlıyorum." },
+  { icon: "🤖", title: "AI Engineer", desc: "Üretim ortamında çalışan AI sistemleri kuruyorum. Hype değil, sonuç odaklı." },
+  { icon: "⚖️", title: "KVKK Uzmanlığı", desc: "Sağlık verisinin yasal hassasiyetini hem teknik hem hukuki yönden anlıyorum." },
   { icon: "🎓", title: "Eğitim Odaklı", desc: "Keşif Akademi'de 3.700+ öğrenci. Ekibinize sistemi öğretirken karmaşık değil, anlaşılır anlatıyorum. Bağımlılık yaratmıyor; özerklik kazandırıyorum." },
 ];
 
 const faqs = [
   { q: "Bütçem küçük, küçük bir klinikim. Yine de uygun mu?", a: "Evet. Hizmetler modüler. Tek bir akış — örneğin sadece randevu hatırlatma — bile aylık 5-15 saat zaman tasarrufu sağlar. Küçük başlamak en mantıklısıdır." },
   { q: "Mevcut sistemimi (Google Takvim, WordPress, Excel) bırakmam gerekiyor mu?", a: "Hayır. Sahip olduğunuz araçların üzerine inşa ediyoruz. Yeni bir yazılım almanıza nadiren gerek olur; mevcut araçlarınızı birbirine bağlıyoruz." },
-  { q: "Veri güvenliği ne durumda? Hasta verisi sızabilir mi?", a: "KVKK uyumluluğu ve veri şifreleme her projenin temelidir. Avukat MCP ile düzenli güvenlik taraması yapılır. Hasta verisi asla AI eğitiminde kullanılmaz; sadece operasyonel akışta işlenir." },
+  { q: "Veri güvenliği ne durumda? Hasta verisi sızabilir mi?", a: "KVKK uyumluluğu ve veri şifreleme her projenin temelidir. Düzenli güvenlik taraması yapılır. Hasta verisi asla AI eğitiminde kullanılmaz; sadece operasyonel akışta işlenir." },
   { q: "AI hekimin yerini mi alıyor?", a: "Hayır, almayacak. AI sekreterlik, takip, bilgilendirme, raporlama gibi tekrarlayan işleri yapıyor. Hekim hastayla daha çok yüz yüze vakit geçirebilsin diye hayatına giriyor." },
   { q: "Ne kadar sürede sonuç görürüm?", a: "Pilot 1-2 hafta. İlk gözle görülür etkiler 4-6 hafta içinde — no-show azalması, sosyal medya etkileşimi artışı, sekreterin nefes alması gibi." },
   { q: "Aylık ücret mi, proje bazlı mı?", a: "İkisi de mümkün. Sürekli operasyon (otomasyon bakımı, içerik üretimi) için aylık paket; sıfırdan kurulum için proje bazlı." },
@@ -148,7 +148,7 @@ export default function AIDanismanligi() {
           <div className="aid-hero-stats">
             <div><strong>14+</strong><span>yıl sağlık deneyimi</span></div>
             <div><strong>80+</strong><span>AI projesi</span></div>
-            <div><strong>50+</strong><span>MCP sunucu</span></div>
+            <div><strong>50+</strong><span>otomasyon akışı</span></div>
             <div><strong>3.7K+</strong><span>öğrenci</span></div>
           </div>
         </div>
