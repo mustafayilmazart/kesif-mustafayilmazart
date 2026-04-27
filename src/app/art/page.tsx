@@ -31,6 +31,7 @@ export default function ArtPage() {
           <li><Link href="/#hakkimda">Hikayem</Link></li>
           <li><Link href="/#uzmanlik">Uzmanlık</Link></li>
           <li><Link href="/ai-danismanligi">AI Danışmanlık</Link></li>
+          <li><Link href="/yazilimlar">Yazılımlar</Link></li>
           <li><Link href="/blog">Blog</Link></li>
           <li><Link href="/art" className="active-link">Art</Link></li>
           <li><a href="mailto:bilgi@mustafayilmaz.art" className="nav-cta">Görüşme Al</a></li>

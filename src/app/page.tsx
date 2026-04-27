@@ -44,82 +44,6 @@ const process = [
   { n: "04", t: "Büyüt & Dönüştür", d: "Sürdürülebilir sonuçlar için birlikte ilerliyoruz." },
 ];
 
-/* Geliştirdiğim yazılımlar — production uygulamalar */
-const apps = [
-  {
-    name: "kesif.app",
-    title: "Keşif Portal",
-    desc: "Kişisel keşif, gelişim ve danışmanlık ekosisteminin ana platformu. KEŞİF Akademi, danışmanlık ve içerik tek çatı altında.",
-    domain: "kesif.app",
-    url: "https://kesif.app",
-    accent: "#219295",
-  },
-  {
-    name: "iyilikhali.tr",
-    title: "İyilik Hali Platformu",
-    desc: "Bütünsel iyilik hali için sağlık çalışanları ve danışanları buluşturan dijital platform. KVKK uyumlu klinik altyapı.",
-    domain: "iyilikhali.tr",
-    url: "https://iyilikhali.tr",
-    accent: "#16a34a",
-  },
-  {
-    name: "terapist.io",
-    title: "Terapist Pro",
-    desc: "Ruh sağlığı profesyonelleri için klinik yönetim, danışan takibi ve dijital iş akışı. Türkçe arayüz, Türkiye odaklı.",
-    domain: "terapist.io",
-    url: "https://terapist.io",
-    accent: "#7c3aed",
-  },
-  {
-    name: "tooleo.app",
-    title: "Tooleo",
-    desc: "Bireyler ve küçük işletmeler için günlük dijital araçlar — hesaplayıcılar, dönüştürücüler ve hızlı yardımcılar.",
-    domain: "tooleo.app",
-    url: "https://tooleo.app",
-    accent: "#0ea5e9",
-  },
-  {
-    name: "ikra.kesif.app",
-    title: "İkra",
-    desc: "Kur'an okuma, anlama ve tefekkür eşliği için dijital okuma deneyimi. Sade arayüz, derin içerik.",
-    domain: "ikra.kesif.app",
-    url: "https://ikra.kesif.app",
-    accent: "#b8a920",
-  },
-  {
-    name: "hafiz.kesif.app",
-    title: "Hafız",
-    desc: "Kur'an ezberi takibi ve hafızlık yolculuğu için planlama, tekrar ve ölçme aracı.",
-    domain: "hafiz.kesif.app",
-    url: "https://hafiz.kesif.app",
-    accent: "#d97706",
-  },
-  {
-    name: "tahkik.kesif.app",
-    title: "Tahkik",
-    desc: "Bilgi doğrulama, kaynak teyit ve ehl-i sünnet usulüne uygun araştırma için dijital tahkik aracı.",
-    domain: "tahkik.kesif.app",
-    url: "https://tahkik.kesif.app",
-    accent: "#0d9488",
-  },
-  {
-    name: "zirh.kesif.app",
-    title: "Zırh",
-    desc: "Dijital güvenlik ve manevi koruma alışkanlıkları için günlük zikir, dua ve farkındalık uygulaması.",
-    domain: "zirh.kesif.app",
-    url: "https://zirh.kesif.app",
-    accent: "#475569",
-  },
-  {
-    name: "maneviyat.kesif.app",
-    title: "Maneviyat",
-    desc: "Ehl-i sünnet kaynaklarından beslenen, manevi danışmanlık ve içsel rehberlik için yapay zeka destekli sohbet asistanı.",
-    domain: "maneviyat.kesif.app",
-    url: "https://maneviyat.kesif.app",
-    accent: "#a855f7",
-  },
-];
-
 /* GitHub açık kaynak projelerim — github.com/mustafayilmazart */
 const githubProjects = [
   {
@@ -355,7 +279,7 @@ export default function Home() {
           <li><a href="#hakkimda">Hikayem</a></li>
           <li><a href="#uzmanlik">Uzmanlık</a></li>
           <li><a href="/ai-danismanligi">AI Danışmanlık</a></li>
-          <li><a href="#yazilimlar">Yazılımlar</a></li>
+          <li><a href="/yazilimlar">Yazılımlar</a></li>
           <li><a href="#github">Açık Kaynak</a></li>
           <li><a href="#akademi">Keşif Akademi</a></li>
           <li><a href="/blog">Blog</a></li>
@@ -475,32 +399,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Geliştirdiğim Yazılımlar — Production */}
-      <section className="apps-section" id="yazilimlar">
-        <div className="apps-inner">
+      {/* Geliştirdiğim Yazılımlar — Teaser */}
+      <section className="apps-teaser" id="yazilimlar">
+        <div className="apps-teaser-inner">
           <div className="section-label reveal">Geliştirdiğim Yazılımlar</div>
           <h2 className="section-title reveal">Hayata Geçirdiğim <em>Ürünler</em>.</h2>
           <p className="section-subtitle reveal">
-            Klinik gözlemden doğan, manevi ihtiyaçtan yükselen, bireyin işine yarayan dijital ürünler.
-            Hepsi yayında, hepsi büyümeye devam ediyor.
+            kesif.app, iyilikhali.tr, terapist.io, tooleo.app, aile.kesif.app ve daha fazlası — production&apos;da çalışan
+            dijital ürünlerimin tamamını yazılımlar sayfasında görebilirsin.
           </p>
-          <div className="apps-grid">
-            {apps.map((a) => (
-              <a key={a.name} href={a.url} target="_blank" rel="noopener noreferrer" className="app-card reveal">
-                <div className="app-accent" style={{ background: a.accent }}></div>
-                <div className="app-card-head">
-                  <span className="app-domain">{a.domain}</span>
-                  <svg className="app-ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
-                </div>
-                <h3>{a.title}</h3>
-                <p>{a.desc}</p>
-                <span className="app-link">Ziyaret et →</span>
-              </a>
-            ))}
+          <div className="apps-teaser-cta reveal">
+            <a href="/yazilimlar" className="btn-primary">Tüm Yazılımları Gör →</a>
           </div>
-          <p className="apps-note reveal">
-            Ve daha fazlası yolda — sırada başka projeler var.
-          </p>
         </div>
       </section>
 
@@ -724,7 +634,7 @@ export default function Home() {
             <a href="#hakkimda">Hikayem</a>
             <a href="#uzmanlik">Uzmanlık</a>
             <a href="/ai-danismanligi">AI Danışmanlık</a>
-            <a href="#yazilimlar">Yazılımlar</a>
+            <a href="/yazilimlar">Yazılımlar</a>
             <a href="#github">Açık Kaynak</a>
             <a href="#akademi">Keşif Akademi</a>
             <a href="#sertifikalar">Sertifikalar</a>

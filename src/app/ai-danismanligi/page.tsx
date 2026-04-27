@@ -115,6 +115,7 @@ export default function AIDanismanligi() {
           <li><Link href="/#hakkimda">Hikayem</Link></li>
           <li><Link href="/#uzmanlik">Uzmanlık</Link></li>
           <li><Link href="/ai-danismanligi" className="active-link">AI Danışmanlık</Link></li>
+          <li><Link href="/yazilimlar">Yazılımlar</Link></li>
           <li><Link href="/blog">Blog</Link></li>
           <li><Link href="/art">Art</Link></li>
           <li><a href="mailto:bilgi@mustafayilmaz.art" className="nav-cta">Görüşme Al</a></li>
