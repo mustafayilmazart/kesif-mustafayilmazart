@@ -282,6 +282,7 @@ export default function Home() {
           <li><a href="#github">Açık Kaynak</a></li>
           <li><a href="#akademi">Keşif Akademi</a></li>
           <li><a href="/blog">Blog</a></li>
+          <li><a href="/art">Art</a></li>
           <li><a href="#iletisim" className="nav-cta">İletişime Geç</a></li>
         </ul>
         <button className="mobile-menu-btn" id="menuBtn" aria-label="Menü">
@@ -621,6 +622,7 @@ export default function Home() {
             <a href="#akademi">Keşif Akademi</a>
             <a href="#sertifikalar">Sertifikalar</a>
             <a href="/blog">Blog</a>
+            <a href="/art">Art</a>
             <a href="#iletisim">İletişim</a>
           </div>
           <p className="footer-copy">&copy; {new Date().getFullYear()} Mustafa Yılmaz. Tüm hakları saklıdır. Aşkla inşa edildi ☕</p>

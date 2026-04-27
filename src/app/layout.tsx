@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import "./aid-styles.css";
+import "./art-styles.css";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",

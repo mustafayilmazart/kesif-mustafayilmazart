@@ -116,6 +116,7 @@ export default function AIDanismanligi() {
           <li><Link href="/#uzmanlik">Uzmanlık</Link></li>
           <li><Link href="/ai-danismanligi" className="active-link">AI Danışmanlık</Link></li>
           <li><Link href="/blog">Blog</Link></li>
+          <li><Link href="/art">Art</Link></li>
           <li><a href="mailto:bilgi@mustafayilmaz.art" className="nav-cta">Görüşme Al</a></li>
         </ul>
       </nav>
@@ -276,6 +277,7 @@ export default function AIDanismanligi() {
           <div className="footer-links">
             <Link href="/">Anasayfa</Link>
             <Link href="/blog">Blog</Link>
+            <Link href="/art">Art</Link>
             <Link href="/ai-danismanligi">AI Danışmanlık</Link>
             <a href="mailto:bilgi@mustafayilmaz.art">İletişim</a>
           </div>

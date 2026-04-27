@@ -130,6 +130,7 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
           <li><Link href="/#uzmanlik">Uzmanlık</Link></li>
           <li><Link href="/#akademi">Keşif Akademi</Link></li>
           <li><Link href="/blog">Blog</Link></li>
+          <li><Link href="/art">Art</Link></li>
           <li><Link href="/#iletisim" className="nav-cta">İletişime Geç</Link></li>
         </ul>
       </nav>
@@ -323,6 +324,7 @@ export default async function BlogPost({ params }: { params: Promise<Params> }) 
           <div className="footer-links">
             <Link href="/">Anasayfa</Link>
             <Link href="/blog">Blog</Link>
+            <Link href="/art">Art</Link>
             <Link href="/#iletisim">İletişim</Link>
           </div>
           <p className="footer-copy">&copy; {new Date().getFullYear()} Mustafa Yılmaz</p>
