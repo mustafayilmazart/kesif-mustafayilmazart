@@ -332,7 +332,7 @@ export default function Home() {
               </div>
             </div>
             <div className="floating-tag tag-1">{Icons.vibe}Vibe Coding</div>
-            <div className="floating-tag tag-2">{Icons.heart}İyileştirme</div>
+            <div className="floating-tag tag-2">{Icons.heart}Destekleme</div>
             <div className="floating-tag tag-3">{Icons.music}Suno Müzik</div>
             <div className="floating-tag tag-4">{Icons.edu}Eğitim</div>
           </div>
@@ -344,7 +344,7 @@ export default function Home() {
         <div className="philosophy-inner reveal">
           <div className="quote-mark">&ldquo;</div>
           <blockquote>
-            Gerçek iyileşme; <strong>KALP, NEFS, RUH, ZİHİN ve BEDEN</strong>&apos;in birbiriyle uyum içinde dans ettiği bütünsel bir yaklaşımla mümkündür.
+            Gerçek destekleme; <strong>KALP, NEFS, RUH, ZİHİN ve BEDEN</strong>&apos;in birbiriyle uyum içinde dans ettiği bütünsel bir yaklaşımla mümkündür.
             Ben sadece bir şey yapmıyorum — yaşamı her boyutuyla <strong>inşa ediyorum.</strong>
           </blockquote>
           <p className="author">— Mustafa Yılmaz · {CFG.domain}</p>
@@ -358,7 +358,7 @@ export default function Home() {
             <div className="section-label">Hikayem</div>
             <h2>Her Şey Bir <em>Merakla</em> Başladı.</h2>
             <p>Her şey, insanın karmaşık ve bir o kadar da büyüleyici iç dünyasını anlama merakıyla başladı. <strong>2010 yılında</strong> insan bedenine şifa verme niyetiyle çıktığım hemşirelik yolculuğu, zamanla beni ruhun ve zihnin derinliklerine doğru bir keşfe yöneltti.</p>
-            <div className="about-highlight">Anladım ki gerçek iyileşme; KALP, NEFS, RUH, ZİHİN ve BEDEN&apos;in birbiriyle uyum içinde dans ettiği bütünsel bir yaklaşımla mümkündü.</div>
+            <div className="about-highlight">Anladım ki gerçek destekleme; KALP, NEFS, RUH, ZİHİN ve BEDEN&apos;in birbiriyle uyum içinde dans ettiği bütünsel bir yaklaşımla mümkündü.</div>
             <p>Bu farkındalık, beni önce psikoloji, ardından da <strong>Psikoloji (Klinik)</strong> alanında uzmanlaşmaya götürdü. Geçtiğimiz 14 yıl boyunca heybeme NLP Eğitmenliği, Hızlı Okuma ve Hafıza Teknikleri gibi zihinsel yetenekleri güçlendiren araçları; Yaşam, Öğrenci, Aile, Bağımlılık ve Maneviyat Danışmanlığı gibi hayatın farklı dönemeçlerinde yol gösteren pusulaları ekledim.</p>
             <p>Teorik bilgiyi ve danışmanlık tecrübelerimi daha geniş kitlelere ulaştırma arzusu, beni yeni yollar aramaya itti. <strong>2012&apos;de</strong> bir hobi olarak başlayan web tasarım ve sosyal medya merakım, zamanla ruh sağlığı profesyonellerinin seslerini dijital dünyada duyurmalarına yardımcı olduğum bir uzmanlığa dönüştü.</p>
             <p>İşimi sadece bir meslek olarak değil, bir <strong>sanat</strong> olarak görüyorum. Domain adresim <strong>{CFG.domain}</strong> bu felsefeyi yansıtıyor — her projemde aşk ve özen var. Suno ile rap ve müzik çalışmalarım da bu sanatsal bakış açısının bir uzantısı.</p>

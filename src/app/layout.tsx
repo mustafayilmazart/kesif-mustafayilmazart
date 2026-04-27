@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Mustafa Yılmaz" }],
   openGraph: {
-    title: "Mustafa Yılmaz — İyileştiriyorum, Kodluyorum, İnşa Ediyorum",
+    title: "Mustafa Yılmaz — Destekliyorum, Kodluyorum, İnşa Ediyorum",
     description: "Danışman · AI Engineer · Eğitmen · AI Artist — mustafayilmaz.art",
     type: "website",
     locale: "tr_TR",
