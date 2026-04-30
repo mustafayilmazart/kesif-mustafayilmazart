@@ -1,0 +1,37 @@
+/* === Yazılımlar Sayfası — apps page === */
+.apps-hero{position:relative;padding:140px 40px 80px;background:linear-gradient(135deg,#0d1117 0%,#1f3333 100%);color:#fff;overflow:hidden}
+.apps-hero-bg{position:absolute;inset:0;z-index:0}
+.apps-blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.18;animation:blobFloat 22s ease-in-out infinite}
+.apps-blob-1{width:520px;height:520px;background:var(--teal);top:-160px;right:-120px}
+.apps-blob-2{width:420px;height:420px;background:var(--yellow);bottom:-120px;left:-60px;animation-delay:-8s}
+.apps-hero-content{max-width:920px;margin:0 auto;position:relative;z-index:1;text-align:center}
+.apps-hero-content .hero-badge{background:rgba(42,179,182,.15);color:#2ab3b6;border-color:rgba(42,179,182,.3)}
+.apps-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:800;line-height:1.15;letter-spacing:-1px;margin:24px 0;color:#fff}
+.apps-hero h1 em{color:var(--teal-light);font-style:italic}
+.apps-hero-desc{font-size:1.1rem;color:rgba(255,255,255,.78);line-height:1.75;max-width:680px;margin:0 auto 32px}
+.apps-hero-desc strong{color:var(--yellow);font-weight:600}
+.apps-hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:480px;margin:0 auto;padding-top:32px;border-top:1px solid rgba(255,255,255,.12)}
+.apps-hero-stats > div{text-align:center}
+.apps-hero-stats strong{display:block;font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--yellow);font-weight:700}
+.apps-hero-stats span{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:4px;display:block}
+
+.apps-page-section{padding:70px 40px;border-bottom:1px solid var(--border)}
+.apps-page-section:nth-child(even){background:var(--warm-gray)}
+.apps-page-section:last-of-type{border-bottom:none}
+.apps-cat-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:30px}
+.apps-cat-count{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--text-muted);letter-spacing:.3px}
+
+/* Apps CTA */
+.apps-cta{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;padding:90px 40px;text-align:center}
+.apps-cta-inner{max-width:720px;margin:0 auto}
+.apps-cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);margin:0 0 18px;line-height:1.25}
+.apps-cta h2 em{color:var(--yellow);font-style:italic}
+.apps-cta p{font-size:1.05rem;color:rgba(255,255,255,.85);line-height:1.7;max-width:580px;margin:0 auto 32px}
+.apps-cta .btn-primary{background:var(--yellow);color:var(--charcoal);font-weight:700;border:1px solid var(--yellow)}
+.apps-cta .btn-primary:hover{background:#fff;color:var(--charcoal);border-color:#fff}
+
+@media(max-width:768px){
+  .apps-hero{padding:100px 24px 60px}
+  .apps-page-section{padding:50px 24px}
+  .apps-cta{padding:60px 24px}
+}
