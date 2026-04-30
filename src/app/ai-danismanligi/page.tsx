@@ -29,6 +29,68 @@ const audiences = [
   { icon: "🥗", title: "Beslenme Uzmanları", desc: "Beslenme planı oluşturma asistanı, danışan ilerleme takibi, içerik takvimi." },
 ];
 
+// 4 katmanlı paket funnel — entry → pilot → tam kurulum → sürekli bakım
+const packages = [
+  {
+    tier: "Giriş",
+    n: "00",
+    title: "Keşif Atölyesi",
+    duration: "2 saat",
+    price: "Ücretsiz",
+    desc: "30 dk görüşme + 90 dk yerinde gözlem. Kliniğinizin AI olgunluğunu ölçer, hangi 1-2 sürecin otomatikleşmesi en yüksek geri dönüşü vereceğini netleştiririm. Çıktı: tek sayfalık AI Yol Haritası.",
+    outcomes: ["AI Hazırlık Skoru", "Hızlı Kazanç Listesi", "Yol Haritası"],
+    cta: "Atölye Al",
+    accent: "#0ea5e9",
+  },
+  {
+    tier: "Pilot",
+    n: "01",
+    title: "Tek Akış Pilot Kurulum",
+    duration: "1-2 hafta",
+    price: "Proje bazlı",
+    desc: "Tek bir akışı (genelde randevu hatırlatma) baştan sona kurarım. WhatsApp / SMS / e-posta + takvim entegrasyonu. No-show oranı görünür düşer, sekreter nefes alır.",
+    outcomes: ["Randevu Hatırlatma", "Takvim Entegrasyonu", "No-Show Azaltma", "Geri Bildirim Toplama"],
+    cta: "Pilot İste",
+    accent: "#16a34a",
+  },
+  {
+    tier: "Tam Kurulum",
+    n: "02",
+    title: "Klinik AI Paketi",
+    duration: "4-8 hafta",
+    price: "Proje bazlı",
+    desc: "Pilot başarılıysa sıradaki akışlara geçiyoruz: Türkçe AI asistan, KVKK uyumlu form altyapısı, hasta takip panosu, içerik üretim hattı. Ekibiniz kullanım için eğitilir.",
+    outcomes: [
+      "7/24 Türkçe AI Asistan",
+      "KVKK Uyumlu Formlar",
+      "Hasta Takip Panosu",
+      "İçerik Üretim Hattı",
+      "Web Sitesi & Yerel SEO",
+      "Ekip Eğitimi",
+    ],
+    cta: "Görüşme Al",
+    accent: "#219295",
+    featured: true,
+  },
+  {
+    tier: "Sürekli Bakım",
+    n: "03",
+    title: "Aylık Operasyon Desteği",
+    duration: "Aylık",
+    price: "Aylık paket",
+    desc: "Sistem kurulduktan sonra haftalık içerik üretimi, otomasyon bakımı, KVKK denetimi, güvenlik taraması ve yeni süreç eklemeleri. Klinikten bir telefon kadar uzaktayım.",
+    outcomes: [
+      "Haftalık İçerik Takvimi",
+      "Otomasyon Bakımı",
+      "KVKK Sürekli Denetim",
+      "Güvenlik Tarama",
+      "Yeni Akış Ekleme",
+    ],
+    cta: "Aylık Plan",
+    accent: "#7c3aed",
+  },
+];
+
 const services = [
   {
     n: "01",
@@ -145,7 +207,7 @@ export default function AIDanismanligi() {
               Ücretsiz Keşif Görüşmesi
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="#hizmetler" className="btn-secondary">Hizmetleri Gör</a>
+            <a href="#paketler" className="btn-secondary">Paketleri Gör</a>
           </div>
           <div className="aid-hero-stats">
             <div><strong>14+</strong><span>yıl sağlık deneyimi</span></div>
@@ -174,12 +236,51 @@ export default function AIDanismanligi() {
         </div>
       </section>
 
+      {/* Paketler — funnel */}
+      <section className="aid-packages-section" id="paketler">
+        <div className="aid-inner">
+          <div className="section-label">Paketler</div>
+          <h2 className="section-title">Küçük Başlayın, <em>Adım Adım</em> Büyüyün.</h2>
+          <p className="section-subtitle">Sıfır risk: ücretsiz keşifle başlarız. Pilot çalışırsa tam kuruluma, oradan da aylık bakıma geçeriz. Her aşamada çıkış kapısı açık.</p>
+          <div className="aid-packages-grid">
+            {packages.map((p) => (
+              <div key={p.n} className={`aid-package-card${p.featured ? " featured" : ""}`}>
+                {p.featured && <div className="aid-package-badge">En Çok Tercih</div>}
+                <div className="aid-package-tier" style={{ color: p.accent }}>{p.tier}</div>
+                <h3>{p.title}</h3>
+                <div className="aid-package-meta">
+                  <span>{p.duration}</span>
+                  <span>·</span>
+                  <span>{p.price}</span>
+                </div>
+                <p>{p.desc}</p>
+                <ul className="aid-package-outcomes">
+                  {p.outcomes.map((o) => (
+                    <li key={o}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={p.accent} strokeWidth="3"><path d="M5 13l4 4L19 7"/></svg>
+                      {o}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={`mailto:bilgi@mustafayilmaz.art?subject=${encodeURIComponent(`AI Danışmanlık — ${p.title}`)}`}
+                  className="aid-package-cta"
+                  style={{ background: p.accent, borderColor: p.accent }}
+                >
+                  {p.cta} →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Hizmetler */}
       <section className="aid-services-section" id="hizmetler">
         <div className="aid-inner">
-          <div className="section-label">Hizmetler</div>
-          <h2 className="section-title">Hangi <em>İşler</em> Otomatikleşir?</h2>
-          <p className="section-subtitle">Aşağıdaki hizmetler modüler. Hepsini birden almak zorunda değilsiniz; size en çok zaman ve para kazandıracak olanla başlıyoruz.</p>
+          <div className="section-label">Detaylar</div>
+          <h2 className="section-title">Tam Kurulumda Hangi <em>İşler</em> Otomatikleşir?</h2>
+          <p className="section-subtitle">Yukarıdaki paketler bu modüllerden birleşiyor. Her klinik için kombinasyon farklı — keşif görüşmesinde size özel olanı seçiyoruz.</p>
           <div className="aid-services-grid">
             {services.map((s) => (
               <div key={s.n} className="aid-service-card">

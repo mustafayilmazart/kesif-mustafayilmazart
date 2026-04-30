@@ -269,6 +269,62 @@ export default function Home() {
 
   return (
     <>
+      {/* SEO/AI fallback — JS yokken bile crawler ve LLM'ler tüm bilgiyi okur */}
+      <noscript>
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "40px 20px", fontFamily: "system-ui,sans-serif", lineHeight: 1.6 }}>
+          <h1>Mustafa Yılmaz — Danışman · AI Engineer · Eğitmen · AI Artist</h1>
+          <p><strong>14+ yıl psikiyatri hemşireliği</strong>, BAHAR Bağımlılık Tedavi Merkezi&apos;nde danışmanlık. <strong>Psikoloji (Klinik)</strong> yüksek lisansı (Nişantaşı + Doğuş Üniversitesi). NLP Trainer, ICF prensipli yaşam koçu, Manevi Danışmanlık sertifikalı.</p>
+          <p>2021&apos;den beri AI Engineer olarak 80+ projede yapay zeka orkestrasyonu yapıyorum. Kendi açık kaynak araçlarımı geliştiriyor, KEŞİF Akademi&apos;de 3.700+ öğrenciye eğitim veriyorum.</p>
+
+          <h2>Uzmanlık Alanları</h2>
+          <ul>
+            <li><strong>Psikoloji (Klinik) &amp; Bağımlılık Danışmanlığı</strong> — BAHAR Merkezinde rehabilitasyon, CBT, NLP, SAMBA</li>
+            <li><strong>Maneviyat Danışmanlığı &amp; Yaşam Koçluğu</strong> — manevi farkındalık ve duygusal zeka</li>
+            <li><strong>AI Engineer &amp; Vibe Coding</strong> — AI ajanları, çoklu model orkestrasyonu, prompt engineering</li>
+            <li><strong>WordPress &amp; Grafik Tasarım</strong> — sağlık profesyonelleri için dijital varlık</li>
+            <li><strong>Eğitim &amp; İçerik Üretimi</strong> — Udemy, YouTube, Keşif Akademi</li>
+            <li><strong>Hemşirelik &amp; Sağlık Teknolojisi</strong> — HES yazılım, İyilik Hali Platformu</li>
+            <li><strong>AI Sanat &amp; Müzik Prodüksiyonu</strong> — Suno, AI Art</li>
+          </ul>
+
+          <h2>Geliştirdiğim Yazılımlar</h2>
+          <ul>
+            <li><a href="https://kesif.app">kesif.app</a> — Keşif Portal (ana platform)</li>
+            <li><a href="https://iyilikhali.tr">iyilikhali.tr</a> — İyilik Hali Platformu</li>
+            <li><a href="https://terapist.io">terapist.io</a> — Terapist Pro</li>
+            <li><a href="https://tooleo.app">tooleo.app</a> — Günlük dijital araçlar</li>
+            <li><a href="https://aile.kesif.app">aile.kesif.app</a> — Aile içi iletişim</li>
+            <li><a href="https://maneviyat.kesif.app">maneviyat.kesif.app</a> — Manevi danışmanlık AI</li>
+            <li><a href="https://ikra.kesif.app">ikra.kesif.app</a>, <a href="https://hafiz.kesif.app">hafiz.kesif.app</a>, <a href="https://tahkik.kesif.app">tahkik.kesif.app</a>, <a href="https://zirh.kesif.app">zirh.kesif.app</a></li>
+          </ul>
+
+          <h2>Açık Kaynak Projeler</h2>
+          <ul>
+            <li><a href="https://github.com/mustafayilmazart/kesif-avukat-mcp">kesif-avukat-mcp</a> — KVKK/GDPR uyumluluk tarayıcısı</li>
+            <li><a href="https://github.com/mustafayilmazart/kesif-capraz-kontrol">kesif-capraz-kontrol</a> — Multi-LLM kod review</li>
+            <li><a href="https://github.com/mustafayilmazart/kesif-udemy-mcp">kesif-udemy-mcp</a> — Udemy eğitmen API entegrasyonu</li>
+            <li><a href="https://github.com/mustafayilmazart/kesif-mcp-orkestratori">kesif-mcp-orkestratori</a> — MCP sync aracı</li>
+          </ul>
+
+          <h2>Rakamlarla</h2>
+          <p>14+ yıl sağlık deneyimi · 80+ AI projesi · 3.700+ Udemy öğrencisi · 233+ değerlendirme · 12+ uzmanlık alanı</p>
+
+          <h2>Hizmetler</h2>
+          <p><a href="/ai-danismanligi">Sağlık kurumları için AI danışmanlığı</a> — Klinikler, terapistler, doktorlar için randevu otomasyonu, KVKK uyumlu altyapı, AI asistan, içerik pipeline&apos;ı.</p>
+
+          <h2>İletişim</h2>
+          <p>Email: <a href="mailto:bilgi@mustafayilmaz.art">bilgi@mustafayilmaz.art</a></p>
+          <p>
+            <a href="https://www.linkedin.com/in/kpmustafayilmaz">LinkedIn</a> ·
+            <a href="https://github.com/mustafayilmazart">GitHub</a> ·
+            <a href="https://medium.com/@kp.mustafayilmaz">Medium</a> ·
+            <a href="https://youtube.com/@kesiforg">YouTube</a> ·
+            <a href="https://www.udemy.com/user/kesfet-kendini/">Udemy</a>
+          </p>
+          <p><a href="/blog">Blog</a> · <a href="/art">Art</a> · <a href="/yazilimlar">Yazılımlar</a> · <a href="/ai-danismanligi">AI Danışmanlık</a></p>
+        </div>
+      </noscript>
+
       {/* Navbar */}
       <nav className="site-nav" id="navbar">
         <a href="/" className="nav-logo">
