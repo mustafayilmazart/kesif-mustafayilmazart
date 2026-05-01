@@ -248,7 +248,7 @@
       </a>
     </div>
     <p class="aid-cta-meta">
-      <strong>bilgi@mustafayilmaz.art</strong> · 7 gün içinde dönüş · KVKK uyumlu iletişim
+      <strong>bilgi&#64;mustafayilmaz&#46;art</strong> · 7 gün içinde dönüş · KVKK uyumlu iletişim
     </p>
   </div>
 </section>

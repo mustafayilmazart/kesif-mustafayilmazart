@@ -178,6 +178,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="tr_TR" />
   <meta property="og:site_name" content="mustafayilmaz.art" />
+  <meta property="og:url" content="https://mustafayilmaz.art/" />
+  <meta property="og:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://mustafayilmaz.art/og-image.jpg" />
   {@html `<script type="application/ld+json">${JSON.stringify(personSchema)}</script>`}
   {@html `<script type="application/ld+json">${JSON.stringify(websiteSchema)}</script>`}
   {@html `<script type="application/ld+json">${JSON.stringify(navigationSchema)}</script>`}
