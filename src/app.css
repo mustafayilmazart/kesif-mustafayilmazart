@@ -637,6 +637,64 @@ html, body{overflow-x:clip}
   gap:6px
 }
 
+/* === Eğitim Programları Teaser === */
+.programs-teaser{padding:90px 40px;background:linear-gradient(135deg,var(--charcoal),#1f3333);color:#fff}
+.programs-teaser-inner{max-width:1200px;margin:0 auto;text-align:center}
+.programs-teaser .section-label{color:var(--yellow);justify-content:center}
+.programs-teaser .section-label::before{background:var(--yellow)}
+.programs-teaser .section-title{color:#fff}
+.programs-teaser .section-title em{color:var(--yellow);font-style:italic}
+.programs-teaser .section-subtitle{color:rgba(255,255,255,.7);margin:0 auto 40px;max-width:680px}
+.programs-teaser-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:36px}
+.programs-teaser-card{position:relative;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:24px;text-decoration:none;color:inherit;text-align:left;overflow:hidden;transition:all .3s}
+.programs-teaser-card:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+.ptc-accent{position:absolute;top:0;left:0;right:0;height:3px}
+.ptc-meta{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--yellow);letter-spacing:.5px;margin-bottom:8px;text-transform:uppercase}
+.programs-teaser-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:#fff;margin:0 0 6px;line-height:1.3}
+.programs-teaser-card p{font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.55;margin:0 0 12px}
+.ptc-link{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--teal-light);font-weight:600}
+.programs-teaser-cta .btn-primary{background:var(--yellow);color:var(--charcoal);font-weight:700}
+.programs-teaser-cta .btn-primary:hover{background:#fff}
+
+/* === Kurumlar Wall === */
+.institutions-section{padding:90px 40px;background:#fff}
+.institutions-inner{max-width:1200px;margin:0 auto}
+.inst-block{margin-top:36px}
+.inst-cat-label{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;padding-bottom:8px;border-bottom:1px dashed var(--border)}
+.inst-row{display:flex;flex-wrap:wrap;gap:10px}
+.inst-chip{background:var(--warm-gray);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:2px;transition:all .25s}
+.inst-chip:hover{background:#fff;border-color:var(--teal);transform:translateY(-2px);box-shadow:0 6px 18px rgba(33,146,149,.08)}
+.inst-name{font-size:.85rem;font-weight:600;color:var(--charcoal)}
+.inst-city{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--text-light);letter-spacing:.3px}
+
+/* === Video Referansları === */
+.videos-section{padding:90px 40px;background:var(--warm-gray)}
+.videos-inner{max-width:1200px;margin:0 auto}
+.videos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:40px}
+.video-card{display:block;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:all .3s}
+.video-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(33,146,149,.1);border-color:var(--teal)}
+.video-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#dc2626,#7f1d1d);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);position:relative}
+.video-channel{position:absolute;bottom:10px;left:12px;background:rgba(13,17,23,.7);color:#fff;font-size:.7rem;padding:4px 10px;border-radius:50px;font-family:'JetBrains Mono',monospace}
+.video-body{padding:18px 20px}
+.video-body h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--charcoal);margin:0 0 8px;line-height:1.35}
+.video-link{font-family:'JetBrains Mono',monospace;font-size:.76rem;color:var(--teal);font-weight:600}
+
+/* === Topluluk === */
+.community-section{padding:80px 40px;background:linear-gradient(135deg,var(--teal-glow),rgba(225,217,72,.06))}
+.community-inner{max-width:1100px;margin:0 auto}
+.community-card{background:#fff;border:1px solid var(--border);border-radius:24px;padding:50px 44px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;box-shadow:0 14px 40px rgba(33,146,149,.06)}
+.comm-icon{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-light));color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.community-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--charcoal);margin:8px 0 12px;line-height:1.25}
+.community-text h2 em{color:var(--teal);font-style:italic}
+.community-text p{color:var(--text-muted);line-height:1.7;margin:0 0 22px}
+.community-actions{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:768px){
+  .programs-teaser,.institutions-section,.videos-section,.community-section{padding:60px 24px}
+  .community-card{grid-template-columns:1fr;padding:32px 24px;text-align:center;gap:20px}
+  .comm-icon{margin:0 auto}
+  .community-actions{justify-content:center}
+}
+
 /* === Geliştirdiğim Yazılımlar === */
 .apps-teaser{padding:90px 40px;background:linear-gradient(135deg,#fefdfb 0%,#f5f4ee 100%);text-align:center}
 .apps-teaser-inner{max-width:780px;margin:0 auto}

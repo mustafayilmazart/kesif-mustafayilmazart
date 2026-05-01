@@ -3,6 +3,18 @@
   import { personSchema, websiteSchema, navigationSchema } from '$lib/schema';
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import { institutions, institutionLabels, type Institution } from '$lib/data/institutions';
+  import { programs } from '$lib/data/programs';
+
+  const institutionCats = Object.keys(institutionLabels) as Institution['category'][];
+  const programsTeaser = programs.slice(0, 3);
+
+  // YouTube referans videoları — Mustafa'nın @kesiforg kanalından öne çıkanlar (placeholder ID'ler)
+  const videos = [
+    { id: 'placeholder1', title: 'Bağımlılığı Anlamak — Beyin & İrade', channel: 'KEŞİF Akademi' },
+    { id: 'placeholder2', title: 'Yapay Zeka ve Klinik İçgörü', channel: 'KEŞİF Akademi' },
+    { id: 'placeholder3', title: 'Nefs, Niyet ve Vibe Coding', channel: 'KEŞİF Akademi' }
+  ];
 
   const CFG = {
     email: 'bilgi@mustafayilmaz.art',
@@ -360,6 +372,58 @@
   </div>
 </section>
 
+<!-- Eğitim Programları Teaser -->
+<section class="programs-teaser" id="egitimler-teaser">
+  <div class="programs-teaser-inner">
+    <div class="section-label reveal">Eğitim & Danışmanlık</div>
+    <h2 class="section-title reveal">Yöntem teorik değil, <em>vakadan</em> damıtılmış.</h2>
+    <p class="section-subtitle reveal">
+      Klinikten kurumsala, manevi rehberlikten yapay zeka atölyesine — 8 yapılandırılmış program.
+      BAHAR sahası ve KEŞİF Akademi'de sınanmış yöntemlerle.
+    </p>
+    <div class="programs-teaser-grid reveal">
+      {#each programsTeaser as p (p.slug)}
+        <a href="/egitimler" class="programs-teaser-card">
+          <div class="ptc-accent" style:background={p.accent}></div>
+          <div class="ptc-meta">{p.duration}</div>
+          <h3>{p.title}</h3>
+          <p>{p.audience}</p>
+          <span class="ptc-link">Detay →</span>
+        </a>
+      {/each}
+    </div>
+    <div class="programs-teaser-cta reveal">
+      <a href="/egitimler" class="btn-primary">Tüm Programlar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Kurumlar Wall -->
+<section class="institutions-section reveal" id="kurumlar">
+  <div class="institutions-inner">
+    <div class="section-label">Birlikte Yürüdüklerim</div>
+    <h2 class="section-title">Sahanın <em>İçinden</em> Geldim.</h2>
+    <p class="section-subtitle">
+      14+ yıl boyunca çalıştığım, eğitim aldığım, sertifikalandığım ve içerik ürettiğim kurumlar.
+      Her biri yöntemime ayrı bir tat ve titizlik kattı.
+    </p>
+    {#each institutionCats as cat (cat)}
+      {@const list = institutions.filter((i) => i.category === cat)}
+      <div class="inst-block">
+        <div class="inst-cat-label">{institutionLabels[cat]}</div>
+        <div class="inst-row">
+          {#each list as i (i.name)}
+            <div class="inst-chip" title={i.name}>
+              <span class="inst-name">{i.shortLabel ?? i.name}</span>
+              {#if i.city}<span class="inst-city">{i.city}</span>{/if}
+            </div>
+          {/each}
+        </div>
+      </div>
+    {/each}
+  </div>
+</section>
+
 <!-- Yazılımlar Teaser -->
 <section class="apps-teaser" id="yazilimlar">
   <div class="apps-teaser-inner">
@@ -400,6 +464,55 @@
           <span class="github-link">View on GitHub →</span>
         </a>
       {/each}
+    </div>
+  </div>
+</section>
+
+<!-- Video Referansları -->
+<section class="videos-section" id="videolar">
+  <div class="videos-inner">
+    <div class="section-label reveal">Video İçerikler</div>
+    <h2 class="section-title reveal">YouTube'da <em>Yayında</em>.</h2>
+    <p class="section-subtitle reveal">
+      Bağımlılık nörobilimi, klinik içgörü, manevi rehberlik ve yapay zeka üzerine düzenli içerikler — KEŞİF Akademi YouTube kanalında.
+    </p>
+    <div class="videos-grid reveal">
+      {#each videos as v (v.id)}
+        <a href={CFG.youtube} target="_blank" rel="noopener noreferrer" class="video-card">
+          <div class="video-thumb">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="56" height="56" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <div class="video-channel">{v.channel}</div>
+          </div>
+          <div class="video-body">
+            <h3>{v.title}</h3>
+            <span class="video-link">Kanala Git →</span>
+          </div>
+        </a>
+      {/each}
+    </div>
+  </div>
+</section>
+
+<!-- Topluluk -->
+<section class="community-section reveal" id="topluluk">
+  <div class="community-inner">
+    <div class="community-card">
+      <div class="comm-icon">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      </div>
+      <div class="community-text">
+        <div class="section-label">Keşif Topluluğu</div>
+        <h2>Birlikte <em>öğrenelim</em>.</h2>
+        <p>
+          KEŞİF Akademi öğrencileri, danışanları ve dijital sağlık alanında çalışan profesyoneller için kurulan topluluğa katıl —
+          haftalık ipuçları, soru-cevap ve etkinlik duyuruları.
+        </p>
+        <div class="community-actions">
+          <a href={CFG.youtube} target="_blank" rel="noopener noreferrer" class="btn-primary">YouTube'da Bağlan</a>
+          <a href={CFG.substack} target="_blank" rel="noopener noreferrer" class="btn-secondary">Bültene Abone Ol</a>
+          <a href="/sss" class="btn-secondary">Sıkça Sorulanlar</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

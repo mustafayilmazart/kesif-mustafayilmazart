@@ -10,12 +10,14 @@
     <div class="footer-links">
       <a href="/#hakkimda">Hikayem</a>
       <a href="/#uzmanlik">Uzmanlık</a>
+      <a href="/egitimler">Eğitimler</a>
       <a href="/ai-danismanligi">AI Danışmanlık</a>
       <a href="/yazilimlar">Yazılımlar</a>
       <a href="/#github">Açık Kaynak</a>
       <a href="/#akademi">Keşif Akademi</a>
       <a href="/blog">Blog</a>
       <a href="/art">Art</a>
+      <a href="/sss">SSS</a>
       <a href="mailto:bilgi@mustafayilmaz.art">İletişim</a>
       <a href="/gizlilik">Gizlilik &amp; KVKK</a>
     </div>

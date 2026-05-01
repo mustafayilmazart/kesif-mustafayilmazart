@@ -41,10 +41,12 @@
       <li><a href="/#hakkimda">Hikayem</a></li>
       <li><a href="/#uzmanlik">Uzmanlık</a></li>
     {/if}
+    <li><a href="/egitimler" class={isActive('/egitimler')}>Eğitimler</a></li>
     <li><a href="/ai-danismanligi" class={isActive('/ai-danismanligi')}>AI Danışmanlık</a></li>
     <li><a href="/yazilimlar" class={isActive('/yazilimlar')}>Yazılımlar</a></li>
     <li><a href="/blog" class={isActive('/blog')}>Blog</a></li>
     <li><a href="/art" class={isActive('/art')}>Art</a></li>
+    <li><a href="/sss" class={isActive('/sss')}>SSS</a></li>
     <li><a href="mailto:bilgi@mustafayilmaz.art" class="nav-cta">İletişime Geç</a></li>
   </ul>
   <button class="mobile-menu-btn" id="menuBtn" aria-label="Menü" onclick={toggleMobile} type="button">

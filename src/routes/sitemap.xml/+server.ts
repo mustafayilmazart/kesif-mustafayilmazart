@@ -7,9 +7,11 @@ const SITE = 'https://mustafayilmaz.art';
 
 const staticRoutes = [
   { path: '/', priority: '1.0', changefreq: 'monthly' },
+  { path: '/egitimler', priority: '0.95', changefreq: 'monthly' },
   { path: '/ai-danismanligi', priority: '0.9', changefreq: 'monthly' },
   { path: '/yazilimlar', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog', priority: '0.8', changefreq: 'weekly' },
+  { path: '/sss', priority: '0.7', changefreq: 'monthly' },
   { path: '/art', priority: '0.6', changefreq: 'monthly' },
   { path: '/gizlilik', priority: '0.3', changefreq: 'yearly' }
 ];
