@@ -43,6 +43,7 @@
     {/if}
     <li><a href="/egitimler" class={isActive('/egitimler')}>Eğitimler</a></li>
     <li><a href="/ai-danismanligi" class={isActive('/ai-danismanligi')}>AI Danışmanlık</a></li>
+    <li><a href="/skills" class={isActive('/skills')}>Skills</a></li>
     <li><a href="/yazilimlar" class={isActive('/yazilimlar')}>Yazılımlar</a></li>
     <li><a href="/blog" class={isActive('/blog')}>Blog</a></li>
     <li><a href="/art" class={isActive('/art')}>Art</a></li>

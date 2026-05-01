@@ -637,6 +637,13 @@ html, body{overflow-x:clip}
   gap:6px
 }
 
+/* === Skills Teaser === */
+.skills-teaser{padding:90px 40px;background:linear-gradient(135deg,rgba(33,146,149,.06),rgba(225,217,72,.04));text-align:center}
+.skills-teaser-inner{max-width:780px;margin:0 auto}
+.skills-teaser-cta{margin-top:32px}
+.skills-teaser-cta .btn-primary{display:inline-flex;align-items:center;gap:8px}
+@media(max-width:768px){.skills-teaser{padding:60px 24px}}
+
 /* === Eğitim Programları Teaser === */
 .programs-teaser{padding:90px 40px;background:linear-gradient(135deg,var(--charcoal),#1f3333);color:#fff}
 .programs-teaser-inner{max-width:1200px;margin:0 auto;text-align:center}

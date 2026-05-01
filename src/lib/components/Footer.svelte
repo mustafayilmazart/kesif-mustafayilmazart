@@ -12,6 +12,7 @@
       <a href="/#uzmanlik">Uzmanlık</a>
       <a href="/egitimler">Eğitimler</a>
       <a href="/ai-danismanligi">AI Danışmanlık</a>
+      <a href="/skills">Skills</a>
       <a href="/yazilimlar">Yazılımlar</a>
       <a href="/#github">Açık Kaynak</a>
       <a href="/#akademi">Keşif Akademi</a>

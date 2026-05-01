@@ -9,13 +9,6 @@
   const institutionCats = Object.keys(institutionLabels) as Institution['category'][];
   const programsTeaser = programs.slice(0, 3);
 
-  // YouTube referans videoları — Mustafa'nın @kesiforg kanalından öne çıkanlar (placeholder ID'ler)
-  const videos = [
-    { id: 'placeholder1', title: 'Bağımlılığı Anlamak — Beyin & İrade', channel: 'KEŞİF Akademi' },
-    { id: 'placeholder2', title: 'Yapay Zeka ve Klinik İçgörü', channel: 'KEŞİF Akademi' },
-    { id: 'placeholder3', title: 'Nefs, Niyet ve Vibe Coding', channel: 'KEŞİF Akademi' }
-  ];
-
   const CFG = {
     email: 'bilgi@mustafayilmaz.art',
     medium: 'https://medium.com/@kp.mustafayilmaz',
@@ -398,32 +391,6 @@
   </div>
 </section>
 
-<!-- Kurumlar Wall -->
-<section class="institutions-section reveal" id="kurumlar">
-  <div class="institutions-inner">
-    <div class="section-label">Birlikte Yürüdüklerim</div>
-    <h2 class="section-title">Sahanın <em>İçinden</em> Geldim.</h2>
-    <p class="section-subtitle">
-      14+ yıl boyunca çalıştığım, eğitim aldığım, sertifikalandığım ve içerik ürettiğim kurumlar.
-      Her biri yöntemime ayrı bir tat ve titizlik kattı.
-    </p>
-    {#each institutionCats as cat (cat)}
-      {@const list = institutions.filter((i) => i.category === cat)}
-      <div class="inst-block">
-        <div class="inst-cat-label">{institutionLabels[cat]}</div>
-        <div class="inst-row">
-          {#each list as i (i.name)}
-            <div class="inst-chip" title={i.name}>
-              <span class="inst-name">{i.shortLabel ?? i.name}</span>
-              {#if i.city}<span class="inst-city">{i.city}</span>{/if}
-            </div>
-          {/each}
-        </div>
-      </div>
-    {/each}
-  </div>
-</section>
-
 <!-- Yazılımlar Teaser -->
 <section class="apps-teaser" id="yazilimlar">
   <div class="apps-teaser-inner">
@@ -468,55 +435,6 @@
   </div>
 </section>
 
-<!-- Video Referansları -->
-<section class="videos-section" id="videolar">
-  <div class="videos-inner">
-    <div class="section-label reveal">Video İçerikler</div>
-    <h2 class="section-title reveal">YouTube'da <em>Yayında</em>.</h2>
-    <p class="section-subtitle reveal">
-      Bağımlılık nörobilimi, klinik içgörü, manevi rehberlik ve yapay zeka üzerine düzenli içerikler — KEŞİF Akademi YouTube kanalında.
-    </p>
-    <div class="videos-grid reveal">
-      {#each videos as v (v.id)}
-        <a href={CFG.youtube} target="_blank" rel="noopener noreferrer" class="video-card">
-          <div class="video-thumb">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="56" height="56" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            <div class="video-channel">{v.channel}</div>
-          </div>
-          <div class="video-body">
-            <h3>{v.title}</h3>
-            <span class="video-link">Kanala Git →</span>
-          </div>
-        </a>
-      {/each}
-    </div>
-  </div>
-</section>
-
-<!-- Topluluk -->
-<section class="community-section reveal" id="topluluk">
-  <div class="community-inner">
-    <div class="community-card">
-      <div class="comm-icon">
-        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-      </div>
-      <div class="community-text">
-        <div class="section-label">Keşif Topluluğu</div>
-        <h2>Birlikte <em>öğrenelim</em>.</h2>
-        <p>
-          KEŞİF Akademi öğrencileri, danışanları ve dijital sağlık alanında çalışan profesyoneller için kurulan topluluğa katıl —
-          haftalık ipuçları, soru-cevap ve etkinlik duyuruları.
-        </p>
-        <div class="community-actions">
-          <a href={CFG.youtube} target="_blank" rel="noopener noreferrer" class="btn-primary">YouTube'da Bağlan</a>
-          <a href={CFG.substack} target="_blank" rel="noopener noreferrer" class="btn-secondary">Bültene Abone Ol</a>
-          <a href="/sss" class="btn-secondary">Sıkça Sorulanlar</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Akademi -->
 <div class="akademi-section" id="akademi">
   <div class="akademi-inner">
@@ -545,37 +463,18 @@
   </div>
 </div>
 
-<!-- Process -->
-<div class="process-section" id="surecim">
-  <div class="process-inner">
-    <div class="section-label reveal">Çalışma Sürecim</div>
-    <h2 class="section-title reveal">Her Projede Aynı Öz, Farklı Form.</h2>
-    <p class="section-subtitle reveal">İster bir terapi süreci olsun ister bir web sitesi — yaklaşımım hep aynı: dinle, anla, inşa et, dönüştür.</p>
-    <div class="process-steps">
-      {#each process as p (p.n)}
-        <div class="process-step reveal">
-          <div class="step-number">{p.n}</div>
-          <h3>{p.t}</h3>
-          <p>{p.d}</p>
-        </div>
-      {/each}
+<!-- Skills Koleksiyonu Teaser -->
+<section class="skills-teaser" id="skills">
+  <div class="skills-teaser-inner">
+    <div class="section-label reveal">Claude Skills</div>
+    <h2 class="section-title reveal">50+ Sahada Sınanmış <em>Skill Koleksiyonu</em>.</h2>
+    <p class="section-subtitle reveal">
+      Klinik gözlem, eğitim üretimi, içerik pipeline'ı ve yapay zeka orkestrasyonundan damıtılmış Claude Code skill'leri.
+      Hepsi BAHAR / KEŞİF Akademi / mustafayilmaz.art üretim hattında çalışıyor — açık kaynak.
+    </p>
+    <div class="skills-teaser-cta reveal">
+      <a href="/skills" class="btn-primary">Skill Koleksiyonunu Aç →</a>
     </div>
-  </div>
-</div>
-
-<!-- Tools -->
-<section class="my-section">
-  <div style="text-align:center">
-    <div class="section-label reveal" style="justify-content:center">Araçlarım</div>
-    <h2 class="section-title reveal">Her İşin Doğru Aleti</h2>
-  </div>
-  <div class="tools-grid reveal">
-    {#each tools as t (t.n)}
-      <div class="tool-badge">
-        <span class="tool-dot" style:background={t.c}></span>
-        {t.n}
-      </div>
-    {/each}
   </div>
 </section>
 
@@ -599,6 +498,32 @@
     </div>
   </div>
 </div>
+
+<!-- Kurumlar Wall (sosyal kanıt) -->
+<section class="institutions-section reveal" id="kurumlar">
+  <div class="institutions-inner">
+    <div class="section-label">Birlikte Yürüdüklerim</div>
+    <h2 class="section-title">Sahanın <em>İçinden</em> Geldim.</h2>
+    <p class="section-subtitle">
+      14+ yıl boyunca çalıştığım, eğitim aldığım, sertifikalandığım ve içerik ürettiğim kurumlar.
+      Her biri yöntemime ayrı bir tat ve titizlik kattı.
+    </p>
+    {#each institutionCats as cat (cat)}
+      {@const list = institutions.filter((i) => i.category === cat)}
+      <div class="inst-block">
+        <div class="inst-cat-label">{institutionLabels[cat]}</div>
+        <div class="inst-row">
+          {#each list as i (i.name)}
+            <div class="inst-chip" title={i.name}>
+              <span class="inst-name">{i.shortLabel ?? i.name}</span>
+              {#if i.city}<span class="inst-city">{i.city}</span>{/if}
+            </div>
+          {/each}
+        </div>
+      </div>
+    {/each}
+  </div>
+</section>
 
 <!-- References -->
 <div class="references-section" id="referanslar">
@@ -671,6 +596,30 @@
         <p>Video içerikler, eğitimler ve daha fazlası.</p>
       </div>
     </a>
+  </div>
+</section>
+
+<!-- Topluluk -->
+<section class="community-section reveal" id="topluluk">
+  <div class="community-inner">
+    <div class="community-card">
+      <div class="comm-icon">
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      </div>
+      <div class="community-text">
+        <div class="section-label">Keşif Topluluğu</div>
+        <h2>Birlikte <em>öğrenelim</em>.</h2>
+        <p>
+          KEŞİF Akademi öğrencileri, danışanları ve dijital sağlık alanında çalışan profesyoneller için kurulan topluluğa katıl —
+          haftalık ipuçları, soru-cevap ve etkinlik duyuruları.
+        </p>
+        <div class="community-actions">
+          <a href={CFG.youtube} target="_blank" rel="noopener noreferrer" class="btn-primary">YouTube'da Bağlan</a>
+          <a href={CFG.substack} target="_blank" rel="noopener noreferrer" class="btn-secondary">Bültene Abone Ol</a>
+          <a href="/sss" class="btn-secondary">Sıkça Sorulanlar</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
