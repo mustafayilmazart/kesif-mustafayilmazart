@@ -1,4 +1,6 @@
 import { posts } from '$lib/data/posts';
+import { programs } from '$lib/data/programs';
+import { skills } from '$lib/data/skills';
 import type { RequestHandler } from './$types';
 
 export const prerender = true;
@@ -36,6 +38,24 @@ export const GET: RequestHandler = async () => {
     <lastmod>${p.date}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>`);
+  }
+
+  // Eğitim programları (anchor route — şimdilik tek sayfa)
+  for (const p of programs) {
+    urls.push(`<url>
+    <loc>${SITE}/egitimler#${p.slug}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>`);
+  }
+
+  // Skills (anchor route — tek sayfada filtreli)
+  for (const s of skills) {
+    urls.push(`<url>
+    <loc>${SITE}/skills#${s.slug}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>`);
   }
 

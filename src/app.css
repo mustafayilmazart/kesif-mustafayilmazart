@@ -695,6 +695,7 @@ html, body{overflow-x:clip}
 .community-text h2 em{color:var(--teal);font-style:italic}
 .community-text p{color:var(--text-muted);line-height:1.7;margin:0 0 22px}
 .community-actions{display:flex;gap:12px;flex-wrap:wrap}
+.community-newsletter{margin:0 0 22px}
 @media(max-width:768px){
   .programs-teaser,.institutions-section,.videos-section,.community-section{padding:60px 24px}
   .community-card{grid-template-columns:1fr;padding:32px 24px;text-align:center;gap:20px}

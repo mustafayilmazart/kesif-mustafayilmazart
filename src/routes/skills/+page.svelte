@@ -153,7 +153,7 @@
       <div class="skills-grid">
         {#each filtered as s (s.slug)}
           {@const cat = skillCategories[s.category]}
-          <article class="skill-card" class:highlight={s.highlight}>
+          <a href="/skills/{s.slug}" class="skill-card" class:highlight={s.highlight}>
             <div class="skill-cat-tag" style:color={cat.accent} style:background={cat.accent + '14'}>
               <span>{cat.icon}</span>
               {cat.label}
@@ -173,7 +173,8 @@
                 {/each}
               </div>
             </div>
-          </article>
+            <span class="skill-arrow">Detay →</span>
+          </a>
         {/each}
       </div>
     {/if}
@@ -248,7 +249,8 @@
   .empty-state { text-align: center; padding: 60px 24px; color: var(--text-muted); }
   .empty-state p { margin: 0 0 18px; }
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
-  .skill-card { position: relative; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 12px; transition: all .25s; }
+  .skill-card { position: relative; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 12px; transition: all .25s; text-decoration: none; color: inherit; }
+  .skill-arrow { font-family: 'JetBrains Mono', monospace; font-size: .74rem; color: var(--teal); font-weight: 600; align-self: flex-end; }
   .skill-card:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(33,146,149,.08); border-color: rgba(33,146,149,.3); }
   .skill-card.highlight { border-color: var(--teal); box-shadow: 0 8px 24px rgba(33,146,149,.12); }
   .skill-card.highlight::before { content: '⭐'; position: absolute; top: -10px; right: 14px; background: var(--yellow); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .75rem; }

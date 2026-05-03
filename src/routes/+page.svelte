@@ -5,6 +5,7 @@
   import Footer from '$lib/components/Footer.svelte';
   import { institutions, institutionLabels, type Institution } from '$lib/data/institutions';
   import { programs } from '$lib/data/programs';
+  import NewsletterForm from '$lib/components/NewsletterForm.svelte';
 
   const institutionCats = Object.keys(institutionLabels) as Institution['category'][];
   const programsTeaser = programs.slice(0, 3);
@@ -613,9 +614,14 @@
           KEŞİF Akademi öğrencileri, danışanları ve dijital sağlık alanında çalışan profesyoneller için kurulan topluluğa katıl —
           haftalık ipuçları, soru-cevap ve etkinlik duyuruları.
         </p>
+
+        <div class="community-newsletter">
+          <NewsletterForm />
+        </div>
+
         <div class="community-actions">
-          <a href={CFG.youtube} target="_blank" rel="noopener noreferrer" class="btn-primary">YouTube'da Bağlan</a>
-          <a href={CFG.substack} target="_blank" rel="noopener noreferrer" class="btn-secondary">Bültene Abone Ol</a>
+          <a href={CFG.youtube} target="_blank" rel="noopener noreferrer" class="btn-secondary">YouTube'da Bağlan</a>
+          <a href={CFG.substack} target="_blank" rel="noopener noreferrer" class="btn-secondary">Substack'te Aç</a>
           <a href="/sss" class="btn-secondary">Sıkça Sorulanlar</a>
         </div>
       </div>
