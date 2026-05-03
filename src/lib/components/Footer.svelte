@@ -14,6 +14,7 @@
       <a href="/ai-danismanligi">AI Danışmanlık</a>
       <a href="/skills">Skills</a>
       <a href="/yazilimlar">Yazılımlar</a>
+      <a href="/vakalar">Vakalar</a>
       <a href="/#github">Açık Kaynak</a>
       <a href="/#akademi">Keşif Akademi</a>
       <a href="/blog">Blog</a>

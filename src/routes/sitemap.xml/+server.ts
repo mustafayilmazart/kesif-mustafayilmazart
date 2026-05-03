@@ -13,6 +13,7 @@ const staticRoutes = [
   { path: '/ai-danismanligi', priority: '0.9', changefreq: 'monthly' },
   { path: '/skills', priority: '0.85', changefreq: 'weekly' },
   { path: '/yazilimlar', priority: '0.8', changefreq: 'monthly' },
+  { path: '/vakalar', priority: '0.75', changefreq: 'monthly' },
   { path: '/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/sss', priority: '0.7', changefreq: 'monthly' },
   { path: '/art', priority: '0.6', changefreq: 'monthly' },

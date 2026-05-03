@@ -14,14 +14,77 @@
 
   function buildScenario(slug: string): string {
     const scenarios: Record<string, string> = {
-      'bdt-modul-uretici': 'BAHAR\'da yeni gelen bir bağımlı için 5 modüllük psikoeğitim setine ihtiyacın var. PDF\'ten 30 dakikada video çıkarıyorsun: kanıta dayalı script + Türkçe seslendirme + altyazı + görseller.',
+      // Klinik
+      'bdt-modul-uretici': 'BAHAR\'da yeni gelen bir bağımlı için 5 modüllük psikoeğitim setine ihtiyacın var. PDF\'ten 30 dakikada video çıkarıyorsun: kanıta dayalı script + Türkçe seslendirme + altyazı + bölüm görselleri.',
       'kvkk-uyum-tarayici': 'Kliniğin web formu hazır ama hukuki tarama yapılmadı. Avukat MCP ile aydınlatma metni şablonu çıkar, eksik alanları tespit et, kullanıcıya gönderilebilir hale getir.',
-      'udemy-video-pipeline': 'Yeni bir Udemy kursu üreteceksin. Konu bağlamında NotebookLM araştırmasıyla başla → Türkçe ders scripti çıkar → ElevenLabs ile seslendir → bölüm bazlı video montaj. 8 saat manuel iş, 90 dakikaya iniyor.',
+      'samba-aile-yardimcisi': 'Bir bağımlının kardeşi yardım istedi. SAMBA aile modülünden uyarlanmış 6 haftalık programı kişiye özel olarak çıkarır: sağlıklı sınır metni, kriz protokolü, iletişim defteri, kendine bakım çizelgesi.',
+
+      // Eğitim
+      'udemy-video-pipeline': 'Yeni bir Udemy kursu üreteceksin. NotebookLM araştırması → Türkçe ders scripti → ElevenLabs seslendirme → bölüm bazlı video montaj. 8 saat manuel iş, 90 dakikaya iniyor.',
+      'kurs-mufredat-yapici': '"Stres yönetimi" konusunda 4 haftalık kurs vermek istiyorsun. Skill modüller, dersler, ödevler, quizler ve öğrenme çıktılarını Bloom taksonomisine göre seviyelendirir. Udemy formatına hazır.',
+      'sinif-ici-ai-rubrigi': 'Lise öğretmenisin, öğrencilerin AI ile ödev yapmasını yapılandırmak istiyorsun. Skill her ödev tipine göre rubrik üretir: hangi görevde AI olur/olmaz, değerlendirme kriterleri, telif çerçevesi.',
+      'quiz-uretici': 'Bağımlılık eğitimi sonunda 30 soruluk değerlendirme istiyorsun. Skill konu metninden çoktan seçmeli, doğru-yanlış ve açık uçlu sorular üretir. Her soru için Bloom seviyesi etiketler.',
+
+      // İçerik
       'video-montaj': 'Çekilen ham videoyu Reels (9:16) ve YouTube (16:9) versiyonlarıyla beraber çıkar. Altyazı yak, intro/outro ekle, ses normalizasyonu yap.',
       'reels-pipeline': 'Bağımlılık temalı 30 saniyelik bir Reels üreteceksin. Hook + 3 mesaj + CTA. Sistem script yazar, sesi üretir, lip-sync\'li görseli oluşturur, montajı yapar, caption + 30 hashtag verir.',
+      'elevenlabs-tts': 'Bir Udemy ders bölümü için 12 dakikalık Türkçe seslendirme üretmen lazım. Skill ElevenLabs ile yapar, kalite iyi değilse Edge-TTS\'e otomatik düşer. Çok karakterli diyalog için ses ayrımı sağlar.',
+      'islami-video-pipeline': 'Bir hadis-i şerif konulu 60 saniyelik whiteboard video üreteceksin. Skill ehl-i sünnet usulüne göre script yazar, Türkçe seslendirir, Toonly/Doodly çizimleriyle 9:16 montaja dönüştürür.',
+      'podcast-plani': 'KEŞİF Akademi adına 12 bölümlük bir podcast sezonu kurguluyorsun. Skill konu haritası, bölüm yapısı, soru listesi, transkript çıkarımı ve gösteri notlarını üretir.',
+
+      // Sosyal
+      'instagram-manager': 'Bir reels için 2FA korumalı Instagram hesabından paylaşım yapacaksın. Skill instagrapi ile login, caption+hashtag yükleme, story zincirleme ve performans raporu çıkarır.',
+      'instagram-orkestrasyon': '"Önümüzdeki hafta KEŞİF için 5 reels + 3 story + 2 carousel üret ve takvime ekle" dediğinde, skill araştırmadan paylaşıma kadar tüm zinciri yönetir.',
+      'caption-hashtag': 'Bir görseli skill\'e veriyorsun. Marka tonuna uygun Türkçe caption + 30 hashtag (popüler / orta / niş karışımı) çıkarır. KEŞİF ya da kişisel ton seçenekli.',
+      'sosyal-medya-takvimi': 'Aylık içerik planı hazırlıyorsun. Skill tema, format (reel/post/story), platform ve optimum saat önerisiyle Excel/Notion takvimi çıkarır.',
+
+      // AI & Otomasyon
       'kesif-orkestrator': '"Bu hafta için Instagram + YouTube + Substack içeriklerini üret ve takvime kaydet" gibi karmaşık görev verdiğinde, hangi MCP ve skill\'in ne sırayla çalışacağını koordine eder.',
+      'mcp-orkestratori': 'Yeni bir bilgisayara geçtin, 70+ MCP\'yi tek tek tanımlamak yerine kesif-mcp-registry.json\'dan tek komutla Claude Desktop + Code + Cursor için sync ederim. .env secret yönetimi ve dry-run dahil.',
+      'capraz-kontrol': 'Bir auth modülü yazdın, deploy öncesi 4 farklı LLM\'e (Claude, Gemini, Codex, Qwen) inceletmek istiyorsun. Skill paralel review yapar, birleşik Markdown raporda kritik+öneri+güvenlik bulgularını sıralar.',
+      'mirofish-tahmin': 'Yeni bir BDT modül yayını öncesi danışan reaksiyonunu tahmin etmek istiyorsun. Multi-agent simülasyonla farklı persona tepkilerini, finansal etkiyi ve kamuoyu refleksini çıkarır.',
+
+      // Araştırma
+      'notebooklm': 'Yeni bir blog yazısı için 6 makale + 3 podcast + 2 PDF kaynağını analiz edeceksin. Skill NotebookLM\'e kaynakları yükler, soru-cevap akışını kurar, mind-map ve flashcard üretir.',
+      'yt-search': '"Türkiye\'de bağımlılık" konulu son 1 ay içindeki YouTube videolarını topluyor. Skill yt-dlp ile arama yapar, metadata\'yı tablo halinde verir, embed listesi çıkarır.',
+      'yt-notebooklm-pipeline': 'Bir konuda 10 YouTube videosunu hızlıca anlamak ve özet/blog/script üretmek istiyorsun. Skill scrape → NotebookLM yükleme → analiz → içerik üretimi zincirini tek prompt\'la yapar.',
+      'pubmed-arastirma': 'Klinik bir vakanın literatür taraması için PubMed + Semantic Scholar üzerinden 20 makale bulup abstract\'larını analiz ediyorsun. Skill kanıt seviyesi sınıflaması ve kaynakça üretir.',
+
+      // Manevi
+      'maneviyat-rag': 'Bir manevi soruya cevap ararken Calibre kütüphanendeki onlarca eserden Ollama RAG ile sahih cevap getirir. Bulut LLM\'e gizli veri sızmaz, kaynak referansı verilir.',
+      'tahkik-asistani': 'Sosyal medyada gördüğün bir hadisin sahihliğini doğrulamak istiyorsun. Skill ehl-i sünnet usulüne uygun tahkik yapar: senet, metin, alimler arası farklılıklar.',
+      'zikir-takip': 'Günlük 100 istiğfar + sabah evradı + akşam virdi alışkanlığı kuracaksın. Skill kişisel takvim ile bildirim, eksik gün haritası ve haftalık özet sunar.',
+
+      // Marka
+      'kesif-marka-tonu': 'Yeni bir Reels script\'i yazdırırken sesin KEŞİF Akademi\'nin "sade Türkçe + empatik + bilim+manevi sentez" tonunda olmasını sağlar. Yargılayan dil, abartılı vurgu otomatik düzeltilir.',
+      'biyografi-yazari': 'LinkedIn profilini güncelleyeceksin. Skill 3 farklı uzunluk (kısa/orta/detay) ve ton (resmi/samimi/pazarlama) ile biyografi seçenekleri üretir.',
+      'landing-page-metni': 'Yeni bir kurs için landing sayfası kuruyorsun. Skill hero, value proposition, sosyal kanıt, fiyat, SSS ve CTA bloklarını dönüşüm odaklı Türkçe metinle hazırlar.',
+
+      // Tasarım
+      'm3-design-system': 'Yeni bir kesif.app modülü için UI tasarlayacaksın. Skill Material 3 tema üretir: dynamic color, type scale, 30+ component varyantı, KEŞİF marka rengi paleti.',
+      'thumbnail-uretici': 'Yeni YouTube videosuna thumbnail tasarlatacaksın. Skill başlık + duygu hedefine göre kompozisyon brief\'i çıkarır: yüz ifadesi, renk paleti, font hiyerarşisi.',
+
+      // Yazılım
+      'prp-framework': 'Karmaşık bir feature\'a (örn. yeni bir AI agent katmanı) başlamadan önce skill codebase\'i tarar, benzer pattern\'leri çıkarır, blueprint hazırlar ve güven skoru verir.',
+      'context-engineering': 'Yeni bir SvelteKit modülü ekleyeceksin. Skill INITIAL.md feature spec, PRP plan ve example pattern\'leri hazırlar — kod yazmadan önce bağlam tam olur.',
+      'prompt-muhendisligi': 'Bir LLM uygulamasında yanıt kalitesi düşük. Skill few-shot örnek kütüphanesi, chain-of-thought iskeleti ve role-play kalıplarıyla prompt\'u sistematik olarak iyileştirir.',
+      'os-framework-5': 'Solo founder olarak yeni bir AI ürünü kuruyorsun. Skill 5 klasör (Build/Think/Make/Ship/Grow) iskeletini hazırlar; ürün-yaşam-döngüsünün her adımı için araç önerir.',
+
+      // Hukuk
       'avukat-tara': 'Yeni bir SaaS kuruyorsan, deploy öncesi `/avukat-tara <proje>` ile KVKK + GDPR + e-ticaret + güvenlik taraması yap. Aksiyon listesi + öncelikli düzeltme planı çıkar.',
-      'maneviyat-rag': 'Bir manevi soruya cevap ararken Calibre kütüphanendeki onlarca eserden Ollama RAG ile sahih cevap getir. Bulut LLM\'e gizli veri sızmaz.'
+      'aydinlatma-metni-uretici': 'İyilik Hali platformuna terapist üyelik formu eklendi. Skill veri kategorisini analiz eder (özel nitelikli sağlık verisi var mı?), KVKK m.10 uyumlu Türkçe aydınlatma metni hazırlar.',
+      'sozlesme-taslagi': 'Bir kurumsal müşteriyle danışmanlık sözleşmesi imzalayacaksın. Skill Türk hukuku uyumlu taslak hazırlar: KVKK, telif, fesih, iade ve gizlilik maddeleri dahil.',
+
+      // Verimlilik
+      'token-optimizer': 'Claude\'a 5000 satırlık dosya gönderirken token israfı oluyor. Skill caveman tarzı filler-silme + kalıp sıkıştırması ile %40-60 input tasarrufu, anlam kaybı yok.',
+      'hybrid-memory': 'Birkaç oturumdur konuştuğun konu unutulmasın istiyorsun. Skill ChromaDB + Neo4j + SQLite üçlüsünü kullanarak kalıcı bellek kurar, periyodik olarak Obsidian wiki üretir.',
+      'auto-code-quality': 'Edit/Write hook\'una bağlı çalışır — kod yazıldıktan hemen sonra otomatik kalite kontrolü yapar: tekrar tespiti, karmaşıklık, isim tutarlılığı, kullanılmayan import.',
+
+      // Altyapı
+      'git-guard': 'Tehlikeli git komutları (force push, hard reset, branch -D, --no-verify) çalıştırılmaya çalışıldığında skill engelliyor. Hook tabanlı güvenlik katmanı, commit hijyeni.',
+      'notion-master': 'Her başarılı görev sonrası KEŞİF Master Notion sayfasına otomatik kayıt düşer. Skill Notion Bridge ile blok ekler, haftalık ve aylık raporları derler.',
+      'fewer-permission-prompts': 'Claude Code sürekli aynı komutlara permission soruyor. Skill geçmiş transcriptleri tarar, tekrarlayan tool çağrılarını allowlist\'e ekler. Permission prompt yorgunluğunu azaltır.',
+      'skill-creator': 'Yeni bir skill yazacaksın. Skill yapıyı kurar (frontmatter, when-to-trigger, prompt yapısı), eval senaryoları üretir, varyans testi yapar ve description\'ı tetikleme doğruluğu için optimize eder.'
     };
     return scenarios[slug] ?? `${skill.name} skill'i, ${skill.audiences.map(a => audienceLabels[a]).join(' / ')} için yapılandırılmış bir Claude Code akışı sağlar. ${skill.description}`;
   }
