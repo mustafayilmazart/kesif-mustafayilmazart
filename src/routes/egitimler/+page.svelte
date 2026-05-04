@@ -9,7 +9,7 @@
 
 <svelte:head>
   <title>Eğitim & Danışmanlık Programları · Mustafa Yılmaz</title>
-  <meta name="description" content="Klinikten kurumsala, bireysel rehberlikten yapay zeka atölyesine — 8 yapılandırılmış program. BAHAR sahası ve KEŞİF Akademi deneyiminden damıtılmış." />
+  <meta name="description" content="Klinikten kurumsala, bireysel rehberlikten yapay zeka atölyesine — 8 yapılandırılmış program. Klinik tecrübe ve KEŞİF Akademi deneyiminden damıtılmış." />
   <meta property="og:title" content="Eğitim & Danışmanlık Programları" />
   <meta property="og:description" content="Klinikten kurumsala, manevi rehberlikten AI atölyesine — yapılandırılmış programlar." />
   <meta property="og:url" content="https://mustafayilmaz.art/egitimler/" />
@@ -34,7 +34,7 @@
       <em>vakadan</em> damıtılmış.
     </h1>
     <p class="prog-hero-desc">
-      <strong>14+ yıl psikiyatri</strong>, <strong>BAHAR Bağımlılık Tedavi Merkezi</strong> sahası ve
+      <strong>14+ yıl psikiyatri</strong>, <strong>bağımlılık tedavi merkezinde klinik tecrübe</strong> ve
       <strong>80+ AI projesi</strong> deneyiminden çıkarılmış 8 yapılandırılmış program.
       Klinikten kurumsala, manevi rehberlikten yapay zeka atölyesine.
     </p>

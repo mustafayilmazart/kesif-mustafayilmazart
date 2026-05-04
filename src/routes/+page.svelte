@@ -23,7 +23,7 @@
   };
 
   const expertise = [
-    { icon: 'icon-healing', title: 'Psikoloji (Klinik) & Bağımlılık Danışmanlığı', desc: 'BAHAR Merkezinde bağımlı hastalara eğitim ve ailelerine danışmanlık. Kanıta dayalı rehabilitasyon yaklaşımları.', tags: ['CBT', 'NLP Trainer', 'Rehabilitasyon', 'SAMBA'] },
+    { icon: 'icon-healing', title: 'Psikoloji (Klinik) & Bağımlılık Danışmanlığı', desc: 'Bağımlılık tedavi merkezinde bağımlı hastalara eğitim ve ailelerine danışmanlık. Kanıta dayalı rehabilitasyon yaklaşımları.', tags: ['CBT', 'NLP Trainer', 'Rehabilitasyon', 'SAMBA'] },
     { icon: 'icon-spirit', title: 'Maneviyat Danışmanlığı & Yaşam Koçluğu', desc: 'İçsel keşif yolculuğunda eşlik ediyor, manevi farkındalık ve duygusal zeka ile kişisel dönüşümü destekliyorum.', tags: ['Yaşam Koçluğu', 'Manevi Danışmanlık', 'Pozitif Psikoterapi'] },
     { icon: 'icon-code', title: 'AI Engineer & Vibe Coding', desc: 'AI ajanları, çoklu model orkestrasyonu ve vibe coding ile sağlık/eğitim platformları geliştiriyorum. Prompt engineering ve AI workflow tasarımı uzmanı.', tags: ['AI Agents', 'Vibe Code', 'Prompt Engineering', 'MCP & Tools'] },
     { icon: 'icon-design', title: 'WordPress & Grafik Tasarım', desc: 'Ruh sağlığı profesyonellerinin dijital varlığını inşa ediyorum. WordPress, Avada, Canva ile marka kimliği.', tags: ['WordPress', 'Canva', 'Avada', 'SEO'] },
@@ -39,7 +39,7 @@
     { year: '2011 — 2013', title: 'Klinik Deneyim', desc: 'Çapa, Cerrahpaşa, Kocaeli Tıp — Onkoloji & Kemoterapi' },
     { year: '2013 — 2018', title: 'Eğitim & AR-GE', desc: 'Anadolu Kuzey KHB — HES yazılımı, 80+ eğitim videosu' },
     { year: '2014 — 2019', title: 'Psikoloji (Klinik)', desc: 'Nişantaşı & Doğuş Üniversitesi — Yüksek Lisans' },
-    { year: '2018 — Günümüz', title: 'BAHAR Merkezi', desc: 'Erenköy RH EAH — Bağımlılık Rehabilitasyonu' },
+    { year: '2018 — Günümüz', title: 'Bağımlılık Rehabilitasyonu', desc: 'Klinik tecrübe — bağımlılık tedavi merkezinde danışmanlık' },
     { year: '2019 — 2021', title: 'Web Tasarım & Kodlama', desc: 'Anadolu Üniversitesi — Ön Lisans' },
     { year: '2021 — Günümüz', title: 'Vibe Code & AI Art & Müzik', desc: 'Apps Script, WordPress, Suno, AI Tools' }
   ];
@@ -196,7 +196,7 @@
 <noscript>
   <div style="max-width:800px;margin:0 auto;padding:40px 20px;font-family:system-ui,sans-serif;line-height:1.6">
     <h1>Mustafa Yılmaz — Danışman · AI Engineer · Eğitmen · AI Artist</h1>
-    <p><strong>14+ yıl psikiyatri hemşireliği</strong>, BAHAR Bağımlılık Tedavi Merkezi'nde danışmanlık. <strong>Psikoloji (Klinik)</strong> yüksek lisansı (Nişantaşı + Doğuş Üniversitesi). NLP Trainer, ICF prensipli yaşam koçu, Manevi Danışmanlık sertifikalı.</p>
+    <p><strong>14+ yıl psikiyatri hemşireliği</strong>, bağımlılık tedavi merkezinde klinik tecrübe ve danışmanlık. <strong>Psikoloji (Klinik)</strong> yüksek lisansı (Nişantaşı + Doğuş Üniversitesi). NLP Trainer, ICF prensipli yaşam koçu, Manevi Danışmanlık sertifikalı.</p>
     <p>2021'den beri AI Engineer olarak 80+ projede yapay zeka orkestrasyonu yapıyorum. Kendi açık kaynak araçlarımı geliştiriyor, KEŞİF Akademi'de 3.700+ öğrenciye eğitim veriyorum.</p>
 
     <h2>Uzmanlık Alanları</h2>
@@ -373,7 +373,7 @@
     <h2 class="section-title reveal">Yöntem teorik değil, <em>vakadan</em> damıtılmış.</h2>
     <p class="section-subtitle reveal">
       Klinikten kurumsala, manevi rehberlikten yapay zeka atölyesine — 8 yapılandırılmış program.
-      BAHAR sahası ve KEŞİF Akademi'de sınanmış yöntemlerle.
+      Klinik tecrübe ve KEŞİF Akademi'de sınanmış yöntemlerle.
     </p>
     <div class="programs-teaser-grid reveal">
       {#each programsTeaser as p (p.slug)}
@@ -471,7 +471,7 @@
     <h2 class="section-title reveal">50+ Sahada Sınanmış <em>Skill Koleksiyonu</em>.</h2>
     <p class="section-subtitle reveal">
       Klinik gözlem, eğitim üretimi, içerik pipeline'ı ve yapay zeka orkestrasyonundan damıtılmış Claude Code skill'leri.
-      Hepsi BAHAR / KEŞİF Akademi / mustafayilmaz.art üretim hattında çalışıyor — açık kaynak.
+      Hepsi klinik saha / KEŞİF Akademi / mustafayilmaz.art üretim hattında çalışıyor — açık kaynak.
     </p>
     <div class="skills-teaser-cta reveal">
       <a href="/skills" class="btn-primary">Skill Koleksiyonunu Aç →</a>

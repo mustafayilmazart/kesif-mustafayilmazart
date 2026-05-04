@@ -21,8 +21,7 @@ export const personSchema = {
   nationality: { '@type': 'Country', name: 'Türkiye' },
   worksFor: {
     '@type': 'Organization',
-    name: 'BAHAR Bağımlılık Tedavi Merkezi',
-    url: 'https://erenkoyrh.saglik.gov.tr'
+    name: 'Bağımlılık Tedavi Merkezi (klinik tecrübe)'
   },
   alumniOf: [
     { '@type': 'CollegeOrUniversity', name: 'Muğla Sıtkı Koçman Üniversitesi', description: 'Hemşirelik Lisans' },

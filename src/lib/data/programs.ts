@@ -23,7 +23,7 @@ export const programs: Program[] = [
     duration: '4 modül × 2 saat',
     audience: 'Sağlık çalışanları, terapistler, danışmanlar',
     format: 'Online veya yüz yüze',
-    desc: 'BAHAR Bağımlılık Tedavi Merkezi sahasında 7+ yıl uygulanmış vakalardan damıtılmış BDT (CBT) protokolleri. SAMBA ile entegre, Türk hastaya özel düzenlenmiş.',
+    desc: 'Bağımlılık tedavi merkezinde 7+ yıl uygulanmış klinik vakalardan damıtılmış BDT (CBT) protokolleri. SAMBA ile entegre, Türk hastaya özel düzenlenmiş.',
     outcomes: ['BDT temel oturumu yapısı', 'Tetikleyici haritası çıkarma', 'Düşünce kaydı tekniği', 'Relaps önleme planı', 'Aile entegrasyonu'],
     cta: 'Klinik Eğitim Talebi',
     ctaSubject: 'Eğitim — Bağımlılıkta BDT',

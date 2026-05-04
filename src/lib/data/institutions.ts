@@ -8,9 +8,9 @@ export type Institution = {
 };
 
 export const institutions: Institution[] = [
-  // Klinik & Sağlık (BAHAR ekosistemi)
-  { name: 'BAHAR Bağımlılık Tedavi Merkezi', category: 'klinik', city: 'İstanbul', shortLabel: 'BAHAR' },
-  { name: 'Erenköy Ruh ve Sinir Hastalıkları EAH', category: 'klinik', city: 'İstanbul', shortLabel: 'Erenköy RH' },
+  // Klinik & Sağlık tecrübe alanları
+  { name: 'Bağımlılık Tedavi Merkezi (klinik tecrübe)', category: 'klinik', city: 'İstanbul', shortLabel: 'Bağımlılık Tedavi' },
+  { name: 'Ruh ve Sinir Hastalıkları EAH (klinik tecrübe)', category: 'klinik', city: 'İstanbul', shortLabel: 'Psikiyatri EAH' },
   { name: 'Çapa Tıp Fakültesi', category: 'klinik', city: 'İstanbul', shortLabel: 'Çapa' },
   { name: 'Cerrahpaşa Tıp Fakültesi', category: 'klinik', city: 'İstanbul', shortLabel: 'Cerrahpaşa' },
   { name: 'Kocaeli Üniversitesi Tıp Fakültesi', category: 'klinik', city: 'Kocaeli', shortLabel: 'Kocaeli Tıp' },

@@ -55,7 +55,7 @@
     </h1>
     <p class="skills-hero-desc">
       Klinik gözlem, eğitim üretimi, içerik pipeline'ları ve yapay zeka orkestrasyonundan damıtılmış
-      <strong>{total}+ Claude Code skill</strong>. Hepsi BAHAR / KEŞİF Akademi / mustafayilmaz.art üretim
+      <strong>{total}+ Claude Code skill</strong>. Hepsi klinik saha / KEŞİF Akademi / mustafayilmaz.art üretim
       hattında çalışıyor.
     </p>
     <div class="skills-hero-stats">

@@ -27,7 +27,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       'Türkiye\'de ruh sağlığı profesyonellerinin kendi dijital varlıklarını, danışan takibini ve ödeme akışlarını tek çatı altında çözebilecekleri KVKK uyumlu bir platform yoktu.',
     approach: [
-      'BAHAR sahasından edinilen klinik gözlemle kullanıcı yolculuğu haritası çıkarıldı',
+      'Klinik tecrübeden edinilen gözlemle kullanıcı yolculuğu haritası çıkarıldı',
       'KVKK 6698 m.6 (özel nitelikli sağlık verisi) çerçevesinde veri mimarisi tasarlandı',
       'Terapist + danışan iki yönlü panel: randevu, seans notu, ödev, ödeme akışları',
       'Dijital sağlık çözümleri için Türkiye\'ye özel uyarlamalar'
@@ -108,14 +108,14 @@ export const caseStudies: CaseStudy[] = [
     status: 'live'
   },
   {
-    slug: 'bahar-bdt-modulleri',
+    slug: 'bdt-modul-uretimi',
     category: 'klinik',
     title: 'Bağımlılık Tedavisinde Dijital Psikoeğitim',
-    client: 'BAHAR Bağımlılık Tedavi Merkezi (anonim vakalardan damıtılmış)',
+    client: 'Bağımlılık tedavi merkezi (anonim vakalardan damıtılmış)',
     year: '2023 — Devam Ediyor',
     duration: '12+ ay',
     challenge:
-      'BAHAR\'da yatan hastalar için kanıta dayalı BDT (CBT) modüllerinin, hasta hızında ilerleyebileceği video formatında, Türkçeye özel anlatımla sunulması gerekliydi.',
+      'Yatan hastalar için kanıta dayalı BDT (CBT) modüllerinin, hasta hızında ilerleyebileceği video formatında, Türkçeye özel anlatımla sunulması gerekliydi.',
     approach: [
       '10 BDT PDF\'inden ChromaDB tabanlı RAG sistemiyle modül üretimi',
       'Edge-TTS Türkçe seslendirme (tr-TR-EmelNeural)',

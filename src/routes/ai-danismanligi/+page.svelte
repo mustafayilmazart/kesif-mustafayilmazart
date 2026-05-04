@@ -45,7 +45,7 @@
   ];
 
   const whyMe = [
-    { icon: '🩺', title: 'Sağlık Sektörü İçeriden', desc: '14+ yıl psikiyatri hemşireliği, BAHAR Bağımlılık Merkezi\'nde danışmanlık. Hekim ve hasta dilini biliyorum.' },
+    { icon: '🩺', title: 'Sağlık Sektörü İçeriden', desc: '14+ yıl psikiyatri hemşireliği, bağımlılık tedavi merkezinde klinik tecrübe. Hekim ve hasta dilini biliyorum.' },
     { icon: '🤖', title: 'AI Engineer', desc: 'Üretim ortamında çalışan AI sistemleri kuruyorum. Hype değil, sonuç odaklı.' },
     { icon: '⚖️', title: 'KVKK Uzmanlığı', desc: 'Sağlık verisinin yasal hassasiyetini hem teknik hem hukuki yönden anlıyorum.' },
     { icon: '🎓', title: 'Eğitim Odaklı', desc: 'Keşif Akademi\'de 3.700+ öğrenci. Ekibinize sistemi öğretirken karmaşık değil, anlaşılır anlatıyorum.' }
@@ -110,7 +110,7 @@
   <div class="aid-inner">
     <div class="section-label">Kimler için</div>
     <h2 class="section-title">Sağlık Sektörünün Gerçek <em>Sıkıntıları</em>nı Biliyorum.</h2>
-    <p class="section-subtitle">14 yıl psikiyatri hemşireliği, klinik psikoloji yüksek lisansı ve BAHAR Bağımlılık Merkezi'nde edinilen deneyim — sektörü içeriden tanıyan biri olarak konuşuyorum.</p>
+    <p class="section-subtitle">14 yıl psikiyatri hemşireliği, klinik psikoloji yüksek lisansı ve bağımlılık tedavi merkezindeki klinik tecrübe — sektörü içeriden tanıyan biri olarak konuşuyorum.</p>
     <div class="aid-audience-grid">
       {#each audiences as a (a.title)}
         <div class="aid-audience-card">

@@ -15,7 +15,7 @@
   function buildScenario(slug: string): string {
     const scenarios: Record<string, string> = {
       // Klinik
-      'bdt-modul-uretici': 'BAHAR\'da yeni gelen bir bağımlı için 5 modüllük psikoeğitim setine ihtiyacın var. PDF\'ten 30 dakikada video çıkarıyorsun: kanıta dayalı script + Türkçe seslendirme + altyazı + bölüm görselleri.',
+      'bdt-modul-uretici': 'Klinikte yeni gelen bir bağımlı için 5 modüllük psikoeğitim setine ihtiyacın var. PDF\'ten 30 dakikada video çıkarıyorsun: kanıta dayalı script + Türkçe seslendirme + altyazı + bölüm görselleri.',
       'kvkk-uyum-tarayici': 'Kliniğin web formu hazır ama hukuki tarama yapılmadı. Avukat MCP ile aydınlatma metni şablonu çıkar, eksik alanları tespit et, kullanıcıya gönderilebilir hale getir.',
       'samba-aile-yardimcisi': 'Bir bağımlının kardeşi yardım istedi. SAMBA aile modülünden uyarlanmış 6 haftalık programı kişiye özel olarak çıkarır: sağlıklı sınır metni, kriz protokolü, iletişim defteri, kendine bakım çizelgesi.',
 

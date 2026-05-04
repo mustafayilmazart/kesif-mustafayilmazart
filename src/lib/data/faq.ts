@@ -15,7 +15,7 @@ export const faqs: FaqGroup[] = [
       },
       {
         q: 'İstanbul dışından da çalışabilir miyiz?',
-        a: 'Evet. Yüz yüze randevular İstanbul (Erenköy / Kadıköy / online) ekseninde yürür; yazılım, eğitim, danışmanlık ve grup programları Türkiye genelinde online çalışır. Yurt dışı katılımcılar da kabul edilir.'
+        a: 'Evet. Yüz yüze randevular İstanbul (Anadolu yakası / online) ekseninde yürür; yazılım, eğitim, danışmanlık ve grup programları Türkiye genelinde online çalışır. Yurt dışı katılımcılar da kabul edilir.'
       },
       {
         q: 'Yapay zeka ile çalışmak modaya uymak mı?',
@@ -87,7 +87,7 @@ export const faqs: FaqGroup[] = [
       },
       {
         q: 'Hangi günlerde görüşme yapıyorsunuz?',
-        a: 'BAHAR Bağımlılık Tedavi Merkezi mesai saatleri dışında bireysel/kurumsal randevular planlanır. Genellikle akşam saatleri ve hafta sonu uygundur. Görüşme talebiniz sırasında size 3-5 zaman seçeneği sunulur.'
+        a: 'Klinik mesai saatleri dışında bireysel/kurumsal randevular planlanır. Genellikle akşam saatleri ve hafta sonu uygundur. Görüşme talebiniz sırasında size 3-5 zaman seçeneği sunulur.'
       }
     ]
   }

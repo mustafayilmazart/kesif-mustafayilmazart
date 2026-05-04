@@ -170,7 +170,7 @@
           <h4>Mustafa Yılmaz</h4>
           <p class="profile-role">Danışman · AI Engineer · Eğitmen · AI Artist</p>
           <p class="profile-bio">
-            Hemşirelikten psikolojiye (klinik), yazılımdan AI'a uzanan bir yolculuk. BAHAR Merkezi'nde bağımlılık danışmanlığı, 80'den fazla projede AI orkestrasyonu.
+            Hemşirelikten psikolojiye (klinik), yazılımdan AI'a uzanan bir yolculuk. Bağımlılık tedavi merkezinde klinik tecrübe, 80'den fazla projede AI orkestrasyonu.
           </p>
           <div class="profile-stats">
             <div><strong>14+</strong><span>Yıl</span></div>

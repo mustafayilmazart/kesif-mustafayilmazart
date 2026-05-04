@@ -61,7 +61,7 @@ export const skills: Skill[] = [
     description: 'Bilişsel Davranışçı Terapi protokolü temelli psikoeğitim modüllerini PDF\'ten videoya çevirir. Edge-TTS Türkçe seslendirme + altyazı + bölüm görselleri.',
     category: 'klinik',
     audiences: ['klinisyen', 'egitmen'],
-    tags: ['BDT', 'CBT', 'BAHAR', 'Edge-TTS', 'video'],
+    tags: ['BDT', 'CBT', 'klinik', 'Edge-TTS', 'video'],
     status: 'aktif',
     highlight: true
   },
