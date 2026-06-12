@@ -4,19 +4,50 @@
   import { tracks, artworks } from '$lib/data/art';
 
   const categories = Array.from(new Set(artworks.map((a) => a.category)));
+
+  // Müzik parçaları için MusicRecording şeması
+  const musicSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'AI Müzik Portfolyosu — Mustafa Yılmaz',
+    url: 'https://mustafayilmaz.art/art',
+    itemListElement: tracks.map((t, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'MusicRecording',
+        name: t.title,
+        genre: t.genre,
+        duration: t.duration,
+        byArtist: { '@type': 'Person', name: 'Mustafa Yılmaz', url: 'https://mustafayilmaz.art' },
+        url: `https://mustafayilmaz.art/art#${t.slug}`
+      }
+    }))
+  };
 </script>
 
 <svelte:head>
   <title>Art · Müzik & Görsel — Mustafa Yılmaz</title>
   <meta name="description" content="AI ile üretilmiş müzikler ve görsellerden oluşan kişisel sanat portfolyom. Suno ile bestelenmiş parçalar dinlenebilir, görseller galeride görüntülenebilir." />
+  <link rel="canonical" href="https://mustafayilmaz.art/art" />
   <meta property="og:title" content="Art · Mustafa Yılmaz" />
   <meta property="og:description" content="Müzik ve görsel — AI destekli sanat portfolyom." />
-  <meta property="og:url" content="https://mustafayilmaz.art/art/" />
+  <meta property="og:url" content="https://mustafayilmaz.art/art" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="tr_TR" />
+  <meta property="og:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Art · Mustafa Yılmaz" />
+  <meta name="twitter:description" content="Müzik ve görsel — AI destekli sanat portfolyom." />
+  <meta name="twitter:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  {#if tracks.length > 0}
+    {@html `<script type="application/ld+json">${JSON.stringify(musicSchema)}</script>`}
+  {/if}
 </svelte:head>
 
 <Nav activePath="/art" />
+
+<main id="ana-icerik">
 
 <section class="art-hero">
   <div class="art-hero-bg">
@@ -83,7 +114,7 @@
               </div>
               <h3>{t.title}</h3>
               <p>{t.description}</p>
-              <audio controls preload="none" src={t.src} class="art-audio">
+              <audio controls preload="none" src={t.src} class="art-audio" aria-label="Ses oynatıcı — {t.title}">
                 Tarayıcınız ses oynatıcıyı desteklemiyor.
               </audio>
               <div class="art-tags">
@@ -151,5 +182,7 @@
     </a>
   </div>
 </section>
+
+</main>
 
 <Footer />

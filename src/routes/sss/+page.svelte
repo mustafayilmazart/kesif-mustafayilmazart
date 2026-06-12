@@ -23,15 +23,23 @@
 <svelte:head>
   <title>Sıkça Sorulan Sorular · Mustafa Yılmaz</title>
   <meta name="description" content="Klinik danışmanlık, yapay zeka eğitimi, manevi rehberlik ve süreç sorularına net cevaplar. KVKK, fiyat, format ve destek konuları." />
+  <link rel="canonical" href="https://mustafayilmaz.art/sss" />
   <meta property="og:title" content="Sıkça Sorulan Sorular" />
   <meta property="og:description" content="Klinik, AI, manevi ve süreç sorularına cevaplar." />
-  <meta property="og:url" content="https://mustafayilmaz.art/sss/" />
+  <meta property="og:url" content="https://mustafayilmaz.art/sss" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="tr_TR" />
+  <meta property="og:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sıkça Sorulan Sorular · Mustafa Yılmaz" />
+  <meta name="twitter:description" content="Klinik, AI, manevi ve süreç sorularına cevaplar." />
+  <meta name="twitter:image" content="https://mustafayilmaz.art/og-image.jpg" />
   {@html `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`}
 </svelte:head>
 
 <Nav activePath="/sss" />
+
+<main id="ana-icerik">
 
 <section class="faq-hero">
   <div class="faq-hero-inner">
@@ -69,6 +77,8 @@
     <a href="mailto:bilgi@mustafayilmaz.art?subject=Soru" class="btn-primary btn-lg">Soru Gönder</a>
   </div>
 </section>
+
+</main>
 
 <Footer />
 

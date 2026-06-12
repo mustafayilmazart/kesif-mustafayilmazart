@@ -10,14 +10,22 @@
   <title>Geliştirdiğim Yazılımlar · Mustafa Yılmaz</title>
   <meta name="description" content="Klinik gözlemden doğan, manevi ihtiyaçtan yükselen, bireyin işine yarayan dijital ürünler. kesif.app, iyilikhali.tr, terapist.io ve daha fazlası." />
   <meta name="keywords" content="Mustafa Yılmaz yazılım, kesif.app, iyilikhali.tr, terapist.io, tooleo, aile.kesif, hafiz.kesif, tahkik.kesif, maneviyat.kesif" />
+  <link rel="canonical" href="https://mustafayilmaz.art/yazilimlar" />
   <meta property="og:title" content="Geliştirdiğim Yazılımlar · Mustafa Yılmaz" />
   <meta property="og:description" content="Production'da çalışan dijital ürünlerim." />
-  <meta property="og:url" content="https://mustafayilmaz.art/yazilimlar/" />
+  <meta property="og:url" content="https://mustafayilmaz.art/yazilimlar" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="tr_TR" />
+  <meta property="og:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Geliştirdiğim Yazılımlar · Mustafa Yılmaz" />
+  <meta name="twitter:description" content="Production'da çalışan dijital ürünlerim." />
+  <meta name="twitter:image" content="https://mustafayilmaz.art/og-image.jpg" />
 </svelte:head>
 
 <Nav activePath="/yazilimlar" />
+
+<main id="ana-icerik">
 
 <section class="apps-hero">
   <div class="apps-hero-bg">
@@ -84,5 +92,7 @@
     </a>
   </div>
 </section>
+
+</main>
 
 <Footer />

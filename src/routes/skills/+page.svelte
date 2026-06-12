@@ -30,15 +30,22 @@
 <svelte:head>
   <title>{total}+ Claude Skills Koleksiyonu · Mustafa Yılmaz</title>
   <meta name="description" content="Klinik, eğitim, içerik üretimi, manevi rehberlik ve yapay zeka alanlarında 50+ kürate edilmiş Claude Code skill koleksiyonu. Hepsi gerçek projelerde sınanmış." />
+  <link rel="canonical" href="https://mustafayilmaz.art/skills" />
   <meta property="og:title" content="{total}+ Claude Skills Koleksiyonu" />
   <meta property="og:description" content="Sahada sınanmış 50+ Claude Skill — klinik, eğitim, içerik, AI." />
-  <meta property="og:url" content="https://mustafayilmaz.art/skills/" />
+  <meta property="og:url" content="https://mustafayilmaz.art/skills" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="tr_TR" />
   <meta property="og:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{total}+ Claude Skills Koleksiyonu" />
+  <meta name="twitter:description" content="Sahada sınanmış 50+ Claude Skill — klinik, eğitim, içerik, AI." />
+  <meta name="twitter:image" content="https://mustafayilmaz.art/og-image.jpg" />
 </svelte:head>
 
 <Nav activePath="/skills" />
+
+<main id="ana-icerik">
 
 <section class="skills-hero">
   <div class="skills-hero-bg">
@@ -77,8 +84,10 @@
   <div class="skills-inner">
     <div class="search-row">
       <div class="search-box">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <label for="skill-search" class="sr-only">Skill ara</label>
         <input
+          id="skill-search"
           type="search"
           placeholder="Skill ara — örn: BDT, Reels, KVKK..."
           bind:value={query}
@@ -98,6 +107,7 @@
         <button
           class="filter-chip"
           class:active={activeCategory === 'all'}
+          aria-pressed={activeCategory === 'all'}
           onclick={() => activeCategory = 'all'}
           type="button"
         >Hepsi</button>
@@ -107,6 +117,7 @@
           <button
             class="filter-chip"
             class:active={activeCategory === c}
+            aria-pressed={activeCategory === c}
             onclick={() => activeCategory = c}
             type="button"
           >
@@ -124,6 +135,7 @@
         <button
           class="filter-chip alt"
           class:active={activeAudience === 'all'}
+          aria-pressed={activeAudience === 'all'}
           onclick={() => activeAudience = 'all'}
           type="button"
         >Hepsi</button>
@@ -131,6 +143,7 @@
           <button
             class="filter-chip alt"
             class:active={activeAudience === a}
+            aria-pressed={activeAudience === a}
             onclick={() => activeAudience = a}
             type="button"
           >{audienceLabels[a]}</button>
@@ -196,6 +209,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <Footer />
 

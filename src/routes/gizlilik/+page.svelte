@@ -8,10 +8,17 @@
 <svelte:head>
   <title>Gizlilik & KVKK Aydınlatma Metni · Mustafa Yılmaz</title>
   <meta name="description" content="mustafayilmaz.art kişisel veri işleme aydınlatma metni — KVKK 6698 m.10 kapsamında." />
-  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://mustafayilmaz.art/gizlilik" />
+  <meta property="og:title" content="Gizlilik & KVKK Aydınlatma Metni" />
+  <meta property="og:description" content="mustafayilmaz.art kişisel veri işleme aydınlatma metni." />
+  <meta property="og:url" content="https://mustafayilmaz.art/gizlilik" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="tr_TR" />
 </svelte:head>
 
 <Nav />
+
+<main id="ana-icerik">
 
 <article class="legal-page">
   <header class="legal-header">
@@ -110,6 +117,8 @@
     </p>
   </div>
 </article>
+
+</main>
 
 <Footer />
 

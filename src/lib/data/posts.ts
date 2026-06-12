@@ -6,6 +6,7 @@ export type Post = {
   category: string;
   excerpt: string;
   date: string;
+  updatedAt?: string;      // İçerik güncellenince doldurulur — dateModified/lastmod için
   readTime: string;
   cover: string;
   content: string;

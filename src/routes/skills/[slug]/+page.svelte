@@ -12,6 +12,29 @@
   const usageScenario = $derived(buildScenario(skill.slug));
   const examplePrompt = $derived(buildPrompt(skill.slug, skill.name));
 
+  // Skill detayı için TechArticle + breadcrumb yapılandırılmış verisi
+  const skillSchema = $derived({
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: `${skill.name} — Claude Code Skill`,
+    description: skill.description,
+    author: { '@type': 'Person', name: 'Mustafa Yılmaz', url: 'https://mustafayilmaz.art' },
+    keywords: skill.tags.join(', '),
+    inLanguage: 'tr-TR',
+    image: 'https://mustafayilmaz.art/og-image.jpg',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://mustafayilmaz.art/skills/${skill.slug}` }
+  });
+
+  const breadcrumbSchema = $derived({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Anasayfa', item: 'https://mustafayilmaz.art' },
+      { '@type': 'ListItem', position: 2, name: 'Skills', item: 'https://mustafayilmaz.art/skills' },
+      { '@type': 'ListItem', position: 3, name: skill.name, item: `https://mustafayilmaz.art/skills/${skill.slug}` }
+    ]
+  });
+
   function buildScenario(slug: string): string {
     const scenarios: Record<string, string> = {
       // Klinik
@@ -97,14 +120,24 @@
 <svelte:head>
   <title>{skill.name} · Skills · Mustafa Yılmaz</title>
   <meta name="description" content={skill.description} />
+  <link rel="canonical" href="https://mustafayilmaz.art/skills/{skill.slug}" />
   <meta property="og:title" content={skill.name} />
   <meta property="og:description" content={skill.description} />
-  <meta property="og:url" content="https://mustafayilmaz.art/skills/{skill.slug}/" />
+  <meta property="og:url" content="https://mustafayilmaz.art/skills/{skill.slug}" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="tr_TR" />
+  <meta property="og:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={skill.name} />
+  <meta name="twitter:description" content={skill.description} />
+  <meta name="twitter:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  {@html `<script type="application/ld+json">${JSON.stringify(skillSchema)}</script>`}
+  {@html `<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`}
 </svelte:head>
 
 <Nav activePath="/skills" />
+
+<main id="ana-icerik">
 
 <article class="skill-detail">
   <header class="sd-header">
@@ -188,6 +221,8 @@
     </section>
   </div>
 </article>
+
+</main>
 
 <Footer />
 

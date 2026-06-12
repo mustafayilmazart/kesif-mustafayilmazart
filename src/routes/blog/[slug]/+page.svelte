@@ -21,14 +21,25 @@
     author: { '@type': 'Person', name: 'Mustafa Yılmaz', url: 'https://mustafayilmaz.art' },
     publisher: { '@type': 'Person', name: 'Mustafa Yılmaz', url: 'https://mustafayilmaz.art' },
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updatedAt ?? post.date,
+    image: 'https://mustafayilmaz.art/og-image.jpg',
     inLanguage: 'tr-TR',
     keywords: post.tags.join(', '),
     articleSection: post.category,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://mustafayilmaz.art/blog/${post.slug}/`
+      '@id': `https://mustafayilmaz.art/blog/${post.slug}`
     }
+  });
+
+  const breadcrumbSchema = $derived({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Anasayfa', item: 'https://mustafayilmaz.art' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://mustafayilmaz.art/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://mustafayilmaz.art/blog/${post.slug}` }
+    ]
   });
 </script>
 
@@ -36,19 +47,27 @@
   <title>{post.title} · Mustafa Yılmaz</title>
   <meta name="description" content={post.excerpt} />
   <meta name="keywords" content={post.tags.join(', ')} />
-  <link rel="canonical" href="https://mustafayilmaz.art/blog/{post.slug}/" />
+  <link rel="canonical" href="https://mustafayilmaz.art/blog/{post.slug}" />
   <meta property="og:title" content={post.title} />
   <meta property="og:description" content={post.excerpt} />
-  <meta property="og:url" content="https://mustafayilmaz.art/blog/{post.slug}/" />
+  <meta property="og:url" content="https://mustafayilmaz.art/blog/{post.slug}" />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content={post.date} />
+  <meta property="article:modified_time" content={post.updatedAt ?? post.date} />
   <meta property="og:locale" content="tr_TR" />
   <meta property="og:site_name" content="mustafayilmaz.art" />
+  <meta property="og:image" content="https://mustafayilmaz.art/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={post.title} />
+  <meta name="twitter:description" content={post.excerpt} />
+  <meta name="twitter:image" content="https://mustafayilmaz.art/og-image.jpg" />
   {@html `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>`}
+  {@html `<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`}
 </svelte:head>
 
 <Nav activePath="/blog" />
+
+<main id="ana-icerik">
 
 <article class="article">
   <header class="article-header blog-cover-bg" data-cover={post.slug}>
@@ -78,7 +97,7 @@
     {#if toc.length > 0}
       <aside class="article-toc">
         <div class="toc-sticky">
-          <h4 class="toc-title">İçindekiler</h4>
+          <h2 class="toc-title">İçindekiler</h2>
           <ol class="toc-list">
             {#each toc as item (item.id)}
               <li><a href="#{item.id}">{item.text}</a></li>
@@ -101,7 +120,7 @@
               <div class="audio-meta">Türkçe seslendirme · {post.audioDuration ?? ''}</div>
             </div>
           </div>
-          <audio controls preload="none" src={post.audio}>
+          <audio controls preload="none" src={post.audio} aria-label="Yazının Türkçe seslendirmesi — {post.title}">
             Tarayıcınız ses oynatmayı desteklemiyor.
           </audio>
         </div>
@@ -120,7 +139,7 @@
       {#if post.sources && post.sources.length > 0}
         <details class="article-sources">
           <summary>
-            <span class="sources-icon">📚</span>
+            <span class="sources-icon" aria-hidden="true">📚</span>
             <span class="sources-label">Kaynaklar &amp; Atıflar</span>
             <span class="sources-count">{post.sources.length} kaynak</span>
             <svg class="sources-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -220,5 +239,7 @@
     </div>
   </section>
 {/if}
+
+</main>
 
 <Footer />

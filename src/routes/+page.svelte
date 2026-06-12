@@ -177,8 +177,9 @@
 </script>
 
 <svelte:head>
-  <title>Mustafa Yılmaz | mustafayilmaz.art — Danışman · AI Engineer · Eğitmen · AI Artist</title>
+  <title>Mustafa Yılmaz — Danışman · AI Engineer · Eğitmen · AI Artist</title>
   <meta name="description" content="Psikolojiden (klinik) yazılıma, maneviyat danışmanlığından dijital tasarıma, müzikten eğitime — insanın bütünsel iyilik halini bilim, sanat ve teknolojiyle inşa ediyorum." />
+  <link rel="canonical" href="https://mustafayilmaz.art/" />
   <meta property="og:title" content="Mustafa Yılmaz — Destekliyorum, Kodluyorum, İnşa Ediyorum" />
   <meta property="og:description" content="Danışman · AI Engineer · Eğitmen · AI Artist — mustafayilmaz.art" />
   <meta property="og:type" content="website" />
@@ -222,6 +223,8 @@
 </noscript>
 
 <Nav />
+
+<main id="ana-icerik">
 
 <!-- Hero -->
 <section class="hero">
@@ -651,13 +654,15 @@
     <a href={CFG.linkedin} target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn'de Bağlanalım</a>
   </div>
   <div class="cta-links reveal">
-    <a href={CFG.github} target="_blank" rel="noopener noreferrer" class="cta-link">⌨️ GitHub</a>
-    <a href={CFG.medium} target="_blank" rel="noopener noreferrer" class="cta-link">📝 Medium</a>
-    <a href={CFG.substack} target="_blank" rel="noopener noreferrer" class="cta-link">📬 Substack</a>
-    <a href={CFG.youtube} target="_blank" rel="noopener noreferrer" class="cta-link">▶ YouTube</a>
-    <a href={CFG.udemy} target="_blank" rel="noopener noreferrer" class="cta-link">🎓 Udemy</a>
-    <a href={CFG.kesif} target="_blank" rel="noopener noreferrer" class="cta-link">🌐 kesif.org</a>
+    <a href={CFG.github} target="_blank" rel="noopener noreferrer" class="cta-link"><span aria-hidden="true">⌨️</span> GitHub<span class="sr-only"> (yeni sekmede açılır)</span></a>
+    <a href={CFG.medium} target="_blank" rel="noopener noreferrer" class="cta-link"><span aria-hidden="true">📝</span> Medium<span class="sr-only"> (yeni sekmede açılır)</span></a>
+    <a href={CFG.substack} target="_blank" rel="noopener noreferrer" class="cta-link"><span aria-hidden="true">📬</span> Substack<span class="sr-only"> (yeni sekmede açılır)</span></a>
+    <a href={CFG.youtube} target="_blank" rel="noopener noreferrer" class="cta-link"><span aria-hidden="true">▶</span> YouTube<span class="sr-only"> (yeni sekmede açılır)</span></a>
+    <a href={CFG.udemy} target="_blank" rel="noopener noreferrer" class="cta-link"><span aria-hidden="true">🎓</span> Udemy<span class="sr-only"> (yeni sekmede açılır)</span></a>
+    <a href={CFG.kesif} target="_blank" rel="noopener noreferrer" class="cta-link"><span aria-hidden="true">🌐</span> kesif.org<span class="sr-only"> (yeni sekmede açılır)</span></a>
   </div>
 </section>
+
+</main>
 
 <Footer />

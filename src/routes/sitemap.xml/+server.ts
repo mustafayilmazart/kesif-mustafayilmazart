@@ -1,5 +1,4 @@
 import { posts } from '$lib/data/posts';
-import { programs } from '$lib/data/programs';
 import { skills } from '$lib/data/skills';
 import type { RequestHandler } from './$types';
 
@@ -20,6 +19,9 @@ const staticRoutes = [
   { path: '/gizlilik', priority: '0.3', changefreq: 'yearly' }
 ];
 
+// Build tarihi — statik sayfalar için lastmod (her deploy'da güncellenir)
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
+
 export const GET: RequestHandler = async () => {
   const urls: string[] = [];
 
@@ -27,6 +29,7 @@ export const GET: RequestHandler = async () => {
   for (const r of staticRoutes) {
     urls.push(`<url>
     <loc>${SITE}${r.path}</loc>
+    <lastmod>${BUILD_DATE}</lastmod>
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
   </url>`);
@@ -36,26 +39,18 @@ export const GET: RequestHandler = async () => {
   for (const p of posts) {
     urls.push(`<url>
     <loc>${SITE}/blog/${p.slug}</loc>
-    <lastmod>${p.date}</lastmod>
+    <lastmod>${p.updatedAt ?? p.date}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>`);
   }
 
-  // Eğitim programları (anchor route — şimdilik tek sayfa)
-  for (const p of programs) {
-    urls.push(`<url>
-    <loc>${SITE}/egitimler#${p.slug}</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>`);
-  }
-
-  // Skills (anchor route — tek sayfada filtreli)
+  // Skill detay sayfaları (gerçek prerendered sayfalar — anchor DEĞİL)
   for (const s of skills) {
     urls.push(`<url>
-    <loc>${SITE}/skills#${s.slug}</loc>
-    <changefreq>weekly</changefreq>
+    <loc>${SITE}/skills/${s.slug}</loc>
+    <lastmod>${BUILD_DATE}</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>`);
   }

@@ -59,19 +59,54 @@
     { q: 'Ne kadar sürede sonuç görürüm?', a: 'Pilot 1-2 hafta. İlk gözle görülür etkiler 4-6 hafta içinde.' },
     { q: 'Aylık ücret mi, proje bazlı mı?', a: 'İkisi de mümkün. Sürekli operasyon için aylık paket; sıfırdan kurulum için proje bazlı.' }
   ];
+
+  // Google SSS snippet'ı için FAQPage şeması
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a }
+    }))
+  };
+
+  // Hizmet sayfası şeması — Google'ın hizmeti tanıması için
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Sağlık Kurumları için AI Danışmanlığı',
+    url: 'https://mustafayilmaz.art/ai-danismanligi',
+    description:
+      'Terapistler, doktorlar ve diş klinikleri için yapay zeka otomasyonları: randevu, hasta takibi, KVKK uyumlu dijital altyapı, AI asistan ve içerik pipeline\'ı.',
+    provider: { '@id': 'https://mustafayilmaz.art/#person' },
+    areaServed: { '@type': 'Country', name: 'Türkiye' },
+    availableLanguage: ['tr'],
+    serviceType: 'AI danışmanlığı ve otomasyon'
+  };
 </script>
 
 <svelte:head>
   <title>Sağlık Kurumları için AI Danışmanlığı · Mustafa Yılmaz</title>
   <meta name="description" content="Terapistler, doktorlar ve diş klinikleri için yapay zeka otomasyonları: randevu, hasta takibi, KVKK uyumlu dijital altyapı, AI asistan ve içerik pipeline'ı." />
+  <link rel="canonical" href="https://mustafayilmaz.art/ai-danismanligi" />
   <meta property="og:title" content="Sağlık Kurumları için AI Danışmanlığı" />
   <meta property="og:description" content="Terapistler, doktorlar ve diş klinikleri için AI otomasyonları." />
-  <meta property="og:url" content="https://mustafayilmaz.art/ai-danismanligi/" />
+  <meta property="og:url" content="https://mustafayilmaz.art/ai-danismanligi" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="tr_TR" />
+  <meta property="og:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sağlık Kurumları için AI Danışmanlığı" />
+  <meta name="twitter:description" content="Terapistler, doktorlar ve diş klinikleri için AI otomasyonları." />
+  <meta name="twitter:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  {@html `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`}
+  {@html `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script>`}
 </svelte:head>
 
 <Nav activePath="/ai-danismanligi" />
+
+<main id="ana-icerik">
 
 <section class="aid-hero">
   <div class="aid-hero-bg">
@@ -241,7 +276,7 @@
     <p>Ücretsiz 30 dakikalık keşif görüşmesinde birlikte bakalım. Görüşmenin sonunda hiçbir şey almak zorunda değilsiniz; en azından 1-2 somut fikirle ayrılırsınız.</p>
     <div class="aid-cta-buttons">
       <a href="mailto:bilgi@mustafayilmaz.art?subject=AI%20Dan%C4%B1%C5%9Fmanl%C4%B1k%20%E2%80%94%20%C3%9Ccretsiz%20Ke%C5%9Fif%20G%C3%B6r%C3%BC%C5%9Fmesi" class="btn-primary btn-lg">
-        📅 Ücretsiz Görüşme Talep Et
+        <span aria-hidden="true">📅</span> Ücretsiz Görüşme Talep Et
       </a>
       <a href="https://linkedin.com/in/kpmustafayilmaz" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-lg">
         LinkedIn'de Mesaj At
@@ -252,5 +287,7 @@
     </p>
   </div>
 </section>
+
+</main>
 
 <Footer />

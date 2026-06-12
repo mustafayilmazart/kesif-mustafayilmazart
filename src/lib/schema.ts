@@ -6,7 +6,12 @@ export const personSchema = {
   name: 'Mustafa Yılmaz',
   alternateName: 'kpmustafayilmaz',
   url: 'https://mustafayilmaz.art',
-  image: 'https://mustafayilmaz.art/profile.jpg',
+  image: {
+    '@type': 'ImageObject',
+    url: 'https://mustafayilmaz.art/profile.jpg',
+    width: 400,
+    height: 400
+  },
   sameAs: [
     'https://www.linkedin.com/in/kpmustafayilmaz',
     'https://github.com/mustafayilmazart',
@@ -72,16 +77,23 @@ export const websiteSchema = {
   publisher: { '@id': 'https://mustafayilmaz.art/#person' }
 };
 
+// Geçerli JSON-LD: her nav ögesi ayrı SiteNavigationElement olarak ItemList içinde
 export const navigationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SiteNavigationElement',
-  name: ['Hikayem', 'Uzmanlık', 'AI Danışmanlık', 'Yazılımlar', 'Blog', 'Art'],
-  url: [
-    'https://mustafayilmaz.art/#hakkimda',
-    'https://mustafayilmaz.art/#uzmanlik',
-    'https://mustafayilmaz.art/ai-danismanligi',
-    'https://mustafayilmaz.art/yazilimlar',
-    'https://mustafayilmaz.art/blog',
-    'https://mustafayilmaz.art/art'
-  ]
+  '@type': 'ItemList',
+  itemListElement: [
+    { name: 'Eğitimler', url: 'https://mustafayilmaz.art/egitimler' },
+    { name: 'AI Danışmanlık', url: 'https://mustafayilmaz.art/ai-danismanligi' },
+    { name: 'Skills', url: 'https://mustafayilmaz.art/skills' },
+    { name: 'Yazılımlar', url: 'https://mustafayilmaz.art/yazilimlar' },
+    { name: 'Vakalar', url: 'https://mustafayilmaz.art/vakalar' },
+    { name: 'Blog', url: 'https://mustafayilmaz.art/blog' },
+    { name: 'Art', url: 'https://mustafayilmaz.art/art' },
+    { name: 'SSS', url: 'https://mustafayilmaz.art/sss' }
+  ].map((item, i) => ({
+    '@type': 'SiteNavigationElement',
+    position: i + 1,
+    name: item.name,
+    url: item.url
+  }))
 };

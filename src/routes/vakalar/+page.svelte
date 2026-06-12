@@ -6,19 +6,48 @@
   const cats = Object.keys(caseStudyCategories) as (keyof typeof caseStudyCategories)[];
   let activeCat = $state<'all' | (typeof cats)[number]>('all');
   const filtered = $derived(activeCat === 'all' ? caseStudies : caseStudies.filter((c) => c.category === activeCat));
+
+  // Vaka listesi şeması — arama motorları için makinece okunur vaka envanteri
+  const casesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Vaka Çalışmaları — Mustafa Yılmaz',
+    url: 'https://mustafayilmaz.art/vakalar',
+    itemListElement: caseStudies.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Article',
+        headline: c.title,
+        description: c.challenge,
+        author: { '@type': 'Person', name: 'Mustafa Yılmaz', url: 'https://mustafayilmaz.art' },
+        inLanguage: 'tr-TR',
+        url: `https://mustafayilmaz.art/vakalar#${c.slug}`
+      }
+    }))
+  };
 </script>
 
 <svelte:head>
   <title>Vaka Çalışmaları · Mustafa Yılmaz</title>
   <meta name="description" content="Klinik AI dönüşümünden eğitim akademisine, KVKK uyumlu sağlık platformlarından bağımlılık BDT pipeline'ına — sahaya inmiş gerçek vakalar." />
+  <link rel="canonical" href="https://mustafayilmaz.art/vakalar" />
   <meta property="og:title" content="Vaka Çalışmaları" />
   <meta property="og:description" content="Sahaya inmiş gerçek dönüşüm vakaları." />
-  <meta property="og:url" content="https://mustafayilmaz.art/vakalar/" />
+  <meta property="og:url" content="https://mustafayilmaz.art/vakalar" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="tr_TR" />
+  <meta property="og:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vaka Çalışmaları · Mustafa Yılmaz" />
+  <meta name="twitter:description" content="Sahaya inmiş gerçek dönüşüm vakaları." />
+  <meta name="twitter:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  {@html `<script type="application/ld+json">${JSON.stringify(casesSchema)}</script>`}
 </svelte:head>
 
 <Nav activePath="/vakalar" />
+
+<main id="ana-icerik">
 
 <section class="cv-hero">
   <div class="cv-hero-inner">
@@ -39,12 +68,12 @@
 <section class="cv-filters">
   <div class="cv-inner">
     <div class="filter-row">
-      <button class="filter-chip" class:active={activeCat === 'all'} onclick={() => activeCat = 'all'} type="button">
+      <button class="filter-chip" class:active={activeCat === 'all'} aria-pressed={activeCat === 'all'} onclick={() => activeCat = 'all'} type="button">
         Hepsi <span class="chip-count">{caseStudies.length}</span>
       </button>
       {#each cats as c (c)}
         {@const count = caseStudies.filter((cs) => cs.category === c).length}
-        <button class="filter-chip" class:active={activeCat === c} onclick={() => activeCat = c} type="button">
+        <button class="filter-chip" class:active={activeCat === c} aria-pressed={activeCat === c} onclick={() => activeCat = c} type="button">
           {caseStudyCategories[c]} <span class="chip-count">{count}</span>
         </button>
       {/each}
@@ -119,8 +148,11 @@
     <h2>Sıradaki <em>vaka</em> seninki olabilir.</h2>
     <p>Sağlık, eğitim, dijital ürün veya yapay zeka dönüşümü için iş birliği yapalım — keşif görüşmesi ücretsiz.</p>
     <a href="mailto:bilgi@mustafayilmaz.art?subject=Vaka%20%C4%B0%C5%9F%20Birli%C4%9Fi" class="btn-primary btn-lg">İş Birliği İçin Yaz</a>
+    <p class="cv-cta-links">Benzer bir dönüşüm mü arıyorsun? <a href="/ai-danismanligi">AI Danışmanlık paketlerine</a> veya <a href="/egitimler">eğitim programlarına</a> göz at.</p>
   </div>
 </section>
+
+</main>
 
 <Footer />
 
@@ -178,6 +210,8 @@
 
   .cv-cta { background: linear-gradient(135deg, var(--teal), var(--teal-dark)); color: #fff; padding: 80px 40px; text-align: center; }
   .cv-cta-inner { max-width: 720px; margin: 0 auto; }
+  .cv-cta-links { margin-top: 22px; font-size: .88rem; color: rgba(255,255,255,.85); }
+  .cv-cta-links a { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
   .cv-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 14px; }
   .cv-cta h2 em { color: var(--yellow); font-style: italic; }
   .cv-cta p { line-height: 1.7; margin: 0 0 28px; opacity: .9; max-width: 560px; margin-left: auto; margin-right: auto; }

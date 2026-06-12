@@ -7,7 +7,7 @@
     <div class="footer-logo">M<span>.</span>Yılmaz</div>
     <div class="footer-domain">mustafayilmaz.art</div>
     <p class="footer-tagline">Bilim · Sanat · Teknoloji · Maneviyat — bütünsel inşa.</p>
-    <div class="footer-links">
+    <nav class="footer-links" aria-label="Alt sayfa gezinmesi">
       <a href="/#hakkimda">Hikayem</a>
       <a href="/#uzmanlik">Uzmanlık</a>
       <a href="/egitimler">Eğitimler</a>
@@ -22,7 +22,7 @@
       <a href="/sss">SSS</a>
       <a href="mailto:bilgi@mustafayilmaz.art">İletişim</a>
       <a href="/gizlilik">Gizlilik &amp; KVKK</a>
-    </div>
+    </nav>
     <p class="footer-copy">&copy; {year} Mustafa Yılmaz. Tüm hakları saklıdır. Aşkla inşa edildi ☕</p>
   </div>
 </footer>

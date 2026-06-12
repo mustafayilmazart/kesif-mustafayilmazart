@@ -5,20 +5,47 @@
 
   const categories = Object.keys(categoryLabels) as Program['category'][];
   const featured = programs.find((p) => p.featured);
+
+  // Eğitim programları için Course listesi şeması
+  const coursesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: programs.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Course',
+        name: p.title,
+        description: p.desc,
+        provider: { '@type': 'Person', name: 'Mustafa Yılmaz', url: 'https://mustafayilmaz.art' },
+        inLanguage: 'tr-TR',
+        timeRequired: p.duration,
+        url: `https://mustafayilmaz.art/egitimler#${p.slug}`
+      }
+    }))
+  };
 </script>
 
 <svelte:head>
   <title>Eğitim & Danışmanlık Programları · Mustafa Yılmaz</title>
   <meta name="description" content="Klinikten kurumsala, bireysel rehberlikten yapay zeka atölyesine — 8 yapılandırılmış program. Klinik tecrübe ve KEŞİF Akademi deneyiminden damıtılmış." />
+  <link rel="canonical" href="https://mustafayilmaz.art/egitimler" />
   <meta property="og:title" content="Eğitim & Danışmanlık Programları" />
   <meta property="og:description" content="Klinikten kurumsala, manevi rehberlikten AI atölyesine — yapılandırılmış programlar." />
-  <meta property="og:url" content="https://mustafayilmaz.art/egitimler/" />
+  <meta property="og:url" content="https://mustafayilmaz.art/egitimler" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="tr_TR" />
   <meta property="og:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Eğitim & Danışmanlık Programları" />
+  <meta name="twitter:description" content="Klinikten kurumsala, manevi rehberlikten AI atölyesine — yapılandırılmış programlar." />
+  <meta name="twitter:image" content="https://mustafayilmaz.art/og-image.jpg" />
+  {@html `<script type="application/ld+json">${JSON.stringify(coursesSchema)}</script>`}
 </svelte:head>
 
 <Nav activePath="/egitimler" />
+
+<main id="ana-icerik">
 
 <section class="prog-hero">
   <div class="prog-hero-bg">
@@ -109,6 +136,8 @@
     </a>
   </div>
 </section>
+
+</main>
 
 <Footer />
 

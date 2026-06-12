@@ -2,11 +2,9 @@
   import { onMount } from 'svelte';
 
   let {
-    activePath = '',
-    showHomeAnchors = true
+    activePath = ''
   }: {
     activePath?: string;
-    showHomeAnchors?: boolean;
   } = $props();
 
   let scrolled = $state(false);
@@ -28,19 +26,16 @@
   }
 </script>
 
-<nav class="site-nav" class:scrolled id="navbar">
+<a href="#ana-icerik" class="skip-link">Ana içeriğe geç</a>
+
+<nav class="site-nav" class:scrolled id="navbar" aria-label="Ana gezinme">
   <a href="/" class="nav-logo">
     M<span>.</span>Yılmaz
     <span class="domain">mustafayilmaz.art</span>
   </a>
   <ul class="nav-links" class:active={mobileOpen} id="navLinks">
-    {#if showHomeAnchors}
-      <li><a href="/#hakkimda">Hikayem</a></li>
-      <li><a href="/#uzmanlik">Uzmanlık</a></li>
-    {:else}
-      <li><a href="/#hakkimda">Hikayem</a></li>
-      <li><a href="/#uzmanlik">Uzmanlık</a></li>
-    {/if}
+    <li><a href="/#hakkimda">Hikayem</a></li>
+    <li><a href="/#uzmanlik">Uzmanlık</a></li>
     <li><a href="/egitimler" class={isActive('/egitimler')}>Eğitimler</a></li>
     <li><a href="/ai-danismanligi" class={isActive('/ai-danismanligi')}>AI Danışmanlık</a></li>
     <li><a href="/skills" class={isActive('/skills')}>Skills</a></li>
@@ -51,7 +46,15 @@
     <li><a href="/sss" class={isActive('/sss')}>SSS</a></li>
     <li><a href="mailto:bilgi@mustafayilmaz.art" class="nav-cta">İletişime Geç</a></li>
   </ul>
-  <button class="mobile-menu-btn" id="menuBtn" aria-label="Menü" onclick={toggleMobile} type="button">
+  <button
+    class="mobile-menu-btn"
+    id="menuBtn"
+    aria-label={mobileOpen ? 'Menüyü kapat' : 'Menüyü aç'}
+    aria-expanded={mobileOpen}
+    aria-controls="navLinks"
+    onclick={toggleMobile}
+    type="button"
+  >
     <span></span><span></span><span></span>
   </button>
 </nav>
