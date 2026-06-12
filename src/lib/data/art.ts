@@ -28,20 +28,57 @@ export type Artwork = {
 };
 
 export const tracks: Track[] = [
-  // Örnek taslak — Mustafa kendi mp3'lerini /public/art/music/ altına atıp burayı dolduracak.
-  // {
-  //   slug: "kesif-yolu",
-  //   title: "Keşif Yolu",
-  //   genre: "Sufi Electronic",
-  //   mood: "Tefekkür",
-  //   description: "İçsel yolculuğu anlatan; ney, elektronik dokular ve nefes ritmiyle örülmüş bir parça.",
-  //   date: "2026-03-15",
-  //   duration: "3:42",
-  //   src: "/art/music/kesif-yolu.mp3",
-  //   cover: "linear-gradient(135deg,#219295,#0d1117)",
-  //   tags: ["sufi", "elektronik", "ney"],
-  //   lyrics: "Bir yol var içeride / sessiz, derin, sade...",
-  // },
+  {
+    slug: "arayis",
+    title: "Arayış",
+    genre: "Manevi Rap",
+    mood: "İçsel Yolculuk",
+    description:
+      "Karanlıktan aydınlığa, yalnızlıktan huzura, kayboluştan kendini bulmaya uzanan içsel yolculuğun sinematik anlatımı. Zirveye çıkmak, bulutların üstünde durup nefes almak... aslında dışarıda değil, içeride başlayan bir yolculuğun sonu. Söz: Mustafa Yılmaz · Sanatçı: Kâşif · Prodüksiyon: AI.",
+    date: "2026-06-07",
+    duration: "2:46",
+    src: "/art/music/arayis.mp3",
+    cover: "/art/covers/arayis.jpg",
+    tags: ["rap", "manevi", "içsel yolculuk", "Kâşif", "AI müzik"],
+  },
+  {
+    slug: "tabut",
+    title: "Tabut",
+    genre: "Manevi Rap",
+    mood: "Tefekkür",
+    description:
+      "Ölümün, hesap gününün ve Rabbe dönüşün sessiz bir hatırlatması. \"Dört tahta duvar, son durak son bineğim...\" Söz: Mustafa Yılmaz · Sanatçı: Kâşif · Prodüksiyon: AI (jeneratif müzik araçları).",
+    date: "2026-05-29",
+    duration: "3:08",
+    src: "/art/music/tabut.mp3",
+    cover: "/art/covers/tabut.jpg",
+    tags: ["rap", "manevi", "tefekkür", "ahiret", "Kâşif", "AI müzik"],
+    lyrics: `[Verse 1]
+Dört tahta duvar, son durak son bineğim
+Yolculuk başlar, ölümlü dünya geride kaldı
+Her adım, bir nefes biten bir ömür
+Karanlıkta parlayan bir ışık, Rabbime yöneldiğim
+
+[Nakarat]
+Tabut ey tabut, sırrın derin
+Toprağa emanet bedenim
+Ruhum yüceldi, affına sığındım
+Merhametine döndüm — senden gelip
+Sana dönecek yolcu benim
+
+[Verse 2]
+Dünya dediğin bir gölge, bir anlık bir nefes
+Eşyalar anlamsız, sadece kalp sesi eşlik eder
+Amellerle yolcu, hesap günü bekler
+Rabbinin huzurunda hakikat belirir
+
+[Bridge]
+Rabbim günahım çok, merhametin engin
+Beni affet, bana yol göster, nurunla aydınlat
+Kabrimi cennet bahçelerinden bir köşe eyle
+Sana döndüğümde
+Yüzüm ak eyle`,
+  },
 ];
 
 export const artworks: Artwork[] = [
