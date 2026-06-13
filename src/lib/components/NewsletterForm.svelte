@@ -108,12 +108,12 @@
   .nl-fields button:hover:not(:disabled) { background: var(--teal-dark); }
   .nl-fields button:disabled { opacity: .6; cursor: not-allowed; }
   .nl-note { font-size: .76rem; color: var(--text-muted); margin: 8px 0 0; text-align: center; }
-  .nl-error { font-size: .82rem; color: #dc2626; margin: 8px 0 0; text-align: center; }
-  .nl-error a { color: #dc2626; font-weight: 600; }
+  .nl-error { font-size: .82rem; color: var(--color-error); margin: 8px 0 0; text-align: center; }
+  .nl-error a { color: var(--color-error); font-weight: 600; }
   .nl-success a { color: inherit; font-weight: 600; }
   /* Honeypot alanı: ekran dışında, klavye/okuyucu erişiminden çıkarılmış */
   .nl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
-  .nl-success { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 22px; background: rgba(22,163,74,.08); color: #16a34a; border: 1px solid rgba(22,163,74,.2); border-radius: 50px; font-size: .92rem; font-weight: 500; }
+  .nl-success { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 22px; background: var(--color-success-bg); color: var(--color-success); border: 1px solid var(--color-success-border); border-radius: 50px; font-size: .92rem; font-weight: 500; }
   .compact .nl-fields { padding: 4px; }
   .compact .nl-fields input { padding: 8px 14px; font-size: .85rem; }
   .compact .nl-fields button { padding: 8px 16px; font-size: .8rem; }

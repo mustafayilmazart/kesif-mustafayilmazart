@@ -42,6 +42,23 @@
 - **Semantik:** başarı `#16a34a` · hata `#dc2626` (form/uyarı). Bunlar token değil, yerinde kullanılıyor — gerekirse `:root`'a alınabilir.
 - **Koyu bölümler:** Footer ve bazı section'lar `--dark #0d0d0d` zeminde; metin opaklıkları AA için `.5+` tutulur (footer link/tagline/copy).
 
+## Token Mimarisi (3 Katman)
+`src/app.css` `:root` üç katmanlı yapıdadır — değer değişikliği tek noktadan yönetilir:
+
+```
+KATMAN 1 — Primitif   →  --color-teal-600:#219295   (ham hex, doğrudan KULLANMA)
+        ↓
+KATMAN 2 — Semantik   →  --teal:var(--color-teal-600)   (amaç; KODDA BUNU kullan)
+        ↓
+KATMAN 3 — Component  →  ör. --color-success-bg (NewsletterForm durum rengi)
+```
+
+- **Kodda her zaman semantik katmanı kullan:** `var(--teal)`, `var(--text)`, `var(--color-success)`. Ham hex yazma.
+- Mevcut isimler (`--teal`, `--text`, `--dark`…) korundu; artık primitiflere bağlı — yani geriye uyumlu, hesaplanan çıktı birebir aynı.
+- Bir markanın tonunu değiştirmek için **tek satır** yeter: primitifteki hex'i güncelle, tüm site takip eder.
+- **Durum renkleri** artık token: `--color-success` / `--color-success-bg` / `--color-success-border` / `--color-error`. NewsletterForm bunları kullanır (önceden hardcoded'di).
+- **İstisna — dekoratif paletler token DEĞİL:** icon arka planları, blog kapak gradient'leri, floating tag renkleri bilinçli çok-renkli birer aksandır; semantik token'a bağlanmaz (her biri tek seferlik).
+
 ## Boşluk (Spacing)
 - **Taban birim:** 4px ızgarası (değerler 4'ün katları: 8/12/14/16/20/24…).
 - **Yoğunluk:** Ferah (spacious) — bölümler nefes alır.
