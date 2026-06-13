@@ -2,12 +2,18 @@
 
 `mustafayilmaz.art` kişisel marka sitesi — Next.js 16'dan SvelteKit 2 + Svelte 5'e taşındı.
 
+## Tasarım Sistemi
+
+Görsel/UI karar vermeden önce **[DESIGN.md](DESIGN.md)** oku. Tüm font, renk, boşluk,
+kenar yarıçapı ve estetik yön orada tanımlı. Açık kullanıcı onayı olmadan sapma.
+QA/inceleme sırasında DESIGN.md'ye uymayan kodu işaretle.
+
 ## Önemli Kurallar
 
 - Türkçe iletişim, Türkçe kod yorumları
 - Statik export (adapter-static) — Firebase Hosting üzerinde
 - Performans birinci öncelik: bundle <50KB/route, TTFB <50ms
-- Tasarım birebir korundu (CSS Next.js sürümünden port)
+- Tasarım birebir korundu (CSS Next.js sürümünden port) — bkz. DESIGN.md
 
 ## Stack
 
