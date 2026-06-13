@@ -5,7 +5,10 @@
 
   const categories = Array.from(new Set(artworks.map((a) => a.category)));
 
-  // Müzik parçaları için MusicRecording şeması
+  // Tıklayınca açılan video parçanın slug'ı — performans/gizlilik için iframe yalnız tıklamada yüklenir
+  let activeVideo = $state<string | null>(null);
+
+  // Müzik parçaları için MusicRecording şeması (videolu parçalarda VideoObject + embedUrl)
   const musicSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -20,7 +23,20 @@
         genre: t.genre,
         duration: t.duration,
         byArtist: { '@type': 'Person', name: 'Mustafa Yılmaz', url: 'https://mustafayilmaz.art' },
-        url: `https://mustafayilmaz.art/art#${t.slug}`
+        url: `https://mustafayilmaz.art/art#${t.slug}`,
+        ...(t.video
+          ? {
+              video: {
+                '@type': 'VideoObject',
+                name: `${t.title} — Resmi Klip`,
+                description: t.description,
+                thumbnailUrl: `https://mustafayilmaz.art${t.cover}`,
+                contentUrl: `https://www.youtube.com/watch?v=${t.video}`,
+                embedUrl: `https://www.youtube.com/embed/${t.video}`,
+                uploadDate: t.date
+              }
+            }
+          : {})
       }
     }))
   };
@@ -99,12 +115,37 @@
           <article class="art-track-card">
             <div
               class="art-track-cover"
+              class:has-video={t.video}
               style:background={t.cover.startsWith('linear-') ? t.cover : undefined}
             >
-              {#if !t.cover.startsWith('linear-')}
+              {#if t.video && activeVideo === t.slug}
+                <iframe
+                  class="art-video-frame"
+                  src={`https://www.youtube-nocookie.com/embed/${t.video}?autoplay=1&rel=0`}
+                  title={`${t.title} — Resmi Klip`}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              {:else if t.video}
+                <button
+                  type="button"
+                  class="art-video-play"
+                  onclick={() => (activeVideo = t.slug)}
+                  aria-label={`Videoyu oynat — ${t.title} (resmi klip)`}
+                >
+                  <img src={t.cover} alt={`${t.title} klip kapağı`} />
+                  <span class="art-video-playicon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                  </span>
+                </button>
+              {:else if !t.cover.startsWith('linear-')}
                 <img src={t.cover} alt={t.title} />
               {/if}
-              <div class="art-track-genre">{t.genre}</div>
+              {#if !(t.video && activeVideo === t.slug)}
+                <div class="art-track-genre">{t.genre}</div>
+              {/if}
             </div>
             <div class="art-track-body">
               <div class="art-track-meta">
@@ -114,6 +155,9 @@
               </div>
               <h3>{t.title}</h3>
               <p>{t.description}</p>
+              {#if t.video}
+                <p class="art-listen-label">Klibi yukarıda izle · ya da sadece dinle:</p>
+              {/if}
               <audio controls preload="none" src={t.src} class="art-audio" aria-label="Ses oynatıcı — {t.title}">
                 Tarayıcınız ses oynatıcıyı desteklemiyor.
               </audio>

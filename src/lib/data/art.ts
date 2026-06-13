@@ -10,6 +10,7 @@ export type Track = {
   duration: string;
   src: string;        // /art/music/<file>.mp3
   cover: string;      // /art/covers/<file>.jpg veya gradient string
+  video?: string;     // YouTube video ID — varsa kapak tıkla-oynat klibe dönüşür
   tags: string[];
   lyrics?: string;
 };
@@ -39,6 +40,7 @@ export const tracks: Track[] = [
     duration: "2:46",
     src: "/art/music/arayis.mp3",
     cover: "/art/covers/arayis.jpg",
+    video: "OdtSXX-m0q0",
     tags: ["rap", "manevi", "içsel yolculuk", "Kâşif", "AI müzik"],
   },
   {
@@ -52,6 +54,7 @@ export const tracks: Track[] = [
     duration: "3:08",
     src: "/art/music/tabut.mp3",
     cover: "/art/covers/tabut.jpg",
+    video: "V7ud_xukjUs",
     tags: ["rap", "manevi", "tefekkür", "ahiret", "Kâşif", "AI müzik"],
     lyrics: `[Verse 1]
 Dört tahta duvar, son durak son bineğim
