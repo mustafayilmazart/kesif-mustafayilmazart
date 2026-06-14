@@ -42,7 +42,7 @@
 .art-video-play:focus-visible{outline:3px solid var(--teal,#219295);outline-offset:-3px}
 .art-video-frame{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 .art-listen-label{font-size:.74rem;color:var(--text-light,#767676);margin:0 0 6px;font-family:'JetBrains Mono',monospace}
-.art-track-genre{position:absolute;top:14px;left:14px;background:rgba(13,17,23,.7);color:#fff;backdrop-filter:blur(8px);padding:6px 12px;border-radius:50px;font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.5px}
+.art-track-genre{position:absolute;top:14px;left:14px;background:rgba(13,17,23,.7);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:6px 12px;border-radius:50px;font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.5px}
 .art-track-body{padding:22px 22px 24px}
 .art-track-meta{display:flex;gap:8px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
 .art-track-body h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--charcoal);margin:0 0 10px;line-height:1.3}
