@@ -73,6 +73,7 @@
 .blog-cover-bg{position:relative;display:flex;align-items:flex-end;padding:24px;color:#fff}
 .blog-cover-bg[data-cover="bagimliligi-anlamak"]{background:linear-gradient(135deg,#16a34a,#0ea5e9)}
 .blog-cover-bg[data-cover="vibe-coding-ai-cagi"]{background:linear-gradient(135deg,#7c3aed,#219295)}
+.blog-cover-bg[data-cover="claude-code-ile-web-sitesi"]{background:linear-gradient(135deg,#219295,#0d1117)}
 .blog-cover-bg[data-cover="icsel-sessizligin-sesi"]{background:linear-gradient(135deg,#b8a920,#219295)}
 
 /* Featured (öne çıkan) */
