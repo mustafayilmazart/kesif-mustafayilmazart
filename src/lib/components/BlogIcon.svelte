@@ -62,16 +62,6 @@
     <path d="M36 14 L28 50" stroke-width="1.5" stroke-opacity="0.6" />
     <circle cx="50" cy="14" r="1.5" fill="currentColor" />
   </svg>
-{:else if slug === 'claude-code-ile-web-sitesi'}
-  <svg width={size} height={size} viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="8" y="12" width="48" height="36" rx="4" />
-    <path d="M16 24 L22 30 L16 36" stroke-width="2" />
-    <line x1="26" y1="36" x2="38" y2="36" stroke-width="2" />
-    <line x1="8" y1="18" x2="56" y2="18" stroke-opacity="0.5" />
-    <circle cx="12" cy="15" r="1" fill="currentColor" />
-    <circle cx="16" cy="15" r="1" fill="currentColor" />
-    <path d="M44 54 L48 50 M50 56 L56 50" stroke-width="1" stroke-opacity="0.5" />
-  </svg>
 {:else if slug === 'icsel-sessizligin-sesi'}
   <svg width={size} height={size} viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M12 16 H52 A4 4 0 0 1 56 20 V40 A4 4 0 0 1 52 44 H30 L20 54 V44 H12 A4 4 0 0 1 8 40 V20 A4 4 0 0 1 12 16 Z" />

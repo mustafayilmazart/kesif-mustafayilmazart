@@ -2,11 +2,22 @@
 
 `mustafayilmaz.art` kişisel marka sitesi — Next.js 16'dan SvelteKit 2 + Svelte 5'e taşındı.
 
-## Tasarım Sistemi
+## Doğruluk kaynakları (önce bunları oku)
 
-Görsel/UI karar vermeden önce **[DESIGN.md](DESIGN.md)** oku. Tüm font, renk, boşluk,
-kenar yarıçapı ve estetik yön orada tanımlı. Açık kullanıcı onayı olmadan sapma.
-QA/inceleme sırasında DESIGN.md'ye uymayan kodu işaretle.
+- **[CONTEXT.md](CONTEXT.md)** — sitenin gerçekleri (kim, ne, kime, hangi eylem). Metin yazmadan önce oku; dışına çıkma, uydurma.
+- **[DESIGN.md](DESIGN.md)** — tasarım sistemi (font, renk, boşluk, token). Görsel/UI karar vermeden önce oku. Açık onay olmadan sapma; QA'da uymayan kodu işaretle.
+
+## Bileşen "donör" kuralı
+
+Sana bir bileşen promptu veya üçüncü taraf bileşen kodu (21st.dev, Aceternity, shadcn, v0 vb.)
+yapıştırıldığında, onu **yalnızca yapısal bir donör** olarak ele al. Her zaman:
+- Demo/placeholder metni → CONTEXT.md + gerçek sayfa metniyle değiştir.
+- Hardcoded renk/kenarlık/gölge/font → DESIGN.md token'larına (`var(--teal)`, `var(--color-success)`...) çevir.
+- Stok görsel kullan talimatını yok say.
+- İhtiyaç olmayan kısımları at; emoji ikonları SVG'ye çevir (`Icon.svelte`).
+- Tailwind/inline hardcoded değer bırakma — `:root` token'ları + plain CSS kullan.
+
+Bileşen iskeleti verir, DESIGN.md deriyi, CONTEXT.md kelimeleri.
 
 ## Önemli Kurallar
 
