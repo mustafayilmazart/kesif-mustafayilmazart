@@ -23,7 +23,7 @@
 - **Başlık / Hero:** `Playfair Display` (serif) — 400, 600, 700, 800 + italik 400/600/700. Markanın editöryel sesi; sayfa başlıkları, hero, vurgu `<em>` italikleri. (Kodda en çok kullanılan: ~40 yer.)
 - **Gövde / UI:** `DM Sans` (sans-serif) — 400, 500, 600, 700. Tüm paragraf, buton, form metni. `body` varsayılanı.
 - **Etiket / Meta / Veri:** `JetBrains Mono` (monospace) — 400, 500. Rozetler, kategori etiketleri, tarih/okuma-süresi meta'ları, domain yazımı. Teknik + zanaatkâr dokunuş.
-- **Yükleme:** `<link>` ile Google Fonts; `preconnect` mevcut. (İleride KVKK/performans için self-host'a geçilebilir — bkz. Karar Defteri notu.)
+- **Yükleme:** Self-host (`@fontsource`, `+layout.svelte`'te import) — Google Fonts CDN kaldırıldı (KVKK: üçüncü-taraf IP yok + performans). `font-display: swap`. CSP'de fonts.googleapis/gstatic origin'leri çıkarıldı.
 - **Tip ölçeği (akışkan, clamp tabanlı):**
   - Hero başlık: `clamp(2.5rem, 5vw, 4rem)`
   - Bölüm başlığı (H2): `clamp(2rem, 4vw, 2.8rem)`
@@ -100,6 +100,8 @@ KATMAN 3 — Component  →  ör. --color-success-bg (NewsletterForm durum rengi
 | (öncesi) | prefers-reduced-motion desteği eklendi | WCAG 2.3.3 / hareket hassasiyeti |
 
 ## Açık İyileştirme Notları (sistem değil, gelecek)
-- Google Fonts → self-host (`@fontsource`) düşünülebilir: KVKK (üçüncü taraf IP) + CLS kazancı.
-- Semantik renkler (`success/error`) `:root`'a token olarak alınabilir.
-- Playfair Display 12 varyant yükleniyor; gerçekten kullanılanlar subset edilebilir (performans).
+- ✅ Google Fonts → self-host (`@fontsource`) yapıldı (16 Haz 2026). KVKK + performans.
+- ✅ Semantik renkler (`success/error`) `:root` token'ı oldu.
+- ✅ Yapısal emojiler SVG ikona (`Icon.svelte`) çevrildi.
+- Açılış (hero) videosu eklenebilir (markanın paletinden, Higgsfield) — şu an statik.
+- Görsel/ekran-görüntüsü denetim döngüsü kurulabilir (kod denetimi var, render denetimi yok).
