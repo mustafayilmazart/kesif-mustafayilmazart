@@ -1,6 +1,7 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import Icon from '$lib/components/Icon.svelte';
   import { skillCategories, audienceLabels } from '$lib/data/skills';
   import type { PageData } from './$types';
 
@@ -144,7 +145,7 @@
     <div class="sd-header-inner">
       <a href="/skills" class="back-link">← Tüm Skills</a>
       <div class="sd-cat-tag" style:color={cat.accent} style:background={cat.accent + '14'}>
-        <span>{cat.icon}</span> {cat.label}
+        <Icon name={cat.icon} size={14} /> {cat.label}
       </div>
       <h1>{skill.name}</h1>
       <p class="sd-lead">{skill.description}</p>
@@ -197,7 +198,7 @@
         <div class="related-grid">
           {#each related as r (r.slug)}
             <a href="/skills/{r.slug}" class="related-card">
-              <div class="related-cat" style:color={cat.accent}>{cat.icon} {cat.label}</div>
+              <div class="related-cat" style:color={cat.accent}><Icon name={cat.icon} size={13} /> {cat.label}</div>
               <h3>{r.name}</h3>
               <p>{r.description}</p>
               <span class="related-link">İncele →</span>
@@ -259,7 +260,7 @@
   .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 14px; }
   .related-card { display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; background: #fff; border: 1px solid var(--border); border-radius: 12px; text-decoration: none; color: inherit; transition: all .25s; }
   .related-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(33,146,149,.08); border-color: var(--teal); }
-  .related-cat { font-family: 'JetBrains Mono', monospace; font-size: .68rem; font-weight: 600; }
+  .related-cat { display: inline-flex; align-items: center; gap: 5px; font-family: 'JetBrains Mono', monospace; font-size: .68rem; font-weight: 600; }
   .related-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--charcoal); margin: 0; line-height: 1.3; }
   .related-card p { font-size: .82rem; color: var(--text-muted); line-height: 1.55; margin: 0; flex: 1; }
   .related-link { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: var(--teal); font-weight: 600; }

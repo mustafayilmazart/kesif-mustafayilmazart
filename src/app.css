@@ -470,10 +470,6 @@ body{overflow-x:visible !important;overflow-y:auto}
   align-items:center;
   gap:10px
 }
-.article-sources h3::before{
-  content:'📚';
-  font-size:1rem
-}
 .article-sources ul{
   list-style:none;
   padding:0;

@@ -2,6 +2,7 @@
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import BlogIcon from '$lib/components/BlogIcon.svelte';
+  import Icon from '$lib/components/Icon.svelte';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
@@ -139,7 +140,7 @@
       {#if post.sources && post.sources.length > 0}
         <details class="article-sources">
           <summary>
-            <span class="sources-icon" aria-hidden="true">📚</span>
+            <span class="sources-icon"><Icon name="book" size={16} /></span>
             <span class="sources-label">Kaynaklar &amp; Atıflar</span>
             <span class="sources-count">{post.sources.length} kaynak</span>
             <svg class="sources-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -204,7 +205,7 @@
         </div>
 
         <div class="profile-card profile-cta-card">
-          <h5>📬 Bültene abone ol</h5>
+          <h5><Icon name="mail" size={16} /> Bültene abone ol</h5>
           <p>Psikoloji (klinik), AI ve maneviyat üzerine yeni yazılarımı kaçırma.</p>
           <a href="https://kesiforg.substack.com" target="_blank" rel="noopener noreferrer" class="btn-primary btn-block">Substack'te Abone Ol</a>
         </div>

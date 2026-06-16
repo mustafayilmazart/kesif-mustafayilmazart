@@ -28,20 +28,21 @@ export type Skill = {
   highlight?: boolean;
 };
 
+// icon alanı artık Icon.svelte ikon adı (emoji değil)
 export const skillCategories: Record<SkillCategory, { label: string; icon: string; accent: string }> = {
-  klinik:        { label: 'Klinik & Sağlık',        icon: '🩺', accent: '#16a34a' },
-  egitim:        { label: 'Eğitim & Kurslar',       icon: '🎓', accent: '#0ea5e9' },
-  icerik:        { label: 'İçerik Üretimi',         icon: '🎬', accent: '#dc2626' },
-  sosyal:        { label: 'Sosyal Medya',           icon: '📱', accent: '#ec4899' },
-  'ai-otomasyon':{ label: 'AI & Otomasyon',         icon: '🤖', accent: '#7c3aed' },
-  arastirma:     { label: 'Araştırma & Analiz',     icon: '🔍', accent: '#0d9488' },
-  manevi:        { label: 'Manevi & Maneviyat',     icon: '🌙', accent: '#b8a920' },
-  marka:         { label: 'Marka & Pazarlama',      icon: '🎨', accent: '#ea580c' },
-  tasarim:       { label: 'Tasarım & UI',           icon: '🎨', accent: '#db2777' },
-  yazilim:       { label: 'Yazılım Geliştirme',     icon: '💻', accent: '#2563eb' },
-  hukuk:         { label: 'Hukuk & Uyumluluk',      icon: '⚖️', accent: '#475569' },
-  verimlilik:    { label: 'Verimlilik & Token',     icon: '⚡', accent: '#d97706' },
-  altyapi:       { label: 'Altyapı & Orkestrasyon', icon: '🛠️', accent: '#219295' }
+  klinik:        { label: 'Klinik & Sağlık',        icon: 'heart-pulse',    accent: '#16a34a' },
+  egitim:        { label: 'Eğitim & Kurslar',       icon: 'graduation-cap', accent: '#0ea5e9' },
+  icerik:        { label: 'İçerik Üretimi',         icon: 'clapperboard',   accent: '#dc2626' },
+  sosyal:        { label: 'Sosyal Medya',           icon: 'smartphone',     accent: '#ec4899' },
+  'ai-otomasyon':{ label: 'AI & Otomasyon',         icon: 'bot',            accent: '#7c3aed' },
+  arastirma:     { label: 'Araştırma & Analiz',     icon: 'search',         accent: '#0d9488' },
+  manevi:        { label: 'Manevi & Maneviyat',     icon: 'moon',           accent: '#b8a920' },
+  marka:         { label: 'Marka & Pazarlama',      icon: 'palette',        accent: '#ea580c' },
+  tasarim:       { label: 'Tasarım & UI',           icon: 'pen-tool',       accent: '#db2777' },
+  yazilim:       { label: 'Yazılım Geliştirme',     icon: 'code',           accent: '#2563eb' },
+  hukuk:         { label: 'Hukuk & Uyumluluk',      icon: 'scale',          accent: '#475569' },
+  verimlilik:    { label: 'Verimlilik & Token',     icon: 'zap',            accent: '#d97706' },
+  altyapi:       { label: 'Altyapı & Orkestrasyon', icon: 'wrench',         accent: '#219295' }
 };
 
 export const audienceLabels: Record<Audience, string> = {

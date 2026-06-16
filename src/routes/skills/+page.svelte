@@ -1,6 +1,7 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import Icon from '$lib/components/Icon.svelte';
   import { skills, skillCategories, audienceLabels, type SkillCategory, type Audience } from '$lib/data/skills';
 
   let query = $state('');
@@ -121,7 +122,7 @@
             onclick={() => activeCategory = c}
             type="button"
           >
-            <span class="chip-icon">{cat.icon}</span>
+            <span class="chip-icon"><Icon name={cat.icon} size={15} /></span>
             {cat.label}
             <span class="chip-count">{count}</span>
           </button>
@@ -168,7 +169,7 @@
           {@const cat = skillCategories[s.category]}
           <a href="/skills/{s.slug}" class="skill-card" class:highlight={s.highlight}>
             <div class="skill-cat-tag" style:color={cat.accent} style:background={cat.accent + '14'}>
-              <span>{cat.icon}</span>
+              <Icon name={cat.icon} size={14} />
               {cat.label}
             </div>
             <div class="skill-status status-{s.status}">{s.status === 'aktif' ? 'Aktif' : s.status === 'beta' ? 'Beta' : 'Planlı'}</div>

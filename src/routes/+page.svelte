@@ -3,6 +3,7 @@
   import { personSchema, websiteSchema, navigationSchema } from '$lib/schema';
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import Icon from '$lib/components/Icon.svelte';
   import { institutions, institutionLabels, type Institution } from '$lib/data/institutions';
   import { programs } from '$lib/data/programs';
   import NewsletterForm from '$lib/components/NewsletterForm.svelte';
@@ -654,12 +655,12 @@
     <a href={CFG.linkedin} target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn'de Bağlanalım</a>
   </div>
   <div class="cta-links reveal">
-    <a href={CFG.github} target="_blank" rel="noopener noreferrer" class="cta-link"><span aria-hidden="true">⌨️</span> GitHub<span class="sr-only"> (yeni sekmede açılır)</span></a>
-    <a href={CFG.medium} target="_blank" rel="noopener noreferrer" class="cta-link"><span aria-hidden="true">📝</span> Medium<span class="sr-only"> (yeni sekmede açılır)</span></a>
-    <a href={CFG.substack} target="_blank" rel="noopener noreferrer" class="cta-link"><span aria-hidden="true">📬</span> Substack<span class="sr-only"> (yeni sekmede açılır)</span></a>
-    <a href={CFG.youtube} target="_blank" rel="noopener noreferrer" class="cta-link"><span aria-hidden="true">▶</span> YouTube<span class="sr-only"> (yeni sekmede açılır)</span></a>
-    <a href={CFG.udemy} target="_blank" rel="noopener noreferrer" class="cta-link"><span aria-hidden="true">🎓</span> Udemy<span class="sr-only"> (yeni sekmede açılır)</span></a>
-    <a href={CFG.kesif} target="_blank" rel="noopener noreferrer" class="cta-link"><span aria-hidden="true">🌐</span> kesif.org<span class="sr-only"> (yeni sekmede açılır)</span></a>
+    <a href={CFG.github} target="_blank" rel="noopener noreferrer" class="cta-link"><Icon name="github" size={17} /> GitHub<span class="sr-only"> (yeni sekmede açılır)</span></a>
+    <a href={CFG.medium} target="_blank" rel="noopener noreferrer" class="cta-link"><Icon name="pen-line" size={17} /> Medium<span class="sr-only"> (yeni sekmede açılır)</span></a>
+    <a href={CFG.substack} target="_blank" rel="noopener noreferrer" class="cta-link"><Icon name="mail" size={17} /> Substack<span class="sr-only"> (yeni sekmede açılır)</span></a>
+    <a href={CFG.youtube} target="_blank" rel="noopener noreferrer" class="cta-link"><Icon name="youtube" size={17} /> YouTube<span class="sr-only"> (yeni sekmede açılır)</span></a>
+    <a href={CFG.udemy} target="_blank" rel="noopener noreferrer" class="cta-link"><Icon name="graduation-cap" size={17} /> Udemy<span class="sr-only"> (yeni sekmede açılır)</span></a>
+    <a href={CFG.kesif} target="_blank" rel="noopener noreferrer" class="cta-link"><Icon name="globe" size={17} /> kesif.org<span class="sr-only"> (yeni sekmede açılır)</span></a>
   </div>
 </section>
 

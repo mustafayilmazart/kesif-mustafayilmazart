@@ -1,14 +1,16 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import Icon from '$lib/components/Icon.svelte';
 
+  // icon alanı = Icon.svelte ikon adı (emoji değil)
   const audiences = [
-    { icon: '🧠', title: 'Terapistler & Psikologlar', desc: 'Seans takibi, ödev otomasyonu, AI destekli ön değerlendirme, KVKK uyumlu danışan kayıt sistemi.' },
-    { icon: '🦷', title: 'Diş Klinikleri', desc: 'Randevu hatırlatma, tedavi planı görselleştirme, hasta sadakat programı, onam formları.' },
-    { icon: '🩺', title: 'Doktorlar & Uzmanlar', desc: 'Hasta dosyası özetleme, e-reçete entegrasyonu, sonuç bildirimi otomasyonu, klinik dashboard.' },
-    { icon: '🏥', title: 'Klinik & Polikliniğer', desc: 'Çoklu hekim koordinasyonu, kapasite yönetimi, gelir analitiği, multi-kanal iletişim.' },
-    { icon: '💪', title: 'Fizyoterapi Merkezleri', desc: "Egzersiz takip uygulaması, ev programı pipeline'ı, video eğitim üretimi." },
-    { icon: '🥗', title: 'Beslenme Uzmanları', desc: 'Beslenme planı oluşturma asistanı, danışan ilerleme takibi, içerik takvimi.' }
+    { icon: 'brain', title: 'Terapistler & Psikologlar', desc: 'Seans takibi, ödev otomasyonu, AI destekli ön değerlendirme, KVKK uyumlu danışan kayıt sistemi.' },
+    { icon: 'smile', title: 'Diş Klinikleri', desc: 'Randevu hatırlatma, tedavi planı görselleştirme, hasta sadakat programı, onam formları.' },
+    { icon: 'stethoscope', title: 'Doktorlar & Uzmanlar', desc: 'Hasta dosyası özetleme, e-reçete entegrasyonu, sonuç bildirimi otomasyonu, klinik dashboard.' },
+    { icon: 'building', title: 'Klinik & Poliklinikler', desc: 'Çoklu hekim koordinasyonu, kapasite yönetimi, gelir analitiği, multi-kanal iletişim.' },
+    { icon: 'dumbbell', title: 'Fizyoterapi Merkezleri', desc: "Egzersiz takip uygulaması, ev programı pipeline'ı, video eğitim üretimi." },
+    { icon: 'leaf', title: 'Beslenme Uzmanları', desc: 'Beslenme planı oluşturma asistanı, danışan ilerleme takibi, içerik takvimi.' }
   ];
 
   const packages = [
@@ -45,10 +47,10 @@
   ];
 
   const whyMe = [
-    { icon: '🩺', title: 'Sağlık Sektörü İçeriden', desc: '14+ yıl psikiyatri hemşireliği, bağımlılık tedavi merkezinde klinik tecrübe. Hekim ve hasta dilini biliyorum.' },
-    { icon: '🤖', title: 'AI Engineer', desc: 'Üretim ortamında çalışan AI sistemleri kuruyorum. Hype değil, sonuç odaklı.' },
-    { icon: '⚖️', title: 'KVKK Uzmanlığı', desc: 'Sağlık verisinin yasal hassasiyetini hem teknik hem hukuki yönden anlıyorum.' },
-    { icon: '🎓', title: 'Eğitim Odaklı', desc: 'Keşif Akademi\'de 3.700+ öğrenci. Ekibinize sistemi öğretirken karmaşık değil, anlaşılır anlatıyorum.' }
+    { icon: 'stethoscope', title: 'Sağlık Sektörü İçeriden', desc: '14+ yıl psikiyatri hemşireliği, bağımlılık tedavi merkezinde klinik tecrübe. Hekim ve hasta dilini biliyorum.' },
+    { icon: 'bot', title: 'AI Engineer', desc: 'Üretim ortamında çalışan AI sistemleri kuruyorum. Hype değil, sonuç odaklı.' },
+    { icon: 'scale', title: 'KVKK Uzmanlığı', desc: 'Sağlık verisinin yasal hassasiyetini hem teknik hem hukuki yönden anlıyorum.' },
+    { icon: 'graduation-cap', title: 'Eğitim Odaklı', desc: 'Keşif Akademi\'de 3.700+ öğrenci. Ekibinize sistemi öğretirken karmaşık değil, anlaşılır anlatıyorum.' }
   ];
 
   const faqs = [
@@ -149,7 +151,7 @@
     <div class="aid-audience-grid">
       {#each audiences as a (a.title)}
         <div class="aid-audience-card">
-          <div class="aid-audience-icon">{a.icon}</div>
+          <div class="aid-audience-icon"><Icon name={a.icon} size={26} /></div>
           <h3>{a.title}</h3>
           <p>{a.desc}</p>
         </div>
@@ -241,7 +243,7 @@
     <div class="aid-why-grid">
       {#each whyMe as w (w.title)}
         <div class="aid-why-card">
-          <div class="aid-why-icon">{w.icon}</div>
+          <div class="aid-why-icon"><Icon name={w.icon} size={26} /></div>
           <div>
             <h3>{w.title}</h3>
             <p>{w.desc}</p>
@@ -276,7 +278,7 @@
     <p>Ücretsiz 30 dakikalık keşif görüşmesinde birlikte bakalım. Görüşmenin sonunda hiçbir şey almak zorunda değilsiniz; en azından 1-2 somut fikirle ayrılırsınız.</p>
     <div class="aid-cta-buttons">
       <a href="mailto:bilgi@mustafayilmaz.art?subject=AI%20Dan%C4%B1%C5%9Fmanl%C4%B1k%20%E2%80%94%20%C3%9Ccretsiz%20Ke%C5%9Fif%20G%C3%B6r%C3%BC%C5%9Fmesi" class="btn-primary btn-lg">
-        <span aria-hidden="true">📅</span> Ücretsiz Görüşme Talep Et
+        <Icon name="calendar" size={18} /> Ücretsiz Görüşme Talep Et
       </a>
       <a href="https://linkedin.com/in/kpmustafayilmaz" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-lg">
         LinkedIn'de Mesaj At
